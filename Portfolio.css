@@ -1,0 +1,33 @@
+.img-profile {
+    height: 25rem;
+    width: 25rem;
+    border-radius: 50%;
+}
+
+.jumbotron{
+    color: white;
+}
+
+.intro-text-header {
+    font-size: 5rem;
+    font-weight: 100;
+}
+
+.img-headers {
+    width: 15%;
+    height: 15%;
+}
+
+.img-skills{
+    border-radius: 50%;
+}
+
+.img-badges{
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+}
+
+.skill-text {
+    font-size: 1.5rem;
+}
