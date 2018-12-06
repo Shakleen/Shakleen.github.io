@@ -48,6 +48,10 @@
         width: 40%;
         border-radius: 50%;
     }
+    .img-contact {
+        width: 30%;
+        border-radius: 50%;
+    }
     #IntroHeader h1{
         font-size: 250%;
         font-weight: 400;
@@ -69,6 +73,10 @@
 @media (max-width: 600px) {
     .img-profile {
         width: 50%;
+        border-radius: 50%;
+    }
+    .img-contact {
+        width: 100%;
         border-radius: 50%;
     }
     #IntroHeader h1{
@@ -112,4 +120,9 @@
     border-radius: 50%;
     width: 50%;
     height: 50%;
+}
+
+.img-contact {
+    width: 3rem;
+    border-radius: 50%;
 }
