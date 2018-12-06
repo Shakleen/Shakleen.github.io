@@ -1,7 +1,66 @@
+#mainNavbar {
+    font-size: 1.5rem;
+}
+
+#mainNavbar .nav-link{
+    color: white;
+    font-weight: 100;
+}
+
+#mainNavbar .nav-link:hover{
+    color: black;
+    background: aqua;
+    font-weight: 600;
+}
+
+#mainNavbar .navbar-brand {
+    color: aqua;
+    font-weight: 600;
+}
+
 .img-profile {
-    height: 25rem;
-    width: 25rem;
+    width: 30%;
     border-radius: 50%;
+} 
+
+#IntroHeader h1{
+    font-size: 400%;
+    font-weight: 400;
+}
+
+#IntroHeader p{
+    font-size: 150%;
+    font-weight: 100;
+}
+
+@media (max-width: 1200px) {
+    .img-profile {
+        width: 40%;
+        border-radius: 50%;
+    }
+    #IntroHeader h1{
+        font-size: 250%;
+        font-weight: 400;
+    }
+    #IntroHeader p{
+        font-size: 125%;
+        font-weight: 100;
+    }
+}
+
+@media (max-width: 600px) {
+    .img-profile {
+        width: 50%;
+        border-radius: 50%;
+    }
+    #IntroHeader h1{
+        font-size: 175%;
+        font-weight: 400;
+    }
+    #IntroHeader p{
+        font-size: 90%;
+        font-weight: 100;
+    }
 }
 
 .jumbotron{
