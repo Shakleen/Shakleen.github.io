@@ -33,6 +33,16 @@
     font-weight: 100;
 }
 
+#Content h1{
+    font-size: 200%;
+    font-weight: 200;
+}
+
+#Content p{
+    font-size: 150%;
+    font-weight: 100;
+}
+
 @media (max-width: 1200px) {
     .img-profile {
         width: 40%;
@@ -44,6 +54,14 @@
     }
     #IntroHeader p{
         font-size: 125%;
+        font-weight: 100;
+    }
+    #Content h1{
+        font-size: 120%;
+        font-weight: 200;
+    }
+    #Content p{
+        font-size: 75%;
         font-weight: 100;
     }
 }
@@ -61,6 +79,19 @@
         font-size: 90%;
         font-weight: 100;
     }
+    #Content h1{
+        font-size: 100%;
+        font-weight: 200;
+    }
+    #Content p{
+        font-size: 50%;
+        font-weight: 100;
+    }
+}
+
+.img-headers {
+    width: 5px;
+    height: 25px;
 }
 
 .jumbotron{
@@ -72,12 +103,8 @@
     font-weight: 100;
 }
 
-.img-headers {
-    width: 15%;
-    height: 15%;
-}
-
 .img-skills{
+    width: auto;
     border-radius: 50%;
 }
 
@@ -85,8 +112,4 @@
     border-radius: 50%;
     width: 50%;
     height: 50%;
-}
-
-.skill-text {
-    font-size: 1.5rem;
 }
