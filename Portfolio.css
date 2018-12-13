@@ -34,7 +34,8 @@
 
 .img-cells {
     width: 100%;
-    max-width: 150px;
+    max-width: 120px;
+    max-height: 120px;
 }
 
 .img-headers {
@@ -113,7 +114,8 @@
         border-radius: 50%;
     }
     .img-cells {
-        max-width: 100px;
+        max-width: 75px;
+        max-height:750px;
     }
     
     .HeadingTitle{
@@ -148,7 +150,8 @@
         border-radius: 50%;
     }
     .img-cells {
-        max-width: 75px;
+        max-width: 50px;
+        max-height: 50px;
     }
     
     .HeadingTitle{
