@@ -34,6 +34,11 @@
     font-weight: 100;
 }
 
+#CardHeader {
+    font-size: 200%;
+    font-weight: 400;
+}
+
 #Content h1{
     font-size: 200%;
     font-weight: 200;
@@ -61,6 +66,10 @@
         font-size: 125%;
         font-weight: 100;
     }
+    #CardHeader {
+        font-size: 150%;
+        font-weight: 400;
+    }
     #Content h1{
         font-size: 120%;
         font-weight: 200;
@@ -87,6 +96,10 @@
     #IntroHeader p{
         font-size: 90%;
         font-weight: 100;
+    }
+    #CardHeader {
+        font-size: 125%;
+        font-weight: 400;
     }
     #Content h1{
         font-size: 100%;
@@ -126,4 +139,12 @@
 .img-contact {
     width: 3rem;
     border-radius: 50%;
+}
+
+.card-body div:hover{
+    color: white;
+}
+
+.Invisible {
+    display: None;
 }
