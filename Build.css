@@ -1,0 +1,65 @@
+.Full {
+    height: 700px;
+}
+
+.Half{
+    height: 48%;
+    transition: all 0.5s;
+}
+
+.Quarter {
+    background-color: #007BFF;
+    color: white;
+    height: auto;
+    width: 50%;
+    padding: 1%;
+    margin: 1%;
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.Quarter:hover{
+    background-color: cyan;
+    color: black;
+    font-weight: bold;
+    border: 2px solid black;
+}
+
+.ShrinkQuarter {
+    width: 0px;
+    opacity: 0;
+}
+
+.ExtendQuarter {
+    width: 100%;
+}
+
+.ShrinkHalf {
+    height: 0px;
+    opacity: 0;
+}
+
+.ExtendHalf {
+    height: 100%;
+}
+
+.img-cells {
+    max-width: 75px;
+    max-height:750px;
+}
+
+.HeadingTitle{
+    font-size: 400%;
+    font-weight: 400;
+}
+
+.HeadingParam{
+    font-size: 150%;
+    font-weight: 100;
+}
+
+.Invisible {
+    display: none;
+    height: 0%;
+    width: 0%;
+}
