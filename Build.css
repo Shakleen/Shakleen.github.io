@@ -93,6 +93,10 @@
     font-weight: 100;
 }
 
+.card {
+    height: 85%;
+}
+
 .Invisible {
     display: none;
     height: 0%;

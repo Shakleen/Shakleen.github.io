@@ -199,9 +199,9 @@ for (var i = 0; i < QtrHeadings.length; ++i){
     } else if (i == 6) {    // Game Development
         HandleProjectsQuarter(
             [
-                "Photos/Project Bytes.jpg",
-                "",
-                ""
+                "http://i1.wp.com/shoryuken.com/wp-content/uploads/2015/03/unrealengine-4-logo-622.png?fit=622%2C320&resize=750%2C400",
+                "http://i1.wp.com/shoryuken.com/wp-content/uploads/2015/03/unrealengine-4-logo-622.png?fit=622%2C320&resize=750%2C400",
+                "http://i1.wp.com/shoryuken.com/wp-content/uploads/2015/03/unrealengine-4-logo-622.png?fit=622%2C320&resize=750%2C400"
             ],
             [
                 "https://github.com/Red-Rebels/ProjectBytes",
