@@ -1,3 +1,28 @@
+/* ********************************************************* */
+/* ******************** Nav Bar Related ******************** */
+/* ********************************************************* */
+
+#mainNavbar {
+    font-size: 1.5rem;
+}
+
+#mainNavbar .nav-link{
+    color: white;
+    font-weight: 100;
+}
+
+#mainNavbar .nav-link:hover{
+    color: black;
+    background: aqua;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+#mainNavbar .navbar-brand {
+    color: aqua;
+    font-weight: 600;
+}
+
 .Full {
     height: 700px;
 }
@@ -44,8 +69,18 @@
 }
 
 .img-cells {
-    max-width: 75px;
-    max-height:750px;
+    max-width: 125px;
+    max-height:125px;
+}
+
+.img-cards {
+    max-width: 150px;
+    max-height:150px;
+}
+
+.img-profile {
+    width: 30%;
+    border-radius: 50%;
 }
 
 .HeadingTitle{
@@ -62,4 +97,16 @@
     display: none;
     height: 0%;
     width: 0%;
+}
+
+.circle-border-success {
+    border: 10px solid rgb(0, 255, 0);
+}
+
+.circle-border-danger {
+    border: 10px solid rgb(255, 0, 0);
+}
+
+.circle-border-warning {
+    border: 10px solid rgb(255, 255, 0);
 }
