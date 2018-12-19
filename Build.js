@@ -1,58 +1,79 @@
-// Creating the main sub parts of the attribute.
-$('.attribute-container').html('<div class="attribute-header"></div><div class="attribute-content p-2"></div>');
+// ====================================================================================================
+// Creating the main sub parts of each of the attributes.
+// Here attribute means the different portions of the portfolio like skills, achievements etc.
+// Each attribute container has two portions, attribute header and attribute content.
+// The header will show the title of the attribute and a small line to indicate what it is.
+// The header might also include additional info like descriptions of measurements of the attribute.  
+// ====================================================================================================
+var AttributeHeader = '<div class="attribute-header col-12"></div>';
+var AttributeContent = '<div class="attribute-content Full container-fluid p-2"></div>';
+$('.attribute-container').html(AttributeHeader + AttributeContent);
 
-
+// ====================================================================================================
 // Working with the header portion
-var heading = '<h1 class="HeadingTitle"></h1><p class="HeadingParam"></p><div class="HeadingDesc d-flex justify-content-center"></div>'
-$('.attribute-header').html(heading);
-$('.attribute-header').addClass('text-center bg-dark text-white col-12 p-0');
-var AttributeTitles = [
-    'Hello, world!',
-    "I'm Shakleen Ishfar",
-    'Skills', 
-    'Projects', 
-    'Education', 
-    'Achievements',
-    'Contact Info'
-];
-var AttributeParagraphs = [
-    'A Computer Science Major with passion for Apps, Games and Machine Learning.',
-    'My superpowers', 
-    'Some cool things I\'ve built', 
-    'My Source of knowledge', 
-    'Things I\'ve earned'
-];
-for (var i = 0; i < AttributeTitles.length; ++i){
-    $($('.HeadingTitle')[i]).text(AttributeTitles[i]);
-    $($('.HeadingParam')[i]).text(AttributeParagraphs[i]);
-}
+// First the title and the short line is added to the header.
+// Then depending on the attribute the descriptions are added. 
+// All the texts for an attribute can be found in the Attribute text variable.
+// ====================================================================================================
+var HeadingTitle = '<h1 class="HeadingTitle"></h1>';
+var HeadingParam = '<p class="HeadingParam"></p>';
+$('.attribute-header').html(HeadingTitle + HeadingParam);
 
-// Working with heading descriptions
-$('.HeadingDesc').html('<p class="HeadingDescC"></p><p class="HeadingDescF"></p><p class="HeadingDescP"></p>');
-$('.HeadingDescC').addClass('text-success HeadingParam px-2');
-$('.HeadingDescF').addClass('text-warning HeadingParam px-2');
-$('.HeadingDescP').addClass('text-danger HeadingParam px-2');
-var headingDesc = [
-    'Comfortable',
-    'Familiar',
-    'Prior Experience',
-    'Large Scale',
-    'Medium Scale',
-    'Small Scale'
-]
-for (var i = 0; i < headingDesc.length; i += 3){
-    if (headingDesc[i] === ''){
-        continue;
+// Handling header description information.
+var HeadingDescC = '<p class="HeadingDescC text-success"></p>';
+var HeadingDescF = '<p class="HeadingDescF text-warning"></p>';
+var HeadingDescP = '<p class="HeadingDescP text-danger"></p>';
+var HeadingDesc = '<div class="d-flex justify-content-center">' + HeadingDescC + HeadingDescF + HeadingDescP + '</div>';
+
+var AttributeTexts = [
+    {   // Attribute titles 
+        0: 'Skills',
+        1: 'Projects',
+        2: 'Education',
+        3: 'Achievements',
+        4: 'Contact Information'
+    },
+    {   // Attribute paragraphs
+        0: 'My superpowers',
+        1: 'Some cool things I\'ve built',
+        2: 'My Source of knowledge',
+        3: 'Things I\'ve earned',
+        4: 'Let\s Talk!'
+    },
+    [   // Attribute descriptions
+        {1: 'Comfortable', 2: 'Familiar', 3: 'Prior Experience'},
+        {1: 'Large Scale', 2: 'Medium Scale', 3: 'Small Scale'}
+    ]
+];
+for (var i = 0; i < $('.attribute-container').length; ++i){
+    // $($('.attribute-header')[i]).find('h1.HeadingTitle').text(AttributeTexts[0][i]);
+    // $($('.attribute-header')[i]).find('p.HeadingParam').text(AttributeTexts[1][i]);
+
+    // if (i <= 1){
+    //     $($('.attribute-header')[i]).append(HeadingDesc);
+    //     $($('.attribute-header')[i]).find('p.HeadingDescC').text(AttributeTexts[2][i][1]);
+    //     $($('.attribute-header')[i]).find('p.HeadingDescF').text(AttributeTexts[2][i][2]);
+    //     $($('.attribute-header')[i]).find('p.HeadingDescP').text(AttributeTexts[2][i][3]);
+    // }
+
+    var headerTemp = $('.attribute-header')[i];
+    $(headerTemp).find('h1.HeadingTitle').text(AttributeTexts[0][i]);
+    $(headerTemp).find('p.HeadingParam').text(AttributeTexts[1][i]);
+
+    if (i <= 1){
+        $(headerTemp).append(HeadingDesc);
+        $(headerTemp).find('p.HeadingDescC').text(AttributeTexts[2][i][1]);
+        $(headerTemp).find('p.HeadingDescF').text(AttributeTexts[2][i][2]);
+        $(headerTemp).find('p.HeadingDescP').text(AttributeTexts[2][i][3]);
     }
-
-    $($('.HeadingDescC')[i/3]).text(headingDesc[i]);
-    $($('.HeadingDescF')[i/3]).text(headingDesc[i+1]);
-    $($('.HeadingDescP')[i/3]).text(headingDesc[i+2]);
 }
 
-
+// ====================================================================================================
 // Working with the content portion
-$('.attribute-content').addClass('Full container-fluid text-center');
+// First the title and the short line is added to the header.
+// Then depending on the attribute the descriptions are added. 
+// All the texts for an attribute can be found in the Attribute text variable.
+// ====================================================================================================
 var fullDiv = '<div class="Half"></div>';
 $('.Full').html(fullDiv + fullDiv);
 
@@ -507,8 +528,8 @@ function HandleProjectsQuarter(ImageSource, ProjectLink, ProjectName, ProjectSca
     for (var i = 0; i < ImageSource.length; ++i){
         var string ='<div class="col-12 col-sm-4">' +
                         '<img class="img-fluid rounded-circle img-cells'  + Level[ ProjectScale[i] ] + '" src="' + ImageSource[i] + '">' +
+                        '<h5 class="card-title m-0 text-center"><a class="text-dark" href="' + ProjectLink[i] + '">' + ProjectName[i] + '</a></h5>' +
                         '<div class="card text-dark HiddenCell Invisible text-left">' +
-                            '<h5 class="card-title m-0"><a href="' + ProjectLink[i] + '">' + ProjectName[i] + '</a></h5>' +
                             '<p class="card-text m-0">Time to complete: ' + Scale[ProjectScale[i]] + '</p>' + 
                             '<p class="card-text m-0">Project type: ' + ((ColabType[i] === 1) ? 'Team' : 'Individual') + '</p>' + 
                             '<p class="card-text m-0">' + ShortDescription[i] + '</p>' + 
@@ -526,7 +547,7 @@ function HandleEducationQuarter(Images, Names, Degree, Grade, Info, Rounded, Qua
         var string =    '<div class="col-10 col-sm-4">' + 
                             '<img class="img-fluid img-cells' + ((Rounded[i] === 1) ? ' rounded-circle': '') + '" src="' + Images[i] + '">' +
                             '<div class="card text-dark HiddenCell Invisible text-left">' + 
-                                '<div class="card-body">' +
+                            '<div class="card-body">' +
                                     '<h4 class="card-title text-center">' + Names[i] + '</h4>' +
                                     '<p class="card-text">' + Degree[i] + '</p>' +
                                     '<p class="card-text">' + Grade[i] + '</p>' +
@@ -558,7 +579,6 @@ function HandleAchievementQuarter(Links, Names, Host, Date, Rank, Hidden, Quarte
 
 // Effects
 $('.Quarter').on('click', function(){
-    // 1. Collapse the adjacent quarter of the same half
     var sibliings = $(this).parent().children();
 
     for (var i = 0; i < sibliings.length; ++i){
