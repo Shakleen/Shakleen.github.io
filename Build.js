@@ -527,10 +527,10 @@ function HandleEducationQuarter(Images, Names, Degree, Grade, Info, Rounded, Qua
                             '<img class="img-fluid img-cells' + ((Rounded[i] === 1) ? ' rounded-circle': '') + '" src="' + Images[i] + '">' +
                             '<div class="card text-dark HiddenCell Invisible text-left">' + 
                                 '<div class="card-body">' +
-                                    '<h4 class="card-title">' + Names[i] + '</h4>' +
+                                    '<h4 class="card-title text-center">' + Names[i] + '</h4>' +
                                     '<p class="card-text">' + Degree[i] + '</p>' +
-                                    '<p>' + Grade[i] + '</p>' +
-                                    '<p class="d-none d-md-block">' + Info[i] + '</p>' +
+                                    '<p class="card-text">' + Grade[i] + '</p>' +
+                                    '<p class="card-text d-none d-md-block">' + Info[i] + '</p>' +
                                 '</div>' +
                             '</div>' +
                         '</div>';
@@ -543,11 +543,11 @@ function HandleAchievementQuarter(Links, Names, Host, Date, Rank, Hidden, Quarte
     for (var i = 0; i < Links.length; ++i){
         var string =    '<div class="col-10 col-sm-4' + ((Hidden[i] === 1) ? ' HiddenCell Invisible': '') + '">' + 
                             '<div class="card text-dark text-left">' + 
-                            '<h4 class="card-title"><a href="' + Links[i] +'">' + Names[i] + '</a></h4>' +
+                            '<h4 class="card-title text-center"><a href="' + Links[i] +'">' + Names[i] + '</a></h4>' +
                                 '<div class="card-body HiddenCell Invisible">' +
                                     '<p class="card-text">' + Host[i] + '</p>' +
-                                    '<p>' + Date[i] + '</p>' +
-                                    '<p class="d-none d-md-block">' + Rank[i] + '</p>' +
+                                    '<p class="card-text">' + Date[i] + '</p>' +
+                                    '<p class="card-text d-none d-md-block">' + Rank[i] + '</p>' +
                                 '</div>' +
                             '</div>' +
                         '</div>';
