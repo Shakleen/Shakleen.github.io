@@ -136,11 +136,7 @@ body {
 /* ********************************************************* */
 /* **************** Different Sizes Related **************** */
 /* ********************************************************* */
-@media (max-width: 1200px) {
-    body {
-        font-size: 3rem;
-    }
-
+@media (max-width: 1300px) {
     .Full {
         height: 600px;
     }
@@ -194,7 +190,7 @@ body {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     .Full {
         height: 700px;
     }
