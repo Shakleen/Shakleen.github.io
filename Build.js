@@ -1,11 +1,11 @@
 // Creating the main sub parts of the attribute.
-$('.attribute-container').html('<div class="attribute-header"></div><div class="attribute-content"></div>');
+$('.attribute-container').html('<div class="attribute-header"></div><div class="attribute-content p-2"></div>');
 
 
 // Working with the header portion
 var heading = '<h1 class="HeadingTitle"></h1><p class="HeadingParam"></p><div class="HeadingDesc d-flex justify-content-center"></div>'
 $('.attribute-header').html(heading);
-$('.attribute-header').addClass('text-center bg-dark text-white col-12');
+$('.attribute-header').addClass('text-center bg-dark text-white col-12 p-0');
 var AttributeTitles = [
     'Hello, world!',
     "I'm Shakleen Ishfar",
@@ -60,7 +60,7 @@ $('.Half').addClass('d-flex');
 var halfDiv = '<div class="Quarter"></div>';
 $('.Half').html(halfDiv + halfDiv);
 
-$('.Quarter').html('<h1 class="QuarterHeading HeadingTitle"></h1><div class="row QuarterContent"></div>');
+$('.Quarter').html('<h1 class="QuarterHeading HeadingTitle"></h1><div class="row QuarterContent align-middle"></div>');
 
 // Setting up the heading of each quarter
 var QuarterHeadings = [
@@ -169,8 +169,8 @@ for (var i = 0; i < QtrHeadings.length; ++i){
     } else if (i == 5) {    // Application Development
         HandleProjectsQuarter(
             [
-                "Photos/Project Medicinae.jpg",
-                "https://www.fnasafety.com/wp-content/uploads/2017/05/classes.png"
+                "Photos/java.jpg",
+                "Photos/java.jpg"
             ],
             [
                 "https://github.com/Shakleen/Project_Medicinae",
@@ -199,9 +199,9 @@ for (var i = 0; i < QtrHeadings.length; ++i){
     } else if (i == 6) {    // Game Development
         HandleProjectsQuarter(
             [
-                "http://i1.wp.com/shoryuken.com/wp-content/uploads/2015/03/unrealengine-4-logo-622.png?fit=622%2C320&resize=750%2C400",
-                "http://i1.wp.com/shoryuken.com/wp-content/uploads/2015/03/unrealengine-4-logo-622.png?fit=622%2C320&resize=750%2C400",
-                "http://i1.wp.com/shoryuken.com/wp-content/uploads/2015/03/unrealengine-4-logo-622.png?fit=622%2C320&resize=750%2C400"
+                "Photos/Unreal Engine.jpg",
+                "Photos/Unreal Engine.jpg",
+                "Photos/Unreal Engine.jpg"
             ],
             [
                 "https://github.com/Red-Rebels/ProjectBytes",
@@ -476,8 +476,6 @@ function HandleSkillsQuarter(QuarterContentImages, QuarterContentParagraph, Hidd
         alert("LENGTH NOT EQUAL - SKILLS");
     }
 
-    var quarterDiv = '<div class="col-3 QuarterContent-val my-2">';
-    var quarterDivHidden = '<div class="col-3 Invisible HiddenCell QuarterContent-val my-3">';
     var Level = {
         1: ' circle-border-success',
         2: ' circle-border-warning',
@@ -485,17 +483,11 @@ function HandleSkillsQuarter(QuarterContentImages, QuarterContentParagraph, Hidd
     };
 
     for (var i = 0; i < HiddenCondition.length; ++i){
-        var addition = '<img class="img-fluid rounded-circle img-cells' + 
-                    ((ExpertLevel[i] > 0) ? Level[ ExpertLevel[i] ] : '') +
-                    '" src="' + QuarterContentImages[i] + '">' +
-                    '<p class="param-cells">' + QuarterContentParagraph[i] + '</p>' +
+        var string = '<div class="col-6 col-lg-3 QuarterContent-val' + ((HiddenCondition[i] === 1) ? ' Invisible HiddenCell' : '') + '">' +
+                        '<img class="img-fluid rounded-circle img-cells' + ((ExpertLevel[i] > 0) ? Level[ ExpertLevel[i] ] : '') + '" src="' + QuarterContentImages[i] + '">' +
+                        '<p class="param-cells">' + QuarterContentParagraph[i] + '</p>' +
                     '</div>';
-
-        if (HiddenCondition[i] === 0){
-            $(QuarterObj).append(quarterDiv + addition);
-        } else {
-            $(QuarterObj).append(quarterDivHidden + addition);
-        }
+        $(QuarterObj).append(string);
     }
 }
 
@@ -513,9 +505,9 @@ function HandleProjectsQuarter(ImageSource, ProjectLink, ProjectName, ProjectSca
     };
 
     for (var i = 0; i < ImageSource.length; ++i){
-        var string =    '<div class="col-lg-3 col-md-5 col-10 card px-0 text-left text-dark ' + Level[ ProjectScale[i] ] + '">' +
-                        '<img class="card-img-top d-none d-md-block" src="' + ImageSource[i] + '" alt="Card image cap">' +
-                        '<div class="card-body HiddenCell Invisible">' +
+        var string ='<div class="col-12 col-md-3">' +
+                        '<img class="img-fluid rounded-circle img-cells'  + Level[ ProjectScale[i] ] + '" src="' + ImageSource[i] + '">' +
+                        '<div class="card text-dark HiddenCell Invisible text-left">' +
                             '<h5 class="card-title m-0"><a href="' + ProjectLink[i] + '">' + ProjectName[i] + '</a></h5>' +
                             '<p class="card-text m-0">Time to complete: ' + Scale[ProjectScale[i]] + '</p>' + 
                             '<p class="card-text m-0">Project type: ' + ((ColabType[i] === 1) ? 'Team' : 'Individual') + '</p>' + 
@@ -532,7 +524,7 @@ function HandleProjectsQuarter(ImageSource, ProjectLink, ProjectName, ProjectSca
 function HandleEducationQuarter(Images, Names, Degree, Grade, Info, Rounded, QuarterObj){
     for (var i = 0; i < Images.length; ++i){
         var string =    '<div class="col-10 col-md-5 col-lg-3">' + 
-                            '<img class="img-fluid img-cards' + ((Rounded[i] === 1) ? ' rounded-circle': '') + '" src="' + Images[i] + '">' +
+                            '<img class="img-fluid img-cells' + ((Rounded[i] === 1) ? ' rounded-circle': '') + '" src="' + Images[i] + '">' +
                             '<div class="card text-dark HiddenCell Invisible text-left">' + 
                                 '<div class="card-body">' +
                                     '<h4 class="card-title">' + Names[i] + '</h4>' +

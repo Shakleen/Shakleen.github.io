@@ -1,3 +1,7 @@
+body {
+    font-family: 'Playfair Display', serif;
+}
+
 /* ********************************************************* */
 /* ******************** Nav Bar Related ******************** */
 /* ********************************************************* */
@@ -23,6 +27,10 @@
     font-weight: 600;
 }
 
+/* ********************************************************* */
+/* ******************** Default sizes ********************** */
+/* ********************************************************* */
+
 .Full {
     height: 700px;
 }
@@ -41,6 +49,14 @@
     margin: 1%;
     opacity: 1;
     transition: all 0.5s;
+}
+
+/* .QuarterHeading {
+    height: 20%;
+} */
+
+.QuarterContent {
+    height: 80%;
 }
 
 .Quarter:hover{
@@ -74,8 +90,8 @@
 }
 
 .img-cards {
-    max-width: 150px;
-    max-height:150px;
+    max-width: 200px;
+    max-height:200px;
 }
 
 .img-profile {
@@ -113,4 +129,103 @@
 
 .circle-border-warning {
     border: 10px solid rgb(255, 255, 0);
+}
+
+/* ********************************************************* */
+/* **************** Different Sizes Related **************** */
+/* ********************************************************* */
+@media (max-width: 1200px) {
+    .Full {
+        height: 800px;
+    }
+    /* .QuarterHeading {
+        height: 25%;
+    }
+    
+    .QuarterContent {
+        height: 75%;
+    } */
+    
+
+    .img-cards {
+        max-width: 100px;
+        max-height:100px;
+    }
+    .img-profile {
+        width: 40%;
+        border-radius: 50%;
+    }
+    .img-contact {
+        width: 30%;
+        border-radius: 50%;
+    }
+    .img-cells {
+        max-width: 95px;
+        max-height:95px;
+    }
+
+    .HeadingTitle{
+        font-size: 250%;
+        font-weight: 400;
+    }
+    .HeadingParam{
+        font-size: 125%;
+        font-weight: 100;
+    }
+
+    .circle-border-success {
+        border: 5px solid rgb(0, 255, 0);
+    }
+    
+    .circle-border-danger {
+        border: 5px solid rgb(255, 0, 0);
+    }
+    
+    .circle-border-warning {
+        border: 5px solid rgb(255, 255, 0);
+    }
+}
+
+@media (max-width: 600px) {
+    .Full {
+        height: 900px;
+    }
+    
+    .img-cards {
+        max-width: 75px;
+        max-height:75px;
+    }
+    .img-profile {
+        width: 50%;
+        border-radius: 50%;
+    }
+    .img-contact {
+        width: 100%;
+        border-radius: 50%;
+    }
+    .img-cells {
+        max-width: 70px;
+        max-height: 70px;
+    }
+
+    .HeadingTitle{
+        font-size: 175%;
+        font-weight: 400;
+    }
+    .HeadingParam{
+        font-size: 90%;
+        font-weight: 100;
+    }
+    
+    .circle-border-success {
+        border: 2px solid rgb(0, 255, 0);
+    }
+    
+    .circle-border-danger {
+        border: 2px solid rgb(255, 0, 0);
+    }
+    
+    .circle-border-warning {
+        border: 2px solid rgb(255, 255, 0);
+    }
 }
