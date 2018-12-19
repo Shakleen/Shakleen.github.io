@@ -57,7 +57,7 @@ var fullDiv = '<div class="Half"></div>';
 $('.Full').html(fullDiv + fullDiv);
 
 $('.Half').addClass('d-flex');
-var halfDiv = '<div class="Quarter"></div>';
+var halfDiv = '<div class="Quarter m-4"></div>';
 $('.Half').html(halfDiv + halfDiv);
 
 $('.Quarter').html('<h1 class="QuarterHeading HeadingTitle"></h1><div class="row QuarterContent align-middle"></div>');
