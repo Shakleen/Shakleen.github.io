@@ -105,9 +105,6 @@ for (var i = 0; i < $('.attribute-container').length; ++i){
 // ====================================================================================================
 
 // Setting up the heading of each quarter
-
-
-
 var QtrHeadings = $('.quarter-heading');
 for (var i = 0; i < QtrHeadings.length; ++i){
     // Setting up the headings of each quarter
