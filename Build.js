@@ -505,7 +505,7 @@ function HandleProjectsQuarter(ImageSource, ProjectLink, ProjectName, ProjectSca
     };
 
     for (var i = 0; i < ImageSource.length; ++i){
-        var string ='<div class="col-12 col-md-3">' +
+        var string ='<div class="col-12 col-sm-4">' +
                         '<img class="img-fluid rounded-circle img-cells'  + Level[ ProjectScale[i] ] + '" src="' + ImageSource[i] + '">' +
                         '<div class="card text-dark HiddenCell Invisible text-left">' +
                             '<h5 class="card-title m-0"><a href="' + ProjectLink[i] + '">' + ProjectName[i] + '</a></h5>' +
@@ -523,7 +523,7 @@ function HandleProjectsQuarter(ImageSource, ProjectLink, ProjectName, ProjectSca
 
 function HandleEducationQuarter(Images, Names, Degree, Grade, Info, Rounded, QuarterObj){
     for (var i = 0; i < Images.length; ++i){
-        var string =    '<div class="col-10 col-md-5 col-lg-3">' + 
+        var string =    '<div class="col-10 col-sm-4">' + 
                             '<img class="img-fluid img-cells' + ((Rounded[i] === 1) ? ' rounded-circle': '') + '" src="' + Images[i] + '">' +
                             '<div class="card text-dark HiddenCell Invisible text-left">' + 
                                 '<div class="card-body">' +
@@ -541,7 +541,7 @@ function HandleEducationQuarter(Images, Names, Degree, Grade, Info, Rounded, Qua
 
 function HandleAchievementQuarter(Links, Names, Host, Date, Rank, Hidden, QuarterObj){
     for (var i = 0; i < Links.length; ++i){
-        var string =    '<div class="col-10 col-md-5 col-lg-4' + ((Hidden[i] === 1) ? ' HiddenCell Invisible': '') + '">' + 
+        var string =    '<div class="col-10 col-sm-4' + ((Hidden[i] === 1) ? ' HiddenCell Invisible': '') + '">' + 
                             '<div class="card text-dark text-left">' + 
                             '<h4 class="card-title"><a href="' + Links[i] +'">' + Names[i] + '</a></h4>' +
                                 '<div class="card-body HiddenCell Invisible">' +
