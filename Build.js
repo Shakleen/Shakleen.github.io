@@ -6,7 +6,7 @@
 // The header might also include additional info like descriptions of measurements of the attribute.  
 // ====================================================================================================
 var AttributeHeader = '<div class="attribute-header col-12"></div>';
-var AttributeContent = '<div class="attribute-content Full container-fluid p-2"></div>';
+var AttributeContent = '<div class="attribute-content content-full container-fluid p-2"></div>';
 $('.attribute-container').html(AttributeHeader + AttributeContent);
 
 // ====================================================================================================
@@ -24,6 +24,13 @@ var HeadingDescC = '<p class="HeadingDescC text-success"></p>';
 var HeadingDescF = '<p class="HeadingDescF text-warning"></p>';
 var HeadingDescP = '<p class="HeadingDescP text-danger"></p>';
 var HeadingDesc = '<div class="d-flex justify-content-center">' + HeadingDescC + HeadingDescF + HeadingDescP + '</div>';
+
+// Content divisions
+var fullDiv = '<div class="content-half d-flex"></div>';
+var halfDiv = '<div class="Quarter"></div>';
+var QuarterHeading = '<h1 class="quarter-heading"></h1>';
+var QuarterContent = '<div class="row quarter-content align-middle"></div>';
+var Quarter = QuarterHeading + QuarterContent;
 
 var AttributeTexts = [
     {   // Attribute titles 
@@ -45,45 +52,6 @@ var AttributeTexts = [
         {1: 'Large Scale', 2: 'Medium Scale', 3: 'Small Scale'}
     ]
 ];
-for (var i = 0; i < $('.attribute-container').length; ++i){
-    // $($('.attribute-header')[i]).find('h1.HeadingTitle').text(AttributeTexts[0][i]);
-    // $($('.attribute-header')[i]).find('p.HeadingParam').text(AttributeTexts[1][i]);
-
-    // if (i <= 1){
-    //     $($('.attribute-header')[i]).append(HeadingDesc);
-    //     $($('.attribute-header')[i]).find('p.HeadingDescC').text(AttributeTexts[2][i][1]);
-    //     $($('.attribute-header')[i]).find('p.HeadingDescF').text(AttributeTexts[2][i][2]);
-    //     $($('.attribute-header')[i]).find('p.HeadingDescP').text(AttributeTexts[2][i][3]);
-    // }
-
-    var headerTemp = $('.attribute-header')[i];
-    $(headerTemp).find('h1.HeadingTitle').text(AttributeTexts[0][i]);
-    $(headerTemp).find('p.HeadingParam').text(AttributeTexts[1][i]);
-
-    if (i <= 1){
-        $(headerTemp).append(HeadingDesc);
-        $(headerTemp).find('p.HeadingDescC').text(AttributeTexts[2][i][1]);
-        $(headerTemp).find('p.HeadingDescF').text(AttributeTexts[2][i][2]);
-        $(headerTemp).find('p.HeadingDescP').text(AttributeTexts[2][i][3]);
-    }
-}
-
-// ====================================================================================================
-// Working with the content portion
-// First the title and the short line is added to the header.
-// Then depending on the attribute the descriptions are added. 
-// All the texts for an attribute can be found in the Attribute text variable.
-// ====================================================================================================
-var fullDiv = '<div class="Half"></div>';
-$('.Full').html(fullDiv + fullDiv);
-
-$('.Half').addClass('d-flex');
-var halfDiv = '<div class="Quarter"></div>';
-$('.Half').html(halfDiv + halfDiv);
-
-$('.Quarter').html('<h1 class="QuarterHeading HeadingTitle"></h1><div class="row QuarterContent align-middle"></div>');
-
-// Setting up the heading of each quarter
 var QuarterHeadings = [
     'Languages I speak',
     'Industry Knowledge',
@@ -102,9 +70,45 @@ var QuarterHeadings = [
     'Certifications',
     'Online awards'
 ];
+for (var i = 0; i < $('.attribute-container').length; ++i){
+    // Getting the necessary stuff
+    var attributeTemp = $('.attribute-container')[i];
+    var headerTemp = $(attributeTemp).find('div.attribute-header');
+    var contentFullTemp = $(attributeTemp).find('div.attribute-content');
+
+    // Adding attribute title and line
+    $(headerTemp).find('h1.HeadingTitle').text(AttributeTexts[0][i]);
+    $(headerTemp).find('p.HeadingParam').text(AttributeTexts[1][i]);
+
+    // Adding description
+    if (i <= 1){
+        $(headerTemp).append(HeadingDesc);
+        $(headerTemp).find('p.HeadingDescC').text(AttributeTexts[2][i][1]);
+        $(headerTemp).find('p.HeadingDescF').text(AttributeTexts[2][i][2]);
+        $(headerTemp).find('p.HeadingDescP').text(AttributeTexts[2][i][3]);
+    }
+
+    $(contentFullTemp).html(fullDiv + fullDiv);
+
+    var contentHalfTemp = $(contentFullTemp).find('div.content-half')
+    $(contentHalfTemp).html(halfDiv + halfDiv);
+
+    var contentQuarterTemp = $(contentHalfTemp).find('div.Quarter')
+    $(contentQuarterTemp).html(Quarter);
+}
+
+// ====================================================================================================
+// Working with the content portion
+// First the title and the short line is added to the header.
+// Then depending on the attribute the descriptions are added. 
+// All the texts for an attribute can be found in the Attribute text variable.
+// ====================================================================================================
+
+// Setting up the heading of each quarter
 
 
-var QtrHeadings = $('.QuarterHeading');
+
+var QtrHeadings = $('.quarter-heading');
 for (var i = 0; i < QtrHeadings.length; ++i){
     // Setting up the headings of each quarter
     $(QtrHeadings[i]).text(QuarterHeadings[i]);
@@ -127,7 +131,7 @@ for (var i = 0; i < QtrHeadings.length; ++i){
             [
                 1, 1, 2, 2, 3, 3, 3, 3, 3, 3
             ],
-            $($('.QuarterContent')[i])
+            $($('.quarter-content')[i])
         )
     } else if (i == 1) { // Industry knowledge
         HandleSkillsQuarter(
@@ -144,7 +148,7 @@ for (var i = 0; i < QtrHeadings.length; ++i){
             [
                 1, 1, 2, 2, 3, 3
             ],
-            $($('.QuarterContent')[i])
+            $($('.quarter-content')[i])
         )
     } else if (i == 2) { // Special Abilities
         HandleSkillsQuarter(
@@ -162,7 +166,7 @@ for (var i = 0; i < QtrHeadings.length; ++i){
             [
                 1, 1, 2, 2, 3, 3
             ],
-            $($('.QuarterContent')[i])
+            $($('.quarter-content')[i])
         )
     } else if (i == 3) { // Tools of choice
         HandleSkillsQuarter(
@@ -180,7 +184,7 @@ for (var i = 0; i < QtrHeadings.length; ++i){
             [
                 1, 1, 1, 1, 2, 3, 2, 3
             ],
-            $($('.QuarterContent')[i])
+            $($('.quarter-content')[i])
         )
     } 
 
@@ -215,7 +219,7 @@ for (var i = 0; i < QtrHeadings.length; ++i){
             [
                 0, 1
             ],
-            $($('.QuarterContent')[i])
+            $($('.quarter-content')[i])
         );
     } else if (i == 6) {    // Game Development
         HandleProjectsQuarter(
@@ -250,7 +254,7 @@ for (var i = 0; i < QtrHeadings.length; ++i){
             [
                 1, 0, 0
             ],
-            $($('.QuarterContent')[i])
+            $($('.quarter-content')[i])
         );
     } else if (i == 7) {    // Web development
 
@@ -287,7 +291,7 @@ for (var i = 0; i < QtrHeadings.length; ++i){
             [
                 1, 1, 1
             ],
-            $($('.QuarterContent')[i])
+            $($('.quarter-content')[i])
         )
     } else if (i == 9) {    // Institutional Education
         HandleEducationQuarter(
@@ -319,7 +323,7 @@ for (var i = 0; i < QtrHeadings.length; ++i){
             [
                 1, 1, 1
             ],
-            $($('.QuarterContent')[i])
+            $($('.quarter-content')[i])
         )
     } else if (i == 10) {    // Institutional Education
         HandleEducationQuarter(
@@ -351,7 +355,7 @@ for (var i = 0; i < QtrHeadings.length; ++i){
             [
                 1, 1, 1
             ],
-            $($('.QuarterContent')[i])
+            $($('.quarter-content')[i])
         )
     } else if (i == 11) {    // Institutional Education
         HandleEducationQuarter(
@@ -383,7 +387,7 @@ for (var i = 0; i < QtrHeadings.length; ++i){
             [
                 1, 1, 1
             ],
-            $($('.QuarterContent')[i])
+            $($('.quarter-content')[i])
         )
     }
 
@@ -418,7 +422,7 @@ for (var i = 0; i < QtrHeadings.length; ++i){
             [
                 0, 0, 0
             ],
-            $($('.QuarterContent')[i])
+            $($('.quarter-content')[i])
         );
     } else if (i == 13) {
         HandleAchievementQuarter(
@@ -440,7 +444,7 @@ for (var i = 0; i < QtrHeadings.length; ++i){
             [
                 0
             ],
-            $($('.QuarterContent')[i])
+            $($('.quarter-content')[i])
         );
     }  else if (i == 14) {
         HandleAchievementQuarter(
@@ -487,7 +491,7 @@ for (var i = 0; i < QtrHeadings.length; ++i){
             [
                 0, 0, 0, 1, 1, 1
             ],
-            $($('.QuarterContent')[i])
+            $($('.quarter-content')[i])
         );
     } 
 }  
@@ -504,7 +508,7 @@ function HandleSkillsQuarter(QuarterContentImages, QuarterContentParagraph, Hidd
     };
 
     for (var i = 0; i < HiddenCondition.length; ++i){
-        var string = '<div class="col-6 col-lg-3 QuarterContent-val' + ((HiddenCondition[i] === 1) ? ' Invisible HiddenCell' : '') + '">' +
+        var string = '<div class="col-6 col-lg-3 quarter-content-val' + ((HiddenCondition[i] === 1) ? ' Invisible HiddenCell' : '') + '">' +
                         '<img class="img-fluid rounded-circle img-cells' + ((ExpertLevel[i] > 0) ? Level[ ExpertLevel[i] ] : '') + '" src="' + QuarterContentImages[i] + '">' +
                         '<p class="param-cells">' + QuarterContentParagraph[i] + '</p>' +
                     '</div>';
@@ -590,7 +594,7 @@ $('.Quarter').on('click', function(){
     }
 });
 
-$('.Half').on('click', function(event){
+$('.content-half').on('click', function(event){
     var sibliings = $(this).parent().children();
 
     for (var i = 0; i < sibliings.length; ++i){
