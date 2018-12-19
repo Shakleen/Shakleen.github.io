@@ -1,6 +1,5 @@
 body {
     font-family: 'Playfair Display', serif;
-    font-size: 100%;
 }
 
 /* ********************************************************* */
@@ -97,12 +96,12 @@ body {
 }
 
 .HeadingTitle{
-    font-size: 400%;
+    font-size: 4rem;
     font-weight: 400;
 }
 
 .HeadingParam{
-    font-size: 150%;
+    font-size: 1.5rem;
     font-weight: 100;
 }
 
@@ -129,6 +128,10 @@ body {
 /* **************** Different Sizes Related **************** */
 /* ********************************************************* */
 @media (max-width: 1200px) {
+    body {
+        font-size: 3rem;
+    }
+
     .Full {
         height: 600px;
     }

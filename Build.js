@@ -57,7 +57,7 @@ var fullDiv = '<div class="Half"></div>';
 $('.Full').html(fullDiv + fullDiv);
 
 $('.Half').addClass('d-flex');
-var halfDiv = '<div class="Quarter m-4"></div>';
+var halfDiv = '<div class="Quarter"></div>';
 $('.Half').html(halfDiv + halfDiv);
 
 $('.Quarter').html('<h1 class="QuarterHeading HeadingTitle"></h1><div class="row QuarterContent align-middle"></div>');
@@ -563,7 +563,7 @@ $('.Quarter').on('click', function(){
 
     for (var i = 0; i < sibliings.length; ++i){
         if (sibliings[i] !== this){
-            $(sibliings[i]).toggleClass('ShrinkQuarter');
+            $(sibliings[i]).toggleClass('ShrinkQuarter Invisible');
         } else {
             $(sibliings[i]).toggleClass('ExtendQuarter');
         }
