@@ -64,49 +64,49 @@ var AttributeValues = [
     [   // 4. Quarter content
         {   // 4.0 Skill
             0: {    // Language
-                0: {'Photo': "Photos/C++.jpg",        'Name': "C/C++",         'Visibility': 0, 'Expertise': 1},
-                1: {'Photo': "Photos/java.jpg",       'Name': "Java",          'Visibility': 0, 'Expertise': 1},
-                2: {'Photo': "Photos/Python.jpg",     'Name': "Python",        'Visibility': 0, 'Expertise': 2},
-                3: {'Photo': "Photos/JavaScript.jpg", 'Name': "JavaScript",    'Visibility': 0, 'Expertise': 2},
-                4: {'Photo': "Photos/Dart.png",       'Name': "Dart",          'Visibility': 1, 'Expertise': 3},
-                5: {'Photo': "Photos/Solidity.svg",   'Name': "Solidity",      'Visibility': 1, 'Expertise': 3},
-                6: {'Photo': "Photos/Kotlin.png",     'Name': "Kotlin",        'Visibility': 1, 'Expertise': 3},
-                7: {'Photo': "Photos/MatLAB.png",     'Name': "MatLAB",        'Visibility': 1, 'Expertise': 3},
-                8: {'Photo': "Photos/Flutter.png",    'Name': "Flutter",       'Visibility': 1, 'Expertise': 3},
-                9: {'Photo': "Photos/firebase.png",   'Name': "Firebase",      'Visibility': 1, 'Expertise': 3}
+                0: {'Photo': "Assets/Photos/C++.jpg",        'Name': "C/C++",         'Visibility': 0, 'Expertise': 1},
+                1: {'Photo': "Assets/Photos/java.jpg",       'Name': "Java",          'Visibility': 0, 'Expertise': 1},
+                2: {'Photo': "Assets/Photos/Python.jpg",     'Name': "Python",        'Visibility': 0, 'Expertise': 2},
+                3: {'Photo': "Assets/Photos/JavaScript.jpg", 'Name': "JavaScript",    'Visibility': 0, 'Expertise': 2},
+                4: {'Photo': "Assets/Photos/Dart.png",       'Name': "Dart",          'Visibility': 1, 'Expertise': 3},
+                5: {'Photo': "Assets/Photos/Solidity.svg",   'Name': "Solidity",      'Visibility': 1, 'Expertise': 3},
+                6: {'Photo': "Assets/Photos/Kotlin.png",     'Name': "Kotlin",        'Visibility': 1, 'Expertise': 3},
+                7: {'Photo': "Assets/Photos/MatLAB.png",     'Name': "MatLAB",        'Visibility': 1, 'Expertise': 3},
+                8: {'Photo': "Assets/Photos/Flutter.png",    'Name': "Flutter",       'Visibility': 1, 'Expertise': 3},
+                9: {'Photo': "Assets/Photos/firebase.png",   'Name': "Firebase",      'Visibility': 1, 'Expertise': 3}
             },
             1: {    // Industry
-                0: {'Photo': "Photos/Machine Learning.png", 'Name': "Machine Learning", 'Visibility': 0, 'Expertise': 1},             
-                1: {'Photo': "Photos/Game Dev.png",         'Name': "Game Dev",         'Visibility': 0, 'Expertise': 1},    
-                2: {'Photo': "Photos/3D Modeling.png",      'Name': "3D Modeling",      'Visibility': 0, 'Expertise': 2},            
-                3: {'Photo': "Photos/Android.png",          'Name': "Mobile Dev",       'Visibility': 0, 'Expertise': 2},        
-                4: {'Photo': "Photos/IOT.png",              'Name': "IOT",              'Visibility': 1, 'Expertise': 3},
-                5: {'Photo': "Photos/Blockchain.png",       'Name': "Blockchain Dev",   'Visibility': 1, 'Expertise': 3}              
+                0: {'Photo': "Assets/Photos/Machine Learning.png", 'Name': "Machine Learning", 'Visibility': 0, 'Expertise': 1},             
+                1: {'Photo': "Assets/Photos/Game Dev.png",         'Name': "Game Dev",         'Visibility': 0, 'Expertise': 1},    
+                2: {'Photo': "Assets/Photos/3D Modeling.png",      'Name': "3D Modeling",      'Visibility': 0, 'Expertise': 2},            
+                3: {'Photo': "Assets/Photos/Android.png",          'Name': "Mobile Dev",       'Visibility': 0, 'Expertise': 2},        
+                4: {'Photo': "Assets/Photos/IOT.png",              'Name': "IOT",              'Visibility': 1, 'Expertise': 3},
+                5: {'Photo': "Assets/Photos/Blockchain.png",       'Name': "Blockchain Dev",   'Visibility': 1, 'Expertise': 3}              
             },
             2 : {   // Special
-                0: {'Photo': "Photos/Problem Solving.png",      'Name': "Problem Solving",  'Visibility': 0, 'Expertise': 1},             
-                1: {'Photo': "Photos/SQL.png",                  'Name': "Database",         'Visibility': 0, 'Expertise': 1},    
-                2: {'Photo': "Photos/Linux Shell.png",          'Name': "Linux Shell",      'Visibility': 0, 'Expertise': 2},            
-                3: {'Photo': "Photos/Source Control",           'Name': "Source Control",   'Visibility': 0, 'Expertise': 2},        
-                4: {'Photo': "Photos/Data Visualization.png",   'Name': "Data Manipulation",'Visibility': 1, 'Expertise': 3},
-                5: {'Photo': "Photos/Photo Editing.png",        'Name': "Photo Editing",    'Visibility': 1, 'Expertise': 3}              
+                0: {'Photo': "Assets/Photos/Problem Solving.png",      'Name': "Problem Solving",  'Visibility': 0, 'Expertise': 1},             
+                1: {'Photo': "Assets/Photos/SQL.png",                  'Name': "Database",         'Visibility': 0, 'Expertise': 1},    
+                2: {'Photo': "Assets/Photos/Linux Shell.png",          'Name': "Linux Shell",      'Visibility': 0, 'Expertise': 2},            
+                3: {'Photo': "Assets/Photos/Source Control",           'Name': "Source Control",   'Visibility': 0, 'Expertise': 2},        
+                4: {'Photo': "Assets/Photos/Data Visualization.png",   'Name': "Data Manipulation",'Visibility': 1, 'Expertise': 3},
+                5: {'Photo': "Assets/Photos/Photo Editing.png",        'Name': "Photo Editing",    'Visibility': 1, 'Expertise': 3}              
             },
             3 : {   // Tools
-                0: {'Photo': "Photos/VS Code.jpeg",         'Name': "VS Code",          'Visibility': 0, 'Expertise': 1},             
-                1: {'Photo': "Photos/IntelliJ IDEA.jpeg",   'Name': "IntelliJ IDEA",    'Visibility': 0, 'Expertise': 1},    
-                2: {'Photo': "Photos/GitHub.png",           'Name': "GitHUB",           'Visibility': 0, 'Expertise': 1},            
-                3: {'Photo': "Photos/Unreal Engine.jpg",    'Name': "Unreal Engine 4",  'Visibility': 0, 'Expertise': 1},        
-                4: {'Photo': "Photos/Blender.png",          'Name': "Blender",          'Visibility': 1, 'Expertise': 2},
-                5: {'Photo': "Photos/Photoshop.png",        'Name': "Photoshop CC",     'Visibility': 1, 'Expertise': 3},              
-                6: {'Photo': "Photos/Android Studio.jpg",   'Name': "Android Studio",   'Visibility': 1, 'Expertise': 2},             
-                7: {'Photo': "Photos/Ubuntu.png",           'Name': "Ubuntu",           'Visibility': 1, 'Expertise': 3}              
+                0: {'Photo': "Assets/Photos/VS Code.jpeg",         'Name': "VS Code",          'Visibility': 0, 'Expertise': 1},             
+                1: {'Photo': "Assets/Photos/IntelliJ IDEA.jpeg",   'Name': "IntelliJ IDEA",    'Visibility': 0, 'Expertise': 1},    
+                2: {'Photo': "Assets/Photos/GitHub.png",           'Name': "GitHUB",           'Visibility': 0, 'Expertise': 1},            
+                3: {'Photo': "Assets/Photos/Unreal Engine.jpg",    'Name': "Unreal Engine 4",  'Visibility': 0, 'Expertise': 1},        
+                4: {'Photo': "Assets/Photos/Blender.png",          'Name': "Blender",          'Visibility': 1, 'Expertise': 2},
+                5: {'Photo': "Assets/Photos/Assets/Photoshop.png",        'Name': "Assets/Photoshop CC",     'Visibility': 1, 'Expertise': 3},              
+                6: {'Photo': "Assets/Photos/Android Studio.jpg",   'Name': "Android Studio",   'Visibility': 1, 'Expertise': 2},             
+                7: {'Photo': "Assets/Photos/Ubuntu.png",           'Name': "Ubuntu",           'Visibility': 1, 'Expertise': 3}              
             }
         },
 
         {   // 4.1 Projects
             0 : {    // 4.1.1 Machine Learning
                 0: {
-                    'Picture': "Photos/Python.jpg", 
+                    'Picture': "Assets/Photos/Python.jpg", 
                     'Link': 'https://github.com/Shakleen/Artificial-Intelligence-Algorithms', 
                     'Name': 'Case Studies', 
                     'Desc1': "A collection of the case studies I've done", 
@@ -118,7 +118,7 @@ var AttributeValues = [
 
             1: {    // 4.1.1 Application Development
                 0: {
-                    'Picture': "Photos/java.jpg", 
+                    'Picture': "Assets/Photos/java.jpg", 
                     'Link': 'https://github.com/Shakleen/Project_Medicinae', 
                     'Name': 'Project Medicinae', 
                     'Desc1': "A java application for inputting, storing and backing up data in cloud.", 
@@ -127,7 +127,7 @@ var AttributeValues = [
                     'Desc4': "Java, JavaFX, Oracle SQL, Google Drive API, CSS"
                 },
                 1: {
-                    'Picture': "Photos/java.jpg", 
+                    'Picture': "Assets/Photos/java.jpg", 
                     'Link': "https://github.com/IshrakAbedin/Attendance-System", 
                     'Name': 'Attendance System', 
                     'Desc1': "A java application for automating the process of taking attendance.", 
@@ -139,7 +139,7 @@ var AttributeValues = [
 
             2: {    // 4.1.2 Game Development
                 0: {
-                    'Picture': "Photos/Unreal Engine.jpg", 
+                    'Picture': "Assets/Photos/Unreal Engine.jpg", 
                     'Link': 'https://github.com/Red-Rebels/ProjectBytes', 
                     'Name': 'Project Bytes', 
                     'Desc1': "A survival horror game developed using Unreal Engine 4 and C++.", 
@@ -148,7 +148,7 @@ var AttributeValues = [
                     'Desc4': "C++, Unreal Engine 4, AutoDesk Maya, GIMP 2, Adobe Premiere Pro"
                 },
                 1: {
-                    'Picture': "Photos/Unreal Engine.jpg", 
+                    'Picture': "Assets/Photos/Unreal Engine.jpg", 
                     'Link': "https://github.com/Shakleen/Pickup-Game", 
                     'Name': 'Battery and Bombs', 
                     'Desc1': "A survival game developed using C++ and Unreal Engine 4.", 
@@ -157,7 +157,7 @@ var AttributeValues = [
                     'Desc4': "C++, Unreal Engine 4, GIMP 2"
                 },
                 2: {
-                    'Picture': "Photos/Unreal Engine.jpg", 
+                    'Picture': "Assets/Photos/Unreal Engine.jpg", 
                     'Link': "https://github.com/Shakleen/Endless-Runner-Project-UE4", 
                     'Name': 'Endless Runner', 
                     'Desc1': "An endless runner game developed using unreal engine 4 and its blueprint system.", 
@@ -169,7 +169,7 @@ var AttributeValues = [
 
             3: {    // 4.1.3 Web Development
                 0: {
-                    'Picture': "Photos/JavaScript.jpg", 
+                    'Picture': "Assets/Photos/JavaScript.jpg", 
                     'Link': "https://github.com/Shakleen/Shakleen.github.io", 
                     'Name': 'Online Portfolio', 
                     'Desc1': "My online portfolio", 
@@ -178,7 +178,7 @@ var AttributeValues = [
                     'Desc4': "JavaSrcipt, HTML, CSS, JQuery, Fonts Awesome, Google Fonts."
                 },
                 1: {
-                    'Picture': "Photos/JavaScript.jpg", 
+                    'Picture': "Assets/Photos/JavaScript.jpg", 
                     'Link': "https://github.com/Shakleen/Shakleen.github.io/tree/master/Web%20Apps/ToDo%20List%20App", 
                     'Name': 'ToDo App', 
                     'Desc1': "A simple javascript web app where you can keep track of tasks.", 
@@ -187,7 +187,7 @@ var AttributeValues = [
                     'Desc4': "JavaSrcipt, HTML, CSS, JQuery"
                 },
                 2: {
-                    'Picture': "Photos/JavaScript.jpg", 
+                    'Picture': "Assets/Photos/JavaScript.jpg", 
                     'Link': 'https://github.com/Shakleen/Shakleen.github.io/tree/master/Web%20Apps/Colour%20Picker%20Game', 
                     'Name': 'Color Picker Game', 
                     'Desc1': "A simple javascript web app where you have to guess the colour randomly picked.", 
@@ -201,7 +201,7 @@ var AttributeValues = [
         {   // 4.2 Education
             0 : {    // 4.2.0 Institutional
                 0: {
-                    'Picture': "Photos/IUT Logo.png", 
+                    'Picture': "Assets/Photos/IUT Logo.png", 
                     'Link': 'http://www.iutoic-dhaka.edu/', 
                     'Name': 'Islamic University of Technology', 
                     'Desc1': "Computer Science and Engineering", 
@@ -210,7 +210,7 @@ var AttributeValues = [
                     'Desc4': "Data Structures, Algorithms, Structured Programming using C, OOP using C++, Visual Programming using Java"
                 },
                 1: {
-                    'Picture': "Photos/Notre Dame College.jpg", 
+                    'Picture': "Assets/Photos/Notre Dame College.jpg", 
                     'Link': "http://www.notredamecollege-dhaka.com/", 
                     'Name': 'Notre Dame College', 
                     'Desc1': "Science.", 
@@ -219,7 +219,7 @@ var AttributeValues = [
                     'Desc4': "AP Physics, AP Chemistry, AP Mathematics, ICT"
                 },
                 2: {
-                    'Picture': "Photos/UB.png", 
+                    'Picture': "Assets/Photos/UB.png", 
                     'Link': "https://udayan.edu.bd/", 
                     'Name': 'Udayan Higher Secondary School', 
                     'Desc1': "Science.", 
@@ -279,7 +279,7 @@ var AttributeValues = [
                     'Desc4': "Solved 200+ Problems."
                 },
                 2: {
-                    'Picture': "Photos/Kaggle.png", 
+                    'Picture': "Assets/Photos/Kaggle.png", 
                     'Link': "https://www.kaggle.com/", 
                     'Name': 'Kaggle', 
                     'Desc1': "Machine Learning", 
@@ -319,6 +319,113 @@ var AttributeValues = [
                 }
             }
         },
+
+        {   // 4.3 Achievements
+            0 : {    // 4.3.0 Contest
+                0: {
+                    'Picture': "Assets/Photos/Award.png", 
+                    'Link': 'https://icpc.baylor.edu/ICPCID/D04Q940071MD', 
+                    'Name': 'ACM ICPC Dhaka Regional Programming Contest', 
+                    'Desc1': "University of Asia Pacific (UAP)", 
+                    'Desc2': 'November, 2017', 
+                    'Desc3': '29th',
+                    'Desc4': ''
+                },
+                1: {
+                    'Picture': "Assets/Photos/Award.png", 
+                    'Link': "#", 
+                    'Name': 'Inter University Programming Contest', 
+                    'Desc1': "Shahjalal University of Science and Technology (SUST)", 
+                    'Desc2': 'August, 2017', 
+                    'Desc3': 'Top 50',
+                    'Desc4': ''
+                },
+                2: {
+                    'Picture': "Assets/Photos/Award.png", 
+                    'Link': "#", 
+                    'Name': 'Inter University Programming Contest', 
+                    'Desc1': "Islamic University of Technology (IUT)", 
+                    'Desc2': 'October, 2017', 
+                    'Desc3': 'Top 30',
+                    'Desc4': ''
+                }
+            },
+
+            1 : {    // 4.3.1 Honors and awards
+                0: {
+                    'Picture': "Assets/Photos/Award.png", 
+                    'Link': 'https://drive.google.com/open?id=1wXcCv2lAZHlX9eyCkvzQIXpWMnINGC8-', 
+                    'Name': 'National Robotech Festival 2017', 
+                    'Desc1': "North South University (NSU)", 
+                    'Desc2': 'December, 2017', 
+                    'Desc3': 'Runners up',
+                    'Desc4': ''
+                }
+            },
+
+            2 : {    // 4.3.2 Certifications
+                0: {
+                    'Picture': "Assets/Photos/Certificate.png", 
+                    'Link': 'https://drive.google.com/open?id=1wXcCv2lAZHlX9eyCkvzQIXpWMnINGC8-', 
+                    'Name': 'Machine Learning', 
+                    'Desc1': "Coursera", 
+                    'Desc2': 'December, 2018', 
+                    'Desc3': 'Andrew NG, Stanford University',
+                    'Desc4': 'Introductory'
+                },
+                1: {
+                    'Picture': "Assets/Photos/Certificate.png", 
+                    'Link': "https://www.udemy.com/certificate/UC-4XXJCOUV/", 
+                    'Name': 'Android P Developer Course', 
+                    'Desc1': "Udemy", 
+                    'Desc2': 'December, 2017', 
+                    'Desc3': 'Morteza Kordi',
+                    'Desc4': 'Complete'
+                },
+                2: {
+                    'Picture': "Assets/Photos/Certificate.png", 
+                    'Link': "https://drive.google.com/file/d/1lt9zEvQWy92ZK9GMJRewzbAabeQetOoO/view", 
+                    'Name': 'Programming Training Camp', 
+                    'Desc1': "Bangladesh Advanced Computing Society", 
+                    'Desc2': 'September, 2017', 
+                    'Desc3': 'Bangladesh Advanced Computing Society',
+                    'Desc4': 'Beginner'
+                },
+                3: {
+                    'Picture': "Assets/Photos/Certificate.png", 
+                    'Link': 'https://www.udemy.com/certificate/UC-ZC2VDD0C/', 
+                    'Name': 'Deep Learning Pre-requisites', 
+                    'Desc1': "Udemy", 
+                    'Desc2': 'December, 2018', 
+                    'Desc3': 'The Lazy Programmer Inc.',
+                    'Desc4': 'Introductory'
+                },
+                4: {
+                    'Picture': "Assets/Photos/Certificate.png", 
+                    'Link': "https://www.udemy.com/certificate/UC-84EZZ40Y/", 
+                    'Name': 'Machine Learning A-Z', 
+                    'Desc1': "Udemy", 
+                    'Desc2': 'August, 2017', 
+                    'Desc3': 'Kirill Ermenko and Hadelin De Pontevez',
+                    'Desc4': 'Introductory'
+                },
+                5: {
+                    'Picture': "Assets/Photos/Certificate.png", 
+                    'Link': "https://www.udemy.com/certificate/UC-V8FD6VKW/", 
+                    'Name': 'Dart Programming Language', 
+                    'Desc1': "Udemy", 
+                    'Desc2': 'October, 2017', 
+                    'Desc3': 'Udemy',
+                    'Desc4': 'Introductory'
+                },
+            },
+
+            3 : {    // 4.2.3 Online record
+                0: {
+                    'Skip': true
+                }
+            }
+        },
     ]
 ];
 
@@ -354,10 +461,8 @@ for (var i = 0; i < $('.attribute-container').length; ++i){
     for (var j = 0; j < contentQuarterTemp.length; ++j){
         $(quarterHeadingTemp[j]).text(AttributeValues[3][i][j]);
         
-        if (i == 0)          SetupSkill(i, j, quarterContentTemp[j])
-        else if (i === 1)    SetupCard(i, j, quarterContentTemp[j]);
-        else if (i === 2)    SetupCard(i, j, quarterContentTemp[j]);
-        else if (i === 3)    HandleAchievement(j, quarterContentTemp[j]);
+        if (i == 0)     SetupSkill(i, j, quarterContentTemp[j])
+        else            SetupCard(i, j, quarterContentTemp[j]);
     }
 }
 
@@ -380,6 +485,10 @@ function SetupSkill(i, j, QuarterObj){
 }
 
 function SetupCard(i, j, QuarterObj){
+    if (AttributeValues[4][i][j][0]['Skip']){
+        return;
+    }
+
     var Desc1 = '', Desc2 = '', Desc3 = '', Desc4 = '';
 
     if (i == 1) {
@@ -388,7 +497,7 @@ function SetupCard(i, j, QuarterObj){
         Desc3 = 'Project Type: ';
         Desc4 = 'Key Components: ';
     } else if (i == 2) {
-        if (j == 1){
+        if (j <= 1){
             Desc1 = 'Major: ';
             Desc2 = 'Time: ';
             Desc3 = 'Grades: ';
@@ -405,146 +514,36 @@ function SetupCard(i, j, QuarterObj){
             Desc3 = 'Purpose: ';
             Desc4 = '';
         }
+    } else if (i == 3) {
+        if (j < 2){
+            Desc1 = 'Host: ';
+            Desc2 = 'Time: ';
+            Desc3 = 'Rank: ';
+        } else if (j == 2) {
+            Desc1 = 'Authority: ';
+            Desc2 = 'Time: ';
+            Desc3 = 'Taught by: ';
+            Desc4 = 'Type: ';
+        } else if (j == 3) {
+            
+        }
     }
 
     var Values = AttributeValues[4][i][j];
     for (var k = 0; k < Object.keys(Values).length; ++k){
-        var string ='<div class="col-12 col-sm-4">' +
+        var string ='<div class="col-12 col-sm-4' + ((k > 2) ? ' HiddenCell Invisible' : '') + '">' +
                         '<a class="text-dark" href="' + Values[k]['Link'] + '">' +
                             '<img class="img-fluid rounded-circle img-cells" src="' + Values[k]['Picture'] + '">' +
-                            '<h5 class="card-title m-0 text-center">' + Values[k]['Name'] + '</h5>' +
+                            '<h5 class="card-title m-1">' + Values[k]['Name'] + '</h5>' +
                         '</a>' +
                         '<div class="card text-dark HiddenCell Invisible text-left">' +
-                            '<p class="card-text m-0">' + Desc1 + Values[k]['Desc1'] + '</p>' + 
-                            '<p class="card-text m-0">' + Desc2 + Values[k]['Desc2'] + '</p>' + 
-                            '<p class="card-text m-0">' + Desc3 + Values[k]['Desc3'] + '</p>' + 
-                            '<p class="card-text m-0">' + Desc4 + Values[k]['Desc4'] + '</p>' +
+                            '<p class="card-text m-0"><span class="card-topic-header">' + Desc1 + '</span>' + Values[k]['Desc1'] + '</p>' + 
+                            '<p class="card-text m-0"><span class="card-topic-header">' + Desc2 + '</span>' + Values[k]['Desc2'] + '</p>' + 
+                            '<p class="card-text m-0"><span class="card-topic-header">' + Desc3 + '</span>' + Values[k]['Desc3'] + '</p>' + 
+                            '<p class="card-text m-0"><span class="card-topic-header">' + Desc4 + '</span>' + Values[k]['Desc4'] + '</p>' +
                         '</div>'
                     '</div>';
         
-        $(QuarterObj).append(string);
-    }
-    $(QuarterObj).addClass('justify-content-center');
-}
-
-// Achievements portion
-function HandleAchievement(i, QuarterObj){
-    if (i == 0) {
-        SetupAchievementQuarter(
-            [
-                "https://icpc.baylor.edu/ICPCID/D04Q940071MD",
-                "#",
-                "#"
-            ],
-            [
-                "ACM ICPC Dhaka Regional Programming Contest",
-                "Inter University Programming Contest",
-                "Inter University Programming Contest"
-            ],
-            [
-                "University of Asia Pacific",
-                "Shahjalal University of Science and Technology",
-                "Islamic University of Technology"
-            ],
-            [
-                "November, 2017",
-                "August, 2017",
-                "October, 2017"
-            ],
-            [
-                "29th",
-                "Top 50",
-                "Top 30"
-            ],
-            [
-                0, 0, 0
-            ],
-            $(QuarterObj)
-        );
-    } else if (i == 1) {
-        SetupAchievementQuarter(
-            [
-                "https://drive.google.com/open?id=1wXcCv2lAZHlX9eyCkvzQIXpWMnINGC8-",
-            ],
-            [
-                "National Robotech Festival 2017",
-            ],
-            [
-                "North South University",
-            ],
-            [
-                "December, 2017"
-            ],
-            [
-                "Runners Up"
-            ],
-            [
-                0
-            ],
-            $(QuarterObj)
-        );
-    }  else if (i == 2) {
-        SetupAchievementQuarter(
-            [
-                "https://drive.google.com/open?id=1wXcCv2lAZHlX9eyCkvzQIXpWMnINGC8-",
-                "https://www.udemy.com/certificate/UC-4XXJCOUV/",
-                "https://drive.google.com/file/d/1lt9zEvQWy92ZK9GMJRewzbAabeQetOoO/view",
-                "https://www.udemy.com/certificate/UC-ZC2VDD0C/",
-                "https://www.udemy.com/certificate/UC-84EZZ40Y/",
-                "https://www.udemy.com/certificate/UC-V8FD6VKW/"
-            ],
-            [
-                "Machine Learning",
-                "Android Developer Course",
-                "Programming Training Camp",
-                "Deep Learning Pre-requisites",
-                "Machine Learning A-Z",
-                "Dart Programing language"
-            ],
-            [
-                "Coursera",
-                "Udemy",
-                "Bangladesh Advanced Computing Society",
-                "Udemy",
-                "Udemy",
-                "Udemy"
-            ],
-            [
-                "December, 2018",
-                "December, 2018",
-                "September, 2017",
-                "December, 2018",
-                "December, 2018",
-                "December, 2018"
-            ],
-            [
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
-            ],
-            [
-                0, 0, 0, 1, 1, 1
-            ],
-            $(QuarterObj)
-        );
-    } 
-}
-
-function SetupAchievementQuarter(Links, Names, Host, Date, Rank, Hidden, QuarterObj){
-    for (var i = 0; i < Links.length; ++i){
-        var string =    '<div class="col-10 col-sm-4' + ((Hidden[i] === 1) ? ' HiddenCell Invisible': '') + '">' + 
-                            '<div class="card text-dark text-left">' + 
-                            '<h4 class="card-title text-center"><a href="' + Links[i] +'">' + Names[i] + '</a></h4>' +
-                                '<div class="card-body HiddenCell Invisible">' +
-                                    '<p class="card-text">' + Host[i] + '</p>' +
-                                    '<p class="card-text">' + Date[i] + '</p>' +
-                                    '<p class="card-text d-none d-md-block">' + Rank[i] + '</p>' +
-                                '</div>' +
-                            '</div>' +
-                        '</div>';
         $(QuarterObj).append(string);
     }
     $(QuarterObj).addClass('justify-content-center');

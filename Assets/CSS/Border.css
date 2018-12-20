@@ -1,0 +1,39 @@
+.circle-border-success {
+    border: 10px solid rgb(0, 255, 0);
+}
+
+.circle-border-danger {
+    border: 10px solid rgb(255, 0, 0);
+}
+
+.circle-border-warning {
+    border: 10px solid rgb(255, 255, 0);
+}
+
+@media (max-width: 1300px) {
+    .circle-border-success {
+        border: 5px solid rgb(0, 255, 0);
+    }
+    
+    .circle-border-danger {
+        border: 5px solid rgb(255, 0, 0);
+    }
+    
+    .circle-border-warning {
+        border: 5px solid rgb(255, 255, 0);
+    }
+}
+
+@media (max-width: 1000px) {
+    .circle-border-success {
+        border: 2px solid rgb(0, 255, 0);
+    }
+    
+    .circle-border-danger {
+        border: 2px solid rgb(255, 0, 0);
+    }
+    
+    .circle-border-warning {
+        border: 2px solid rgb(255, 255, 0);
+    }
+}
