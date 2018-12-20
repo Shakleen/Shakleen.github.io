@@ -20,10 +20,10 @@ var HeadingParam = '<p class="HeadingParam"></p>';
 $('.attribute-header').html(HeadingTitle + HeadingParam);
 
 // Handling header description information.
-var HeadingDescC = '<p class="HeadingDescC text-success"></p>';
-var HeadingDescF = '<p class="HeadingDescF text-warning"></p>';
-var HeadingDescP = '<p class="HeadingDescP text-danger"></p>';
-var HeadingDesc = '<div class="d-flex justify-content-center">' + HeadingDescC + HeadingDescF + HeadingDescP + '</div>';
+var HeadingDescC = '<span class="HeadingDescC text-success"></span>';
+var HeadingDescF = '<span class="HeadingDescF text-warning"></span>';
+var HeadingDescP = '<span class="HeadingDescP text-danger"></span>';
+var HeadingDesc = '<p>' + HeadingDescC + HeadingDescF + HeadingDescP + '</div>';
 
 // Content divisions
 var fullDiv = '<div class="content-half d-flex"></div>';
@@ -33,32 +33,36 @@ var QuarterContent = '<div class="row quarter-content align-middle"></div>';
 var Quarter = QuarterHeading + QuarterContent;
 
 var AttributeValues = [
-    {   // Attribute titles 
+    {   // 0. Attribute titles 
         0: 'Skills',
         1: 'Projects',
         2: 'Education',
         3: 'Achievements',
         4: 'Contact Information'
     },
-    {   // Attribute paragraphs
+
+    {   // 1. Attribute paragraphs
         0: 'My superpowers',
         1: 'Some cool things I\'ve built',
         2: 'My Source of knowledge',
         3: 'Things I\'ve earned',
         4: 'Let\s Talk!'
     },
-    [   // Attribute descriptions
+
+    [   // 2. Attribute descriptions
         {1: 'Comfortable', 2: 'Familiar', 3: 'Prior Experience'},
         {1: 'Large Scale', 2: 'Medium Scale', 3: 'Small Scale'}
     ],
-    [   // Quarter Headings
+    
+    [   // 3. Quarter Headings
         {0: 'Languages I speak', 1: 'Industry Knowledge', 2: 'Special Abilities', 3: 'Tools of choice'},
         {0: 'Machine Learning', 1: 'Application Development', 2: 'Game Development', 3: 'Web Development'},
         {0: 'Institutional Education', 1: 'Online Courses', 2: 'Practice Sites', 3: 'Helpful Sites'},
         {0: 'Contest History', 1: 'Honors and Awards', 2: 'Certifications', 3: 'Online awards'}
     ],
-    [   // Quarter content
-        {   // Skill
+    
+    [   // 4. Quarter content
+        {   // 4.0 Skill
             0: {    // Language
                 0: {'Photo': "Photos/C++.jpg",        'Name': "C/C++",         'Visibility': 0, 'Expertise': 1},
                 1: {'Photo': "Photos/java.jpg",       'Name': "Java",          'Visibility': 0, 'Expertise': 1},
@@ -97,9 +101,104 @@ var AttributeValues = [
                 6: {'Photo': "Photos/Android Studio.jpg",   'Name': "Android Studio",   'Visibility': 1, 'Expertise': 2},             
                 7: {'Photo': "Photos/Ubuntu.png",           'Name': "Ubuntu",           'Visibility': 1, 'Expertise': 3}              
             }
+        },
+        {   // 4.1 Projects
+            0 : {    // 4.1.1 Machine Learning
+                0: {
+                    'Picture': "Photos/Python.jpg", 
+                    'Link': 'https://github.com/Shakleen/Artificial-Intelligence-Algorithms', 
+                    'Name': 'Case Studies', 
+                    'Scale': 2, 
+                    'Description': "A collection of the case studies I've done", 
+                    'Tools': "Python 3, NumPy, Pandas, MatPlotLib, TensorFlow", 
+                    'Colab': 'Individual'
+                },
+            },
+
+            1: {    // 4.1.1 Application Development
+                0: {
+                    'Picture': "Photos/java.jpg", 
+                    'Link': 'https://github.com/Shakleen/Project_Medicinae', 
+                    'Name': 'Project Medicinae', 
+                    'Scale': 2, 
+                    'Description': "A java application for inputting, storing and backing up data in cloud.", 
+                    'Tools': "Java, JavaFX, Oracle SQL, Google Drive API, CSS", 
+                    'Colab': 'Individual'
+                },
+                1: {
+                    'Picture': "Photos/java.jpg", 
+                    'Link': "https://github.com/IshrakAbedin/Attendance-System", 
+                    'Name': 'Attendance System', 
+                    'Scale': 2, 
+                    'Description': "A java application for automating the process of taking attendance.", 
+                    'Tools': "Java, JavaFX, Oracle SQL, CSS", 
+                    'Colab': 'Team'
+                }
+            },
+
+            2: {    // 4.1.2 Game Development
+                0: {
+                    'Picture': "Photos/Unreal Engine.jpg", 
+                    'Link': 'https://github.com/Red-Rebels/ProjectBytes', 
+                    'Name': 'Project Bytes', 
+                    'Scale': 1, 
+                    'Description': "A survival horror game developed using Unreal Engine 4 and C++.", 
+                    'Tools': "C++, Unreal Engine 4, AutoDesk Maya, GIMP 2, Adobe Premiere Pro", 
+                    'Colab': 'Team'
+                },
+                1: {
+                    'Picture': "Photos/Unreal Engine.jpg", 
+                    'Link': "https://github.com/Shakleen/Pickup-Game", 
+                    'Name': 'Battery and Bombs', 
+                    'Scale': 3, 
+                    'Description': "A survival game developed using C++ and Unreal Engine 4.", 
+                    'Tools': "C++, Unreal Engine 4, GIMP 2", 
+                    'Colab': 'Individual'
+                },
+                2: {
+                    'Picture': "Photos/Unreal Engine.jpg", 
+                    'Link': "https://github.com/Shakleen/Endless-Runner-Project-UE4", 
+                    'Name': 'Endless Runner', 
+                    'Scale': 3, 
+                    'Description': "An endless runner game developed using unreal engine 4 and its blueprint system.", 
+                    'Tools': "Unreal Engine 4", 
+                    'Colab': 'Individual'
+                }
+            },
+
+            3: {    // 4.1.3 Web Development
+                0: {
+                    'Picture': "Photos/JavaScript.jpg", 
+                    'Link': 'https://github.com/Shakleen/Project_Medicinae', 
+                    'Name': 'Project Medicinae', 
+                    'Scale': 2, 
+                    'Description': "A java application for inputting, storing and backing up data in cloud.", 
+                    'Tools': "Java, JavaFX, Oracle SQL, Google Drive API, CSS", 
+                    'Colab': 'Individual'
+                },
+                1: {
+                    'Picture': "Photos/JavaScript.jpg", 
+                    'Link': "https://github.com/IshrakAbedin/Attendance-System", 
+                    'Name': 'Attendance System', 
+                    'Scale': 2, 
+                    'Description': "A java application for automating the process of taking attendance.", 
+                    'Tools': "Java, JavaFX, Oracle SQL, CSS", 
+                    'Colab': 'Team'
+                },
+                2: {
+                    'Picture': "Photos/JavaScript.jpg", 
+                    'Link': "https://github.com/IshrakAbedin/Attendance-System", 
+                    'Name': 'Attendance System', 
+                    'Scale': 2, 
+                    'Description': "A java application for automating the process of taking attendance.", 
+                    'Tools': "Java, JavaFX, Oracle SQL, CSS", 
+                    'Colab': 'Team'
+                }
+            },
         }
     ]
 ];
+
 for (var i = 0; i < $('.attribute-container').length; ++i){
     // Getting the necessary stuff
     var attributeTemp = $('.attribute-container')[i];
@@ -113,9 +212,9 @@ for (var i = 0; i < $('.attribute-container').length; ++i){
     // Adding description
     if (i <= 1){
         $(headerTemp).append(HeadingDesc);
-        $(headerTemp).find('p.HeadingDescC').text(AttributeValues[2][i][1]);
-        $(headerTemp).find('p.HeadingDescF').text(AttributeValues[2][i][2]);
-        $(headerTemp).find('p.HeadingDescP').text(AttributeValues[2][i][3]);
+        $(headerTemp).find('span.HeadingDescC').text(AttributeValues[2][i][1]);
+        $(headerTemp).find('span.HeadingDescF').text(AttributeValues[2][i][2]);
+        $(headerTemp).find('span.HeadingDescP').text(AttributeValues[2][i][3]);
     }
 
     // Dealing with content related portion
@@ -132,106 +231,32 @@ for (var i = 0; i < $('.attribute-container').length; ++i){
     for (var j = 0; j < contentQuarterTemp.length; ++j){
         $(quarterHeadingTemp[j]).text(AttributeValues[3][i][j]);
         
-        if (i == 0)         SetupSkill(AttributeValues[4][i][j], quarterContentTemp[j])
-        else if (i === 1)    HandleProjects(j, quarterContentTemp[j]);
+        if (i == 0)          SetupSkill(i, j, quarterContentTemp[j])
+        else if (i === 1)    SetupProject(i, j, quarterContentTemp[j]);
         else if (i === 2)    HandleEducation(j, quarterContentTemp[j]);
         else if (i === 3)    HandleAchievement(j, quarterContentTemp[j]);
     }
 }
 
 
-function SetupSkill(Values, QuarterObj){
+function SetupSkill(i, j, QuarterObj){
     var Level = {
         1: ' circle-border-success',
         2: ' circle-border-warning',
         3: ' circle-border-danger'
     };
 
-    for (var i = 0; i < Object.keys(Values).length; ++i){
-        var string = '<div class="col-6 col-lg-3 quarter-content-val' + ((Values[i]['Visibility'] === 1) ? ' Invisible HiddenCell' : '') + '">' +
-                        '<img class="img-fluid rounded-circle img-cells' + ((Values[i]['Expertise'] > 0) ? Level[ Values[i]['Expertise'] ] : '') + '" src="' + Values[i]['Photo'] + '">' +
-                        '<p class="param-cells">' + Values[i]['Name'] + '</p>' +
+    var Values = AttributeValues[4][i][j];
+    for (var k = 0; k < Object.keys(Values).length; ++k){
+        var string = '<div class="col-6 col-lg-3 quarter-content-val' + ((Values[k]['Visibility'] === 1) ? ' Invisible HiddenCell' : '') + '">' +
+                        '<img class="img-fluid rounded-circle img-cells' + ((Values[k]['Expertise'] > 0) ? Level[ Values[k]['Expertise'] ] : '') + '" src="' + Values[k]['Photo'] + '">' +
+                        '<p class="param-cells">' + Values[k]['Name'] + '</p>' +
                     '</div>';
         $(QuarterObj).append(string);
     }
 }
 
-// Projects portion
-function HandleProjects(i, QuarterObj) {
-    if (i == 0){            // Machine Learning
-        
-    } else if (i == 1) {    // Application Development
-        SetupProjectsQuarter(
-            [
-                "Photos/java.jpg",
-                "Photos/java.jpg"
-            ],
-            [
-                "https://github.com/Shakleen/Project_Medicinae",
-                "https://github.com/IshrakAbedin/Attendance-System"
-            ],
-            [
-                "Project Medicinae",
-                "Attendance System"
-            ],
-            [
-                2, 2
-            ],
-            [
-                "A java application for inputting, storing and backing up data in cloud.",
-                "A java application for automating the process of taking attendance."
-            ],
-            [
-                "Java, JavaFX, Oracle SQL, Google Drive API, CSS",
-                "Java, JavaFX Google Drive API, CSS"
-            ],
-            [
-                0, 1
-            ],
-            $(QuarterObj)
-        );
-    } else if (i == 2) {    // Game Development
-        SetupProjectsQuarter(
-            [
-                "Photos/Unreal Engine.jpg",
-                "Photos/Unreal Engine.jpg",
-                "Photos/Unreal Engine.jpg"
-            ],
-            [
-                "https://github.com/Red-Rebels/ProjectBytes",
-                "https://github.com/Shakleen/Pickup-Game",
-                "https://github.com/Shakleen/Endless-Runner-Project-UE4"
-            ],
-            [
-                "Project Bytes",
-                "Battery and Bombs",
-                "Endless Runner"
-            ],
-            [
-                1, 3, 3
-            ],
-            [
-                "A survival horror game developed using Unreal Engine 4 and C++.",
-                "A survival game developed using C++ and Unreal Engine 4.",
-                "An endless runner game developed using unreal engine 4 and its blueprint system."
-            ],
-            [
-                "C++, Unreal Engine 4, AutoDesk Maya, GIMP 2, Adobe Premiere Pro",
-                "C++, Unreal Engine 4, GIMP 2",
-                "Unreal Engine 4"
-            ],
-            [
-                1, 0, 0
-            ],
-            $(QuarterObj)
-        );
-    } else if (i == 3) {    // Web development
-
-    }
-}
-
-function SetupProjectsQuarter(ImageSource, ProjectLink, ProjectName, ProjectScale, 
-    ShortDescription, ThingsUsed, ColabType, QuarterObj){
+function SetupProject(i, j, QuarterObj){
     var Scale = {
         1: 'Large Scale (> 2 months)',
         2: 'Medium Scale (1 - 2 months)',
@@ -243,15 +268,16 @@ function SetupProjectsQuarter(ImageSource, ProjectLink, ProjectName, ProjectScal
         3: ' circle-border-danger'
     };
 
-    for (var i = 0; i < ImageSource.length; ++i){
+    var Values = AttributeValues[4][i][j];
+    for (var k = 0; k < Object.keys(Values).length; ++k){
         var string ='<div class="col-12 col-sm-4">' +
-                        '<img class="img-fluid rounded-circle img-cells'  + Level[ ProjectScale[i] ] + '" src="' + ImageSource[i] + '">' +
-                        '<h5 class="card-title m-0 text-center"><a class="text-dark" href="' + ProjectLink[i] + '">' + ProjectName[i] + '</a></h5>' +
+                        '<img class="img-fluid rounded-circle img-cells'  + Level[ Values[k]['Scale'] ] + '" src="' + Values[k]['Picture'] + '">' +
+                        '<h5 class="card-title m-0 text-center"><a class="text-dark" href="' + Values[k]['Link'] + '">' + Values[k]['Name'] + '</a></h5>' +
                         '<div class="card text-dark HiddenCell Invisible text-left">' +
-                            '<p class="card-text m-0">Time to complete: ' + Scale[ProjectScale[i]] + '</p>' + 
-                            '<p class="card-text m-0">Project type: ' + ((ColabType[i] === 1) ? 'Team' : 'Individual') + '</p>' + 
-                            '<p class="card-text m-0">' + ShortDescription[i] + '</p>' + 
-                            '<p class="card-text m-0">Key Components used:' + ThingsUsed[i] + '</p>' +
+                            '<p class="card-text m-0">Time to complete: ' + Scale[ Values[k]['Scale'] ] + '</p>' + 
+                            '<p class="card-text m-0">Project type: ' + Values[k]['Colab'] + '</p>' + 
+                            '<p class="card-text m-0">' + Values[k]['Description'] + '</p>' + 
+                            '<p class="card-text m-0">Key Components used:' + Values[k]['Tools'] + '</p>' +
                         '</div>'
                     '</div>';
         
@@ -259,6 +285,8 @@ function SetupProjectsQuarter(ImageSource, ProjectLink, ProjectName, ProjectScal
     }
     $(QuarterObj).addClass('justify-content-center');
 }
+
+
 
 // Education portion
 function HandleEducation(i, QuarterObj){
