@@ -355,20 +355,19 @@
           <h2 class="mb-5"><i class="fa fa-line-chart"></i> Result</h2>
 
           <div class="row mb-4">
-            <p>Experimentation was tracked using <b>Weights and Biases</b> to
-              quickly iterate and improve predictive performance. Additional
-              experimentation details and results can be found in the
-              repository wiki.
-
-              <p><b>Cross-validation performance</b> for a select few
-                experiments are shown below:</p></p>
+            <p>Overall the system performs well on the validation dataset. It
+              <b>achieved 0.96 F5 score in the validation dataset</b>. This
+              translated
+              to <b>0.953 on the leaderboard hidden test dataset</b>. As shown
+              in the 2nd graph below, it is clear that the model <b>achieved
+                0.9+ F5 score for all the PII types</b>.</p>
           </div>
 
           <div class="row mb-4">
-            <div class="col-md-4">
+            <div class="col-md-6">
               <div class="card">
                 <div class="embed-responsive embed-responsive-16by9">
-                  <img src="../img/kaggle_ase/QWK_score.png"
+                  <img src="../img/kaggle_pii/Overall_F1_Recall_Precision.png"
                     class="card-img-top embed-responsive-item" alt="Image">
                 </div>
                 <div class="card-body">
@@ -380,10 +379,10 @@
               </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
               <div class="card">
                 <div class="embed-responsive embed-responsive-16by9">
-                  <img src="../img/kaggle_ase/F1_Score.png"
+                  <img src="../img/kaggle_pii/PII_Specific_F5.png"
                     class="card-img-top embed-responsive-item" alt="Image">
                 </div>
                 <div class="card-body">
@@ -394,25 +393,10 @@
                 </div>
               </div>
             </div>
-
-            <div class="col-md-4">
-              <div class="card">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <img src="../img/kaggle_ase/Confusion_Matrix.png"
-                    class="card-img-top embed-responsive-item" alt="Image">
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title text-center">Confusion Matrix</h5>
-                  <p class="card-text text-center">Predicted scores have
-                    minimal
-                    difference from ground truth.</p>
-                </div>
-              </div>
-            </div>
           </div>
 
-          <p>The best system so far has score 0.793 in the public
-            leaderboard.</p>
+          <p>The system ranked <b>173<sup>rd</sup>
+              out of 2048</b>, which got me a bronze medal.</p>
 
         </div>
       </section>
