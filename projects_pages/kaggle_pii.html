@@ -132,55 +132,72 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-5">Score essays holistically on a scale of 1 to
-                6</h3>
-              <div class="subheading mb-3">Scoring Criteria: Cohen Kappa</div>
-              <p>The <b>difference</b> between ground truth and predicted score
-                should
-                <b>be as minimal as possible</b>. For example:</p>
+              <h3 class="mb-3">Detect PII from long text sequence</h3>
+              <div class="subheading mb-3">Scoring Criteria: F5 metric</div>
+              <p>The system is penalized 5 times more for missing an PII than
+                falsely detecting one.</p>
+
+              <div class="subheading mb-3">Data</div>
+
+              <p>
+                The competition dataset comprises approximately <b>22,000
+                  essays</b> written by students. 30% of this data is usable as
+                a training set, 70%
+                of this data is kept as the leader test set.
+              </p>
+
+              <div class="subheading mb-3">Challenge 1: Different PII
+                Types</div>
+
+              <p>7 PII types with each type further being split into beginning
+                or intermediate PII types. For example:</p>
+
               <div class="table-responsive">
                 <table class="table">
                   <thead class="bg-primary text-white">
                     <tr>
-                      <th><strong>Prediction Qaulity</strong></th>
-                      <th><strong>Ground truth</strong></th>
-                      <th><strong>Predicted</strong></th>
+                      <th><strong>Seqeunce</strong></th>
+                      <th><strong>My</strong></th>
+                      <th><strong>name</strong></th>
+                      <th><strong>is</strong></th>
+                      <th><strong>Shakleen</strong></th>
+                      <th><strong>Ishfar</strong></th>
+                      <th><strong>and</strong></th>
+                      <th><strong>my</strong></th>
+                      <th><strong>email</strong></th>
+                      <th><strong>is</strong></th>
+                      <th><strong>shakleenishfar</strong></th>
+                      <th><strong>@gmail.com</strong></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td style="color: green;">Perfect</td>
-                      <td>5</td>
-                      <td>5</td>
-                    </tr>
-                    <tr>
-                      <td style="color: lightcoral;">Bad</td>
-                      <td>5</td>
-                      <td>3</td>
-                    </tr>
-                    <tr>
-                      <td style="color: #8B0000;">Worse</td>
-                      <td>5</td>
-                      <td>1</td>
+                      <td><strong>PII Prediction</strong></td>
+                      <td>O</td>
+                      <td>O</td>
+                      <td>O</td>
+                      <td style="color: red;">B-NAME</td>
+                      <td style="color: red;">I_NAME</td>
+                      <td>O</td>
+                      <td>O</td>
+                      <td>O</td>
+                      <td>O</td>
+                      <td style="color: red;">B-EMAIL</td>
+                      <td style="color: red;">I_EMAIL</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
 
-              <div class="subheading mb-3">Data</div>
+              <div class="subheading mb-3">Challenge 2: Extreme Class
+                Imabalnce</div>
 
-              <ul>
-                <li>Training data consisted of <b>17 thousand hand written and
-                    AI generated essays</b> on 7 topics.</li>
-                <li>The hidden test set consisted of <b>7 thousand unseen
-                    essays</b>, some of which were on different topics
-                  entirely.</li>
-              </ul>
+              <pi><b>99.9%</b> of tokens aren't PII. Which makes it very
+                difficult to successfully predict tokens as PII.</pi>
 
-              <div class="subheading mb-3">Challenge: Class Imbalance</div>
-
-              <img src="../img/kaggle_ase/Score_Distribution.png"
-                class="img-fluid" />
+              <img src="../img/kaggle_pii/Competition_Data.png"
+                class="img-fluid"
+                alt="https://www.kaggle.com/competitions/pii-detection-removal-from-educational-data/discussion/479491" />
             </div>
           </div>
 
