@@ -217,45 +217,39 @@
           </div>
 
           <div class="row mb-5">
-            <div class="col-md-3">
+            <div class="col-md-4">
               <div class="card">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <img src="../img/kaggle_ase/Lengths_Histogram.png"
-                    class="card-img-top embed-responsive-item" alt="Image">
-                </div>
                 <div class="card-body">
                   <h5 class="card-title text-center">Sliding Window</h5>
-                  <p class="card-text text-center">Divide long essays into
-                    windows of length 1024 tokens.</p>
+                  <p class="card-text text-center">Instead of using long
+                    sequence lengths, I divided them into overlapping windows of
+                    length 512. This allowed me to <b>train models with smaller
+                    context window while retaining high performance</b>.</p>
                 </div>
               </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-4">
               <div class="card">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <img src="../img/kaggle_ase/Datamap.png"
-                    class="card-img-top embed-responsive-item" alt="Image">
-                </div>
                 <div class="card-body">
-                  <h5 class="card-title text-center">Topic Modeling</h5>
-                  <p class="card-text text-center">Identifying overall topic
-                    of the essays and cluster them accordingly.</p>
+                  <h5 class="card-title text-center">Synthetic Data
+                    Generation</h5>
+                  <p class="card-text text-center">Competition data lacked every
+                    type of PII data. To have the model recognize all 7
+                    variations of PII data, I <b>synthetically generated essays
+                    with PII using Mixtral-8x7B</b>.</p>
                 </div>
               </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-4">
               <div class="card">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <img src="../img/kaggle_ase/CV_Score.png"
-                    class="card-img-top embed-responsive-item" alt="Image">
-                </div>
                 <div class="card-body">
-                  <h5 class="card-title text-center">Cross Validation
-                    Strategy</h5>
-                  <p class="card-text text-center">Stratified 7-fold CV
-                    grouping by topic for DeBERTa models.</p>
+                  <h5 class="card-title text-center">Negative Sampling</h5>
+                  <p class="card-text text-center">70% of examples didn't have a
+                    single PII. I divided these into 3 separate datasets and
+                    then added positive samples to them. This <b>reduced the
+                    skewness and resulted in better performing models</b>.</p>
                 </div>
               </div>
             </div>
