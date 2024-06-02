@@ -70,10 +70,6 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger"
-              href="#awards">Awards</a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -360,144 +356,193 @@
         <section class="resume-section p-3 p-lg-5 d-flex flex-column"
           id="projects">
           <div class="my-auto">
-            <h2 class="mb-5">📂 Projects</h2>
+            <h2 class="mb-5"><i class="fa fa-folder"></i> Projects</h2>
 
-            <div class="resume-item d-flex flex-column flex-md-row mb-5">
-              <div class="resume-content mr-auto">
-                <a
-                  href="projects_pages/kaggle_aes.html">
-                  <h3 class="mb-0">Kaggle - Automated Essay Scoring 2.0</h3>
-                </a>
-                <div class="subheading mb-3">PyTorch, Pandas, Plotly, SciPy,
-                  Scikit-Learn</div>
-                <ul>
-                  <li>Combined DeBERTa-V3-Large ensemble models with Light
-                    Gradient Boosted Machines to achieve 0.80 QWK score.</li>
-                  <li>Manually engineered useful features for LGBM like
-                    grammatical score, readability score, cohesion score,
-                    etc.</li>
-                  <li>Tracked experiments using Weights and Biases platform to
-                    quickly prototype and improve ML algorithm.</li>
-                </ul>
-              </div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">April 2024 - Present</span>
-              </div>
-            </div>
+            <div class="container-fluid">
 
-            <div class="resume-item d-flex flex-column flex-md-row mb-5">
-              <div class="resume-content mr-auto">
-                <a
-                  href="https://github.com/shishir9159/PII-Data-Detection"><h3
-                    class="mb-0">Kaggle - PII Detection</h3></a>
-                <div class="subheading mb-3">PyTorch, Pandas, SciPy,
-                  Plotly</div>
-                <ul>
-                  <li>Ensembled 5 DeBERTa-V3-Large models to achieve F5 score
-                    of
-                    0.955, placing us in the top 10% of competitors.</li>
-                  <li>Handled extreme imbalance using negative sampling,
-                    weighted
-                    loss updates, and SMOTE.</li>
-                  <li>Utilized Weights and Biases to track experimentation and
-                    hyperparameter searching.</li>
-                  <li>Generated sythetic training data using Mixtral-7B due to
-                    scarcity of training data.</li>
-                </ul>
-              </div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">January 2024 - April 2024</span>
-              </div>
-            </div>
+              <div class="row align-content-between">
 
-            <div class="resume-item d-flex flex-column flex-md-row mb-5">
-              <div class="resume-content mr-auto">
-                <a
-                  href="https://github.com/Shakleen/Asteroid-Mining-Analysis"><h3
-                    class="mb-0">Asteroid Mining Feasibility Analysis</h3></a>
-                <div class="subheading mb-3">HuggingFace, PyTorch,
-                  Scikit-Learn,
-                  Plotly</div>
-                <ul>
-                  <li>Utilized custom deep learning model to impute missing
-                    values
-                    for diameter and geometric albedo.</li>
-                  <li>Identified Apollo asteroids to be the optimal group to
-                    begin
-                    mining as their size is statistically larger than other
-                    NEO
-                    asteroids.</li>
-                  <li>Used Wilson's test to compare metallic and carbonaceous
-                    asteroid proportions to conclude that NEO asteroids are
-                    better
-                    for mining than non-NEO asteroids.</li>
-                </ul>
-              </div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">October 2023 - January 2024</span>
-              </div>
-            </div>
+                <!-- Project Card 1 -->
+                <div class="col-xl-3 col-md-6 mb-3">
+                  <div class="card mb-3">
+                    <img src="img/kaggle_ase/Kaggle_AES_2_Header.jpg"
+                      class="card-img-top"
+                      alt="Photo by Unseen Studio on Unsplash">
+                    <div class="card-body">
+                      <h5 class="card-title">Kaggle Automated Essay Scoring
+                        2.0</h5>
+                      <p class="card-text">Created an ensemble of deep learning
+                        models and gradient boosted trees to score handwritten
+                        essays. Engineered useful features like grammatical
+                        correctness score, word variety index, etc. to boost
+                        predictive performance.</p>
+                      <p class="card-text"><small
+                          class="text-body-secondary">April 2024 -
+                          Present</small></p>
 
-            <div class="resume-item d-flex flex-column flex-md-row mb-5">
-              <div class="resume-content mr-auto">
-                <a
-                  href="https://github.com/Shakleen/News-Outlet-Freedom-Detection"><h3
-                    class="mb-0">News Outlet Freedom Detection</h3></a>
-                <div class="subheading mb-3">HuggingFace, PyTorch,
-                  Scikit-Learn,
-                  Plotly</div>
-                <ul>
-                  <li>Utilized BERTopic for topic modeling, optimizing
-                    dimensionality with UMAP and cluster size through
-                    HDSCAN.</li>
-                  <li>Employed parameter-efficient fine-tuning (PEFT) to
-                    enhance
-                    LLaMa-2 7B for evaluating news articles on sentiment and
-                    stance, achieving a 92% accuracy rate.</li>
-                  <li>Conducted hypothesis tests to identify statistically
-                    significant distinctions in local and international news
-                    reporting.</li>
-                </ul>
+                      <div class="d-grid gap-2">
+                        <a class="btn btn-primary mr-3" role="button"
+                          href="projects_pages/kaggle_aes.html"
+                          aria-disabled="true">Read More</a>
+                        <a
+                          href="https://github.com/shishir9159/PII-Data-Detection">
+                          <span class="fa-stack fa-lg">
+                            <i class="devicon-github-original"></i>
+                          </span>
+                        </a>
+                        <a
+                          href="https://www.kaggle.com/ishfar/competitions">
+                          <span class="fa-stack fa-lg">
+                            <i class="devicon-kaggle-original"></i>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                      <i class="fa fa-tags"></i>
+                      NLP, Deep Learning, Topic Modeling, Feature Engineering
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="col-xl-3 col-md-6 mb-3">
+                  <div class="card mb-3">
+                    <img src="img/kaggle_pii/Kaggle_PII_Header.jpg"
+                      alt="Photo by Wulan Sari on Unsplash"
+                      class="card-img-top">
+                    <div class="card-body">
+                      <h5 class="card-title">Kaggle PII Detection</h5>
+                      <p class="card-text">Developed a system using ensemble of
+                        DeBERTa models to detect personally identifiable
+                        information (PII) tokens from long text sequences.
+                        <b>Ranked 173<sup>rd</sup> out of 2100</b> participants
+                        achieving bronze medal.</p>
+
+                      <p class="card-text"><small>January 2024 -
+                          April 2024</small></p>
+
+                      <div class="d-grid gap-2">
+                        <a class="btn btn-primary mr-3" role="button"
+                          href="projects_pages/kaggle_pii.html"
+                          aria-disabled="true">Read More</a>
+                        <a
+                          href="https://github.com/Shakleen/Kaggle-Automated-Essay-Scoring">
+                          <span class="fa-stack fa-lg">
+                            <i class="devicon-github-original"></i>
+                          </span>
+                        </a>
+                        <a
+                          href="https://www.kaggle.com/ishfar/competitions">
+                          <span class="fa-stack fa-lg">
+                            <i class="devicon-kaggle-original"></i>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                      <i class="fa fa-tags"></i>
+                      NLP, Deep Learning, Ensembling
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="col-xl-3 col-md-6 mb-3">
+                  <div class="card mb-3">
+                    <img src="img/Sentiment_Analysis/Tweet_Header.jpg"
+                      class="card-img-top ratio ratio-16x9"
+                      alt="Photo by Ravi Sharma on Unsplash">
+                    <div class="card-body">
+                      <h5 class="card-title">End-to-end Tweet Sentiment
+                        Analysis</h5>
+                      <p class="card-text">Developed an end-to-end system to
+                        ingest and process tweet data and store them in delta
+                        lake storage system. Then used MLFLow to predict
+                        sentiment using a HuggingFace BERT model.</p>
+
+                      <p class="card-text"><small>April 2024 -
+                          May 2024</small></p>
+
+                      <div class="d-grid gap-2">
+                        <a class="btn btn-primary mr-3" role="button"
+                          href="projects_pages/tweet_sentiment.html"
+                          aria-disabled="true">Read More</a>
+                        <a
+                          href="https://github.com/Shakleen/Kaggle-Automated-Essay-Scoring">
+                          <span class="fa-stack fa-lg">
+                            <i class="devicon-github-original"></i>
+                          </span>
+                        </a>
+                        <a
+                          href="https://www.kaggle.com/ishfar/competitions">
+                          <span class="fa-stack fa-lg">
+                            <i class="devicon-kaggle-original"></i>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                      <i class="fa fa-tags"></i>
+                      Spark, MLFlow, DeltaLake, NLP
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="col-xl-3 col-md-6 mb-3">
+                  <div class="card mb-3">
+                    <img src="img/news/News_Header.jpg"
+                      class="card-img-top ratio ratio-16x9"
+                      alt="Photo by AbsolutVision on Unsplash">
+                    <div class="card-body">
+                      <h5 class="card-title">News Outlet Freedom Detection</h5>
+                      <p class="card-text">Used LLaMa-2 to analyze sentiment and
+                        stance of news articles. Afterwards, I statistically
+                        showed significant distinctions between local and
+                        international media coverage of the same news topic.</p>
+
+                      <p class="card-text"><small>October 2023 - January
+                          2024</small></p>
+
+                      <div class="d-grid gap-2">
+                        <a class="btn btn-primary mr-3" role="button"
+                          href="projects_pages/news.html"
+                          aria-disabled="true">Read More</a>
+                        <a
+                          href="https://github.com/Shakleen/News-Outlet-Freedom-Detection/">
+                          <span class="fa-stack fa-lg">
+                            <i class="devicon-github-original"></i>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                      <i class="fa fa-tags"></i>
+                      NLP, Topic Modeling, LLM, Statistics
+                    </div>
+                  </div>
+                </div>
+
               </div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">October 2023 - January 2024</span>
-              </div>
+
             </div>
 
           </div>
         </section>
 
-        <section class="resume-section p-3 p-lg-5 d-flex flex-column"
-          id="certifications">
-          <div class="my-auto">
-            <h2 class="mb-5">🏆 Awards</h2>
-            <ul class="fa-ul mb-0">
-              <li>
-                <i class="fa-li fa fa-trophy text-warning"></i>
-                <a
-                  href="https://www.kaggle.com/competitions/pii-detection-removal-from-educational-data/leaderboard">173<sup>rd</sup>
-                  among 2100 teams - Kaggle Competition: PII
-                  Detection</li></a>
-              <li>
-                <li>
-                  <i class="fa-li fa fa-trophy text-warning"></i>
-                  29<sup>th</sup> among 500 teams - Dhaka ACM ICPC Regional
-                  Programming Contest 2017</li>
-              </div>
-            </section>
+      </div>
 
-          </div>
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-          <!-- Bootstrap core JavaScript -->
-          <script src="vendor/jquery/jquery.min.js"></script>
-          <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Plugin JavaScript -->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-          <!-- Plugin JavaScript -->
-          <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+      <!-- Custom scripts for this template -->
+      <script src="js/resume.min.js"></script>
 
-          <!-- Custom scripts for this template -->
-          <script src="js/resume.min.js"></script>
+    </body>
 
-        </body>
-
-      </html>
+  </html>
