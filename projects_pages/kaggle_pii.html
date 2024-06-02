@@ -134,8 +134,9 @@
             <div class="resume-content mr-auto">
               <h3 class="mb-3">Detect PII from long text sequence</h3>
               <div class="subheading mb-3">Scoring Criteria: F5 metric</div>
-              <p>The system is penalized 5 times more for missing an PII than
-                falsely detecting one.</p>
+              <p>The system is penalized 5 times more for missing a PII than
+                falsely detecting one. <b>Recall is 5X more important than
+                  precision.</b></p>
 
               <div class="subheading mb-3">Data</div>
 
@@ -146,10 +147,11 @@
                 of this data is kept as the leader test set.
               </p>
 
-              <div class="subheading mb-3">Challenge 1: Different PII
+              <div class="subheading mb-3">Challenge 1: 14 PII
                 Types</div>
 
-              <p>7 PII types with each type further being split into beginning
+              <p><b>7 PII types</b> with each type further being split into
+                beginning
                 or intermediate PII types. For example:</p>
 
               <div class="table-responsive">
@@ -371,10 +373,10 @@
                     class="card-img-top embed-responsive-item" alt="Image">
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title text-center">QWK Score</h5>
-                  <p class="card-text text-center">Combining LGBM and DeBERTa
-                    ensemble gives
-                    the best performance</p>
+                  <h5 class="card-title text-center">Overall F5 Score</h5>
+                  <p class="card-text text-center">The model has high recall and
+                    lower precision. But as recall is 5X more important, it
+                    achieves a high F5 score.</p>
                 </div>
               </div>
             </div>
@@ -386,10 +388,8 @@
                     class="card-img-top embed-responsive-item" alt="Image">
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title text-center">F1 Score</h5>
-                  <p class="card-text text-center">LGBM has high
-                    classification
-                    performance across all classes.</p>
+                  <h5 class="card-title text-center">PII-wise F5 Score</h5>
+                  <p class="card-text text-center">The model manages to get high F5 score of 0.9+ for all the PII types.</p>
                 </div>
               </div>
             </div>
