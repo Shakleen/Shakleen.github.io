@@ -224,7 +224,7 @@
                   <p class="card-text text-center">Instead of using long
                     sequence lengths, I divided them into overlapping windows of
                     length 512. This allowed me to <b>train models with smaller
-                    context window while retaining high performance</b>.</p>
+                      context window while retaining high performance</b>.</p>
                 </div>
               </div>
             </div>
@@ -237,7 +237,7 @@
                   <p class="card-text text-center">Competition data lacked every
                     type of PII data. To have the model recognize all 7
                     variations of PII data, I <b>synthetically generated essays
-                    with PII using Mixtral-8x7B</b>.</p>
+                      with PII using Mixtral-8x7B</b>.</p>
                 </div>
               </div>
             </div>
@@ -249,31 +249,48 @@
                   <p class="card-text text-center">70% of examples didn't have a
                     single PII. I divided these into 3 separate datasets and
                     then added positive samples to them. This <b>reduced the
-                    skewness and resulted in better performing models</b>.</p>
+                      skewness and resulted in better performing models</b>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-2">
+            <div class="resume-content">
+              <h3 class="mb-0">Prediction</h3>
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Weighted Loss Updates</h5>
+                  <p class="card-text text-center">As recall is 5 times more
+                    important than precision, I wanted to minimize false
+                    negatives. Thus, I set class <b>"O"</b> with a very low
+                    weight for loss updates, as 99.9% of tokens were of this
+                    class and it wasn't PII.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Ensemble 3 DeBERTa Models</h5>
+                  <p class="card-text text-center">I trained 3 separate
+                    DeBERTa-V3-Base models using 3 different folds of the
+                    negative sample coupled with the same positive samples. The
+                    final ensemble of models was used for inference.</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content">
-              <h3 class="mb-0">Feature Engineering</h3>
-              <div class="subheading mb-1">Token features</div>
-              <p>Basic statistical descriptors (mean, max, sum) for token
-                (character, word, sentence).</p>
-
-              <div class="subheading mb-1">Word Vector Features</div>
-              <p>TF-IDF and cTF-IDF vectors</p>
-
-              <div class="subheading mb-1">Writing Quality Features</div>
-              <p>Uncommon word count, mispelled word count, grammar score,
-                etc.</p>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Predictiion</h3>
+              <h3 class="mb-0">Post-processing</h3>
               <div class="subheading mb-1">7-Fold DeBERTa Ensemble</div>
               <p>Microsoft's DeBERTa-V3-Large predicted score probabilities
                 only
