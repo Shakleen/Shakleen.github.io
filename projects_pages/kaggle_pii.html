@@ -9,7 +9,7 @@
     <meta name="description" content>
     <meta name="author" content>
 
-    <title>Kaggle Automated Essay Scoring 2.0</title>
+    <title>Kaggle PII Detection</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -40,8 +40,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"
       id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Kaggle Automated Essay Scoring
-          2.0</span>
+        <span class="d-block d-lg-none">Kaggle PII Detection</span>
         <span class="d-none d-lg-block">
           <img class="img-fluid img-profile rounded-circle mx-auto mb-2"
             src="../img/Profile.png" alt>
@@ -85,18 +84,19 @@
       <section class="resume-section p-3 p-lg-5 d-flex d-column" id="tldr">
         <div class="my-auto">
           <h1 class="mb-0">Kaggle
-            <span class="text-primary">Automated Essay Scoring 2.0</span>
+            <span class="text-primary">PII Detection</span>
           </h1>
-          <div class="subheading">April 2024 - Present
+          <div class="subheading"><i class="fa fa-clock-o"></i> April 2024 -
+            Present
           </div>
-          <div class="subheading mb-2">PYTORCH, PANDAS, PLOTLY, SCIPY,
-            SCIKIT-LEARN</div>
+          <div class="subheading mb-2"><i class="fa fa-tags"></i> NLP, Deep
+            Learning, Ensembling</div>
 
           <ul class="list-inline list-social-icons mb-3">
             <li class="list-inline-item">Check out the repository at</li>
             <li class="list-inline-item">
               <a
-                href="https://github.com/Shakleen/Kaggle-Automated-Essay-Scoring">
+                href="https://github.com/shishir9159/PII-Data-Detection">
                 <span class="fa-stack fa-lg">
                   <i class="devicon-github-original"></i>
                 </span>
@@ -105,7 +105,7 @@
             <li class="list-inline-item"> and my competition ranking at </li>
             <li class="list-inline-item">
               <a
-                href="https://www.kaggle.com/competitions/learning-agency-lab-automated-essay-scoring-2/leaderboard">
+                href="https://www.kaggle.com/ishfar/competitions">
                 <span class="fa-stack fa-lg">
                   <i class="devicon-kaggle-original"></i>
                 </span>
@@ -113,12 +113,15 @@
             </li>
           </ul>
 
-          <p class="mb-5">In this competition, we had to score essays on a scale
-            of 1 to 6. The scoring criteria needed to be consistent with the
-            holistic scoring criteria. Using an ensemble of <i>DeBERTa</i> and
-            <i>Light Gradient Boosted Trees</i> I managed to achieve incredible
-            performance. ur <b>solution ranked 150<sup>th</sup> among 2100</b>,
-            winning us a <b>bronze medal</b>.</p>
+          <p class="mb-5">This was my very first Kaggle competition where I had
+            to detect <b>Personally Identifiable Information (PII)</b> from
+            essays written by students. The main challenge of the competition
+            was dealing with the extreme skew in the dataset. Essays with
+            thousands of words had very few PII, if any at all. My solution was
+            to use negative sampling, thresholding, and ensemble of multiple
+            DeBERTa models to predict tokens as PII. Ultimately, it ranked
+            <b>173<sup>rd</sup> out of 2100</b> participants, earning me a
+            <b>bronze medal.</b></p>
         </div>
       </section>
 
