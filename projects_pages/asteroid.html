@@ -184,75 +184,178 @@
           <div class="row mb-5">
             <div class="col-md-3">
               <div class="card">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <img src="../img/kaggle_ase/Lengths_Histogram.png"
-                    class="card-img-top embed-responsive-item" alt="Image">
-                </div>
                 <div class="card-body">
-                  <h5 class="card-title text-center">Sliding Window</h5>
-                  <p class="card-text text-center">Divide long essays into
-                    windows of length 1024 tokens.</p>
+                  <h5 class="card-title text-center">Impute by Group</h5>
+                  <p class="card-text">Columns with relatively few
+                    missing values (< 5%) was imputed with their</p>
+
+                  <ul>
+                    <li><b>Mode</b> for categorical columns (condition code,
+                      class, is_neo, etc.)</li>
+                    <li><b>Median</b> for numerical columns (orbital period,
+                      MOID, etc.) </li>
+                  </ul>
+
+                  <p>Categorical columns were imputed first. Then they were used
+                    to group rows together for imputing by median.</p>
                 </div>
               </div>
             </div>
 
             <div class="col-md-3">
               <div class="card">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <img src="../img/kaggle_ase/Datamap.png"
-                    class="card-img-top embed-responsive-item" alt="Image">
-                </div>
                 <div class="card-body">
-                  <h5 class="card-title text-center">Topic Modeling</h5>
-                  <p class="card-text text-center">Identifying overall topic
-                    of the essays and cluster them accordingly.</p>
+                  <h5 class="card-title text-center">Impute using Neural
+                    Networks</h5>
+                  <p class="card-text">Two attributes,
+                    <b>albedo</b> and <b>diameter</b> were extremely important
+                    for this project.</p>
+                  <ul>
+                    <li><b>Albedo</b> is needed for identifying material
+                      composition data.</li>
+                    <li><b>Diameter</b> is used to infer size of the
+                      asteroids.</li>
+                  </ul>
+
+                  <p><b>Two Multilayer Perceptrons</b> trained on the
+                    cleaned data was used predict and impute missing values.</p>
                 </div>
               </div>
             </div>
 
             <div class="col-md-3">
               <div class="card">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <img src="../img/kaggle_ase/CV_Score.png"
-                    class="card-img-top embed-responsive-item" alt="Image">
-                </div>
                 <div class="card-body">
-                  <h5 class="card-title text-center">Cross Validation
-                    Strategy</h5>
-                  <p class="card-text text-center">Stratified 7-fold CV
-                    grouping by topic for DeBERTa models.</p>
+                  <h5 class="card-title text-center">Feature Engineering</h5>
+                  <p class="card-text">Used existing attributes to
+                    construct explainable and important features. For
+                    example:</p>
+
+                  <ul><li>From <b>Eccentricity</b> to <b>Orbital Shapes</b>
+                      (Circular or Parabolic?)</li>
+                    <li>From <b>Albedo</b> to <b>Material
+                        composition</b> (Metallic or Carbonaceous?)</li>
+                    <li>From <b>periphellon and aphellon distance</b> to <b>NEO
+                        asteroid type</b></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Outlier Removal</h5>
+                  <p class="card-text">Statistical tests are sensitive to
+                    outliers. Thus before proceeding with statistical analysis,
+                    I've removed outliers from the dataset. Outliers were
+                    identified using five number summary method.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-item d-flex flex-column flex-md-row mb-2">
             <div class="resume-content">
-              <h3 class="mb-0">Feature Engineering</h3>
-              <div class="subheading mb-1">Token features</div>
-              <p>Basic statistical descriptors (mean, max, sum) for token
-                (character, word, sentence).</p>
-
-              <div class="subheading mb-1">Word Vector Features</div>
-              <p>TF-IDF and cTF-IDF vectors</p>
-
-              <div class="subheading mb-1">Writing Quality Features</div>
-              <p>Uncommon word count, mispelled word count, grammar score,
-                etc.</p>
+              <h3 class="mb-0">Statistical Analysis</h3>
             </div>
           </div>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Predictiion</h3>
-              <div class="subheading mb-1">7-Fold DeBERTa Ensemble</div>
-              <p>Microsoft's DeBERTa-V3-Large predicted score probabilities
-                only
-                from essay text.</p>
+          <div class="row mb-5">
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Size Analysis</h5>
+                  <ol>
+                    <li>
+                      <b style="color:#0096c7;">On average which near earth
+                        asteroid type has larger asteroids?</b>
+                      <ul>
+                        <li><b>ANOVA test</b> to identify if all groups have
+                          same mean size. (Because groups have similar
+                          distributions)</li>
+                        <li><b>Pairwise t-test</b> to identify ordering amongst
+                          types.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <b style="color:#0096c7;">On average which asteroid belt
+                        has larger asteroids?</b>
+                      <ul>
+                        <li><b>Kruskal-Wallis test</b> to identify if all groups
+                          have same median. (Because groups have different
+                          distributions)</li>
+                        <li><b>Two-sample t-tests</b> to identify ordering
+                          amongst belts.</li>
+                      </ul>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
 
-              <div class="subheading mb-1">25-Fold Light GBM Ensemble</div>
-              <p>Predicted score from DeBERTa ensemble probabilities and
-                engineered features.</p>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Composition Analysis</h5>
+                  <ol>
+                    <li>
+                      <b style="color:#0096c7;">Are asteroids near earth more
+                        metallic (and thus more valuable)?</b>
+                      <p><b>Two-sample proportion test</b> between metallic and
+                        non-metallic asteroids.</p>
+                    </li>
+                    <li>
+                      <b style="color:#0096c7;">Which NEO type has higher
+                        metallic asteroids?</b>
+                      <ul>
+                        <li><b>Goodness-of-fit test</b> to if all types have
+                          similar proportions.</li>
+                        <li><b>Pairwise two sample proportion tests</b> to
+                          identify ordering amongst types.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <b style="color:#0096c7;">Which belt has higher proportion
+                        of metallic asteroids?</b>
+                      <b>Pairwise two sample proportion tests</b> to identify
+                      ordering amongst belts.
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Orbital Period
+                    Analysis</h5>
+                  <ol>
+                    <li>
+                      <b style="color:#0096c7;">Which NEO type has the shorter
+                        orbital period (and thus is observed more
+                        frequently)?</b>
+                      <ul>
+                        <li><b>ANOVA test</b> to see if all types have the same
+                          average orbital period.</li>
+                        <li><b>Pairwise t-tests</b> to identify ordering amongst
+                          types.</li>
+                      </ul>
+                    </li>
+                    <li><b style="color:#0096c7;">Does orbital period vary
+                        greatly for different composition types?</b></li>
+                    <p><b>Factor plot and 2-way ANOVA test</b> to see if orbital
+                      periods vary significantly for different compositions.</p>
+                    <li>
+                      <b style="color:#0096c7;">Does metallic asteroids have
+                        shorter periods?</b>
+                      <p><b>Welch t-test</b> to identify if metallic asteroids
+                        have a lower orbital periods.</p>
+                    </li>
+                  </ol>
+                </div>
+              </div>
             </div>
           </div>
 
