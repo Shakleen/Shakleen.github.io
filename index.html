@@ -29,6 +29,9 @@
     <link rel="stylesheet" type='text/css'
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
+    <!-- GitHub Calender Theme -->
+    <link rel="stylesheet" href="css/github-calendar-responsive.css" />
+
     <!-- Custom styles for this template -->
     <link href="css/resume.min.css" rel="stylesheet">
 
@@ -85,6 +88,7 @@
             <a
               href="mailto:shakleenishfar@gmail.com">shakleenishfar@gmail.com</a>
           </div>
+
           <p class="mb-5">I'm currently pursuing my data science graduate
             degree, and I've spent over <b>2 years working as a software
               engineer</b>. My focus has been on <b>creating AI/ML products</b>.
@@ -94,6 +98,24 @@
             explored through Kaggle competitions. In fact, I snagged a bronze
             medal in my very first Kaggle challenge—a proud moment for me!
             🌟</p>
+
+          <center>
+            <div class="contain mb-5" style="max-width: 60vh;">
+              <script src="./js/github-calendar.min.js"></script>
+
+              <!-- Prepare a container for your calendar. -->
+              <div class="calendar">
+                <!-- Loading stuff -->
+                Loading the data just for you.
+              </div>
+
+              <script>
+                GitHubCalendar(".calendar", "Shakleen");
+                // or enable responsive functionality
+                GitHubCalendar(".calendar", "Shakleen", { responsive: true, global_stats: false});
+                </script>
+            </div>
+          </center>
 
           <p>Feel free to contact me using any of my socials below! Let's dive
             into data patterns and shape the future together!
@@ -132,6 +154,7 @@
               </a>
             </li>
           </ul>
+
         </div>
       </section>
 
@@ -304,7 +327,8 @@
                     <li><b
                         style="color:#0096c7">Competitions</b><ul><li>2<sup>nd</sup>
                           among 150 teams: Intra IUT Programming Contest</li>
-                        <li>2<sup>nd</sup> among 50 teams: National Robotech Festival Start Expo</li>
+                        <li>2<sup>nd</sup> among 50 teams: National Robotech
+                          Festival Start Expo</li>
                         <li>29<sup>th</sup> among 200 teams: Dhaka ACM ICPC
                           Regional Programming Contest</li>
                       </ul>
