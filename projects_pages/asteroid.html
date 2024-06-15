@@ -129,55 +129,40 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-5">Score essays holistically on a scale of 1 to
-                6</h3>
-              <div class="subheading mb-3">Scoring Criteria: Cohen Kappa</div>
-              <p>The <b>difference</b> between ground truth and predicted score
-                should
-                <b>be as minimal as possible</b>. For example:</p>
-              <div class="table-responsive">
-                <table class="table">
-                  <thead class="bg-primary text-white">
-                    <tr>
-                      <th><strong>Prediction Qaulity</strong></th>
-                      <th><strong>Ground truth</strong></th>
-                      <th><strong>Predicted</strong></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td style="color: green;">Perfect</td>
-                      <td>5</td>
-                      <td>5</td>
-                    </tr>
-                    <tr>
-                      <td style="color: lightcoral;">Bad</td>
-                      <td>5</td>
-                      <td>3</td>
-                    </tr>
-                    <tr>
-                      <td style="color: #8B0000;">Worse</td>
-                      <td>5</td>
-                      <td>1</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <h3 class="mb-5">Analyze asteroid data and determine feasibility
+                of mining operations</h3>
+              <div class="subheading mb-3">Feasibility Analysis</div>
+
+              <ul>
+                <li><b>Asteroid size vs Distance from earth:</b> Larger
+                  asteroids have more resource, but do we have to go far to mine
+                  from large asteroids?</li>
+                <li><b>Material composition vs Distance from earth:</b> Metallic
+                  asteroids have more valuable materials, how does near earth
+                  asteroids compare to ones further away?</li>
+                <li><b>Orbital period vs Distance from earth:</b> Are valuable
+                  asteroids more frequently orbiting earth or passing by
+                  earth?</li>
+              </ul>
 
               <div class="subheading mb-3">Data</div>
 
+              <p>Asteroid data was collected from <b>NASA's Jet Propulsion
+                  Laboratory</b></p>
+
               <ul>
-                <li>Training data consisted of <b>17 thousand hand written and
-                    AI generated essays</b> on 7 topics.</li>
-                <li>The hidden test set consisted of <b>7 thousand unseen
-                    essays</b>, some of which were on different topics
-                  entirely.</li>
+                <li>The dataset contained <b>more than 1 million</b> unique
+                  asteroid data.</li>
+                <li>Each row had <b>30 attributes</b> describing its size,
+                  orbital properties, material composition, reflectance, and
+                  more.</li>
               </ul>
 
-              <div class="subheading mb-3">Challenge: Class Imbalance</div>
+              <div class="subheading mb-3">Challenge: Missing Values</div>
+              <p>Nearly 99.99% of light reflectance data is missing. And about
+                80% of geometric albedo and diameter values were missing.</p>
 
-              <img src="../img/kaggle_ase/Score_Distribution.png"
-                class="img-fluid" />
+              <img src="../img/asteroid/missing_values.png" alt="Image">
             </div>
           </div>
 
