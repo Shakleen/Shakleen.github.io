@@ -70,9 +70,6 @@
             <a class="nav-link js-scroll-trigger" href="#action">Action</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#result">Result</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#lessons">Lessons
               Learnt</a>
           </li>
@@ -137,23 +134,24 @@
                 <li><b>Gold layer</b>: Curated business level data</li>
               </ol>
 
-              <div class="row">
-                <div class="col-md-6">
-                  <img
-                    src="../img/Sentiment_Analysis/medallion_architecture.png"
-                    class="img-fluid" />
-                </div>
-
-                <div class="col-md-6">
-                  <img src="../img/Sentiment_Analysis/table_dictionary.png"
-                    class="img-fluid" />
-                </div>
-              </div>
+              <img src="../img/Sentiment_Analysis/table_dictionary.png"
+                class="img-fluid mb-5" />
 
               <div class="subheading mb-3">Track ML Model using MLFlow</div>
 
               <p>Track metrics of deep learning model using MLFLow and use it to
                 perform sentiment detection on the dataset.</p>
+
+              <div class="subheading mb-3">Identify and Minimize Performance
+                Bottlenecks</div>
+
+              <ol>
+                <li>Identify the 5S of performance issues in Spark which are
+                  Spill,
+                  Storage, Skew, Serialization, and Shuffle.</li>
+                <li>Take steps to reduce
+                  their impact on the Spark application.</li>
+              </ol>
             </div>
           </div>
 
@@ -168,152 +166,62 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-2">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Data Preparation</h3>
-            </div>
-          </div>
+              <h3 class="mb-0">Medallion Architecture Construction</h3>
 
-          <div class="row mb-5">
-            <div class="col-md-3">
-              <div class="card">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <img src="../img/kaggle_ase/Lengths_Histogram.png"
-                    class="card-img-top embed-responsive-item" alt="Image">
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title text-center">Sliding Window</h5>
-                  <p class="card-text text-center">Divide long essays into
-                    windows of length 1024 tokens.</p>
-                </div>
-              </div>
-            </div>
+              <div class="row">
+                <div class="col-md-6">
 
-            <div class="col-md-3">
-              <div class="card">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <img src="../img/kaggle_ase/Datamap.png"
-                    class="card-img-top embed-responsive-item" alt="Image">
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title text-center">Topic Modeling</h5>
-                  <p class="card-text text-center">Identifying overall topic
-                    of the essays and cluster them accordingly.</p>
-                </div>
-              </div>
-            </div>
+                  <div class="subheading mb-1">Delta Lakes</div>
+                  <p>Raw tweet data is read as a stream that is constantly
+                    updated with new tweets. I used Delta Lake technology to
+                    save data at various stages of the pipeline as bronze,
+                    silver, and gold tables.</p>
 
-            <div class="col-md-3">
-              <div class="card">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <img src="../img/kaggle_ase/CV_Score.png"
-                    class="card-img-top embed-responsive-item" alt="Image">
+                  <div class="subheading mb-1">Pandas UDF for Inference</div>
+                  <p>Inference using a traditional UDF is slow. I used Pandas
+                    UDF to leverage <b>Apache Arrow</b> and <b>Pandas
+                      vectorization</b> capabilities to speed up inference
+                    procedure.</p>
+
+                  <div class="subheading mb-1">MLFlow for tracking</div>
+                  <p>A BERT model from HuggingFace was used for sentiment
+                    classification. This model was stored in <b>MLFlow</b>
+                    registry and
+                    performance metrics related to the model were tracked using
+                    <b>MLFlow</b> as well.</p>
+
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title text-center">Cross Validation
-                    Strategy</h5>
-                  <p class="card-text text-center">Stratified 7-fold CV
-                    grouping by topic for DeBERTa models.</p>
+
+                <div class="col-md-6 justify-content-center">
+                  <img
+                    src="../img/Sentiment_Analysis/medallion_architecture.png"
+                    class="img-fluid mt-3" />
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content">
-              <h3 class="mb-0">Feature Engineering</h3>
-              <div class="subheading mb-1">Token features</div>
-              <p>Basic statistical descriptors (mean, max, sum) for token
-                (character, word, sentence).</p>
-
-              <div class="subheading mb-1">Word Vector Features</div>
-              <p>TF-IDF and cTF-IDF vectors</p>
-
-              <div class="subheading mb-1">Writing Quality Features</div>
-              <p>Uncommon word count, mispelled word count, grammar score,
-                etc.</p>
             </div>
           </div>
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Predictiion</h3>
-              <div class="subheading mb-1">7-Fold DeBERTa Ensemble</div>
-              <p>Microsoft's DeBERTa-V3-Large predicted score probabilities
-                only
-                from essay text.</p>
+              <h3 class="mb-0">Identify and Minimize Performance
+                Bottlenecks</h3>
+              <div class="subheading mb-1">Setting Shuffle Partitions</div>
+              <p>Shuffle partitions were set to be a multiple of the number of
+                cores in the workers. This minimized <b>spill</b> perforamnce
+                issue.</p>
 
-              <div class="subheading mb-1">25-Fold Light GBM Ensemble</div>
-              <p>Predicted score from DeBERTa ensemble probabilities and
-                engineered features.</p>
+              <div class="subheading mb-1">Optimize Table</div>
+              <p>Delta tables were optimized to reduce <b>small files</b> issue.
+                Furthermore, <b>Z-ordering</b> was used to make fetching
+                relavant data more optimal.</p>
+
+              <div class="subheading mb-1">Pandas UDF</div>
+              <p>Pandas UDF was used to minimize serialization bottleneck as
+                much as possible. Although the function isn't as efficient as
+                native spark functions, its still much more efficient than
+                traditional UDFs.</p>
             </div>
           </div>
-
-        </div>
-      </section>
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column"
-        id="result">
-        <div class="my-auto">
-          <h2 class="mb-5"><i class="fa fa-line-chart"></i> Result</h2>
-
-          <div class="row mb-4">
-            <p>Experimentation was tracked using <b>Weights and Biases</b> to
-              quickly iterate and improve predictive performance. Additional
-              experimentation details and results can be found in the
-              repository wiki.
-
-              <p><b>Cross-validation performance</b> for a select few
-                experiments are shown below:</p></p>
-          </div>
-
-          <div class="row mb-4">
-            <div class="col-md-4">
-              <div class="card">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <img src="../img/kaggle_ase/QWK_score.png"
-                    class="card-img-top embed-responsive-item" alt="Image">
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title text-center">QWK Score</h5>
-                  <p class="card-text text-center">Combining LGBM and DeBERTa
-                    ensemble gives
-                    the best performance</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <img src="../img/kaggle_ase/F1_Score.png"
-                    class="card-img-top embed-responsive-item" alt="Image">
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title text-center">F1 Score</h5>
-                  <p class="card-text text-center">LGBM has high
-                    classification
-                    performance across all classes.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <img src="../img/kaggle_ase/Confusion_Matrix.png"
-                    class="card-img-top embed-responsive-item" alt="Image">
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title text-center">Confusion Matrix</h5>
-                  <p class="card-text text-center">Predicted scores have
-                    minimal
-                    difference from ground truth.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <p>The best system so far has score 0.793 in the public
-            leaderboard.</p>
 
         </div>
       </section>
@@ -325,34 +233,18 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Engineering good features = great
-                performance</h3>
-              <p>Well engineered features coupled with Deep Neural Networks
-                outperform standalone deep neural networks.</p>
+              <h3 class="mb-0">Medallion Architecture</h3>
+              <p>Structuring the data pipeline using the medallion architecture
+                made it convenient for data management when I had to go back and
+                check data from an earlier stage in the pipeline.</p>
             </div>
           </div>
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Poor CV Strategy = Bad Leaderboard
-                Performance</h3>
-              <p>Kaggle competitions require a good CV strategy that
-                correlates
-                well with public leaderboard. In the beginning, I had a poor
-                CV
-                strategy where I got great CV performance but terrible
-                leaderboard performance.</p>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Iterative Improvement Requires Experiment
-                Tracking</h3>
-              <p>Over the span of 2 months, I experimented a lot. Tracking the
-                experiment parameters like data version, model version,
-                configurations, etc. in a platform helped immensely in
-                prototyping.</p>
+              <h3 class="mb-0">MLFlow Tracking</h3>
+              <p>Tracking performance metrics in MLFlow allowed me to compare
+                different version of the model.</p>
             </div>
           </div>
 
