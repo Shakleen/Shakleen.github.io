@@ -125,55 +125,35 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-5">Score essays holistically on a scale of 1 to
-                6</h3>
-              <div class="subheading mb-3">Scoring Criteria: Cohen Kappa</div>
-              <p>The <b>difference</b> between ground truth and predicted score
-                should
-                <b>be as minimal as possible</b>. For example:</p>
-              <div class="table-responsive">
-                <table class="table">
-                  <thead class="bg-primary text-white">
-                    <tr>
-                      <th><strong>Prediction Qaulity</strong></th>
-                      <th><strong>Ground truth</strong></th>
-                      <th><strong>Predicted</strong></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td style="color: green;">Perfect</td>
-                      <td>5</td>
-                      <td>5</td>
-                    </tr>
-                    <tr>
-                      <td style="color: lightcoral;">Bad</td>
-                      <td>5</td>
-                      <td>3</td>
-                    </tr>
-                    <tr>
-                      <td style="color: #8B0000;">Worse</td>
-                      <td>5</td>
-                      <td>1</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <h3 class="mb-5">Build a scalable system to analyze tweet
+                sentiment</h3>
+              <div class="subheading mb-3">Construct Medallion Data
+                Architecture</div>
+              <p>Build reliable and performant data pipelines using <b>Delta
+                  Lake</b>. The pipeline is composed of three layers:</p>
+              <ol>
+                <li><b>Bronze layer</b>: Raw ingested data</li>
+                <li><b>Silver layer</b>: Cleaned and filtered data</li>
+                <li><b>Gold layer</b>: Curated business level data</li>
+              </ol>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <img
+                    src="../img/Sentiment_Analysis/medallion_architecture.png"
+                    class="img-fluid" />
+                </div>
+
+                <div class="col-md-6">
+                  <img src="../img/Sentiment_Analysis/table_dictionary.png"
+                    class="img-fluid" />
+                </div>
               </div>
 
-              <div class="subheading mb-3">Data</div>
+              <div class="subheading mb-3">Track ML Model using MLFlow</div>
 
-              <ul>
-                <li>Training data consisted of <b>17 thousand hand written and
-                    AI generated essays</b> on 7 topics.</li>
-                <li>The hidden test set consisted of <b>7 thousand unseen
-                    essays</b>, some of which were on different topics
-                  entirely.</li>
-              </ul>
-
-              <div class="subheading mb-3">Challenge: Class Imbalance</div>
-
-              <img src="../img/kaggle_ase/Score_Distribution.png"
-                class="img-fluid" />
+              <p>Track metrics of deep learning model using MLFLow and use it to
+                perform sentiment detection on the dataset.</p>
             </div>
           </div>
 
