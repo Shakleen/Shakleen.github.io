@@ -9,7 +9,7 @@
     <meta name="description" content>
     <meta name="author" content>
 
-    <title>Kaggle Automated Essay Scoring 2.0</title>
+    <title>End-to-End Tweet Sentiment Analysis</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -40,8 +40,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"
       id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Kaggle Automated Essay Scoring
-          2.0</span>
+        <span class="d-block d-lg-none">End-to-End Tweet Sentiment
+          Analysis</span>
         <span class="d-none d-lg-block">
           <img class="img-fluid img-profile rounded-circle mx-auto mb-2"
             src="../img/Profile.png" alt>
@@ -84,41 +84,37 @@
 
       <section class="resume-section p-3 p-lg-5 d-flex d-column" id="tldr">
         <div class="my-auto">
-          <h1 class="mb-0">Kaggle
-            <span class="text-primary">Automated Essay Scoring 2.0</span>
+          <h1 class="mb-0">End-to-End
+            <span class="text-primary">Tweet Sentiment Analysis</span>
           </h1>
-          <div class="subheading">April 2024 - Present
+          <div class="subheading">April 2024 - May 2024
           </div>
-          <div class="subheading mb-2">PYTORCH, PANDAS, PLOTLY, SCIPY,
-            SCIKIT-LEARN</div>
+          <div class="subheading mb-2">Spark, ML-Flow, Delta Lakes</div>
 
           <ul class="list-inline list-social-icons mb-3">
-            <li class="list-inline-item">Check out the repository at</li>
+            <li class="list-inline-item">Check out the project at</li>
             <li class="list-inline-item">
               <a
-                href="https://github.com/Shakleen/Kaggle-Automated-Essay-Scoring">
+                href="https://github.com/Shakleen/End-to-end-Tweet-Sentiment-Detection">
                 <span class="fa-stack fa-lg">
                   <i class="devicon-github-original"></i>
                 </span>
               </a>
             </li>
-            <li class="list-inline-item"> and my competition ranking at </li>
-            <li class="list-inline-item">
-              <a
-                href="https://www.kaggle.com/competitions/learning-agency-lab-automated-essay-scoring-2/leaderboard">
-                <span class="fa-stack fa-lg">
-                  <i class="devicon-kaggle-original"></i>
-                </span>
-              </a>
-            </li>
           </ul>
 
-          <p class="mb-5">In this competition, we had to score essays on a scale
-            of 1 to 6. The scoring criteria needed to be consistent with the
-            holistic scoring criteria. Using an ensemble of <i>DeBERTa</i> and
-            <i>Light Gradient Boosted Trees</i> I managed to achieve incredible
-            performance. ur <b>solution ranked 150<sup>th</sup> among 2100</b>,
-            winning us a <b>bronze medal</b>.</p>
+          <p class="mb-5">In this project, I developed a comprehensive system to
+            analyze tweet sentiment using <b>Spark</b>. Initially, I ingested
+            raw data and filtered it to create a bronze table in Delta Lake
+            format. After performing ETL (Extract, Transform, Load) and data
+            cleaning, the bronze table was transformed into a silver table. We
+            employed a BERT model to predict tweet sentiment, saving the results
+            in a gold table. Prediction metrics, such as F1 score and the
+            confusion matrix, were tracked using <b>MLFlow</b>. Additionally, I
+            analyzed five common performance issues—spill, skew, shuffle,
+            storage, and serialization—and made adjustments to minimize their
+            impact. Finally, we used the gold table to analyze sentiment
+            patterns across tweets and users.</p>
         </div>
       </section>
 
