@@ -368,64 +368,72 @@
           <h2 class="mb-5"><i class="fa fa-line-chart"></i> Result</h2>
 
           <div class="row mb-4">
-            <p>Experimentation was tracked using <b>Weights and Biases</b> to
-              quickly iterate and improve predictive performance. Additional
-              experimentation details and results can be found in the
-              repository wiki.
-
-              <p><b>Cross-validation performance</b> for a select few
-                experiments are shown below:</p></p>
-          </div>
-
-          <div class="row mb-4">
             <div class="col-md-4">
               <div class="card">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <img src="../img/kaggle_ase/QWK_score.png"
-                    class="card-img-top embed-responsive-item" alt="Image">
-                </div>
                 <div class="card-body">
-                  <h5 class="card-title text-center">QWK Score</h5>
-                  <p class="card-text text-center">Combining LGBM and DeBERTa
-                    ensemble gives
-                    the best performance</p>
+                  <h5 class="card-title text-center">Size Analysis</h5>
+                  <ol>
+                    <li>
+                      Looking at asteroid size (measured by
+                      diameter), <b>Apollo</b> asteroids are generally bigger
+                      than
+                      other NEO types. Bigger asteroids have more materials to
+                      mine, and <b>Apollo</b> asteroids come closer to Earth
+                      than
+                      others. So, it's logical to begin with <b>Apollo</b> for
+                      mining operations.
+                    </li>
+                    <li class="mt-2">
+                      In the future, when we have the right technology for space
+                      exploration, our focus should be on the <b>main asteroid
+                        belt (MBA)</b> instead of the <b>outer asteroid belt
+                        (OAB)</b> This is because asteroids in the <b>MBA</b>
+                      are larger than those in the <b>OAB</b>
+                    </li>
+                  </ol>
                 </div>
               </div>
             </div>
 
             <div class="col-md-4">
               <div class="card">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <img src="../img/kaggle_ase/F1_Score.png"
-                    class="card-img-top embed-responsive-item" alt="Image">
-                </div>
                 <div class="card-body">
-                  <h5 class="card-title text-center">F1 Score</h5>
-                  <p class="card-text text-center">LGBM has high
-                    classification
-                    performance across all classes.</p>
+                  <h5 class="card-title text-center">Composition Analysis</h5>
+                  <ol>
+                    <li>NEOs generally have a smaller percentage of metallic
+                      asteroids compared to those farther away. However, within
+                      NEOs, the <b>Apollo</b> asteroids stand out with the
+                      highest proportion of metallic asteroids. This makes them
+                      an excellent starting point for mining efforts.</li>
+                    <li class="mt-2">In the future, our focus for mining should
+                      be on the
+                      <b>main belt asteroids</b> They have the highest
+                      percentage of metallic asteroids compared to asteroids in
+                      other belts.</li>
+                  </ol>
                 </div>
               </div>
             </div>
 
             <div class="col-md-4">
               <div class="card">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <img src="../img/kaggle_ase/Confusion_Matrix.png"
-                    class="card-img-top embed-responsive-item" alt="Image">
-                </div>
                 <div class="card-body">
                   <h5 class="card-title text-center">Confusion Matrix</h5>
-                  <p class="card-text text-center">Predicted scores have
-                    minimal
-                    difference from ground truth.</p>
+                  <ol>
+                    <li><b>Amor</b> asteroids usually have the shortest orbit periods,
+                      but they are actually the farthest from Earth. In
+                      contrast, Apollo asteroids have longer orbit periods but
+                      are the closest to us.</li>
+                    <li>Looking at the material composition, metallic NEO
+                      asteroids, on average, have shorter orbit periods than
+                      carbonaceous asteroids. This implies that we can mine
+                      metals from asteroids more often due to their more
+                      frequent orbits.</li>
+                  </ol>
                 </div>
               </div>
             </div>
           </div>
-
-          <p>The best system so far has score 0.793 in the public
-            leaderboard.</p>
 
         </div>
       </section>
