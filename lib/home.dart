@@ -13,30 +13,44 @@ class Home extends StatelessWidget {
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
         actions: [
-          NavLink(title: "About"),
-          NavLink(title: "Projects"),
-          NavLink(title: "Experience"),
-          NavLink(title: "Education"),
-          NavLink(title: "Resume", invert: true),
+          _NavLink(title: "About"),
+          _NavLink(title: "Projects"),
+          _NavLink(title: "Experience"),
+          _NavLink(title: "Education"),
+          _NavLink(title: "Resume", invert: true),
         ],
       ),
       body: ListView(
         children: [
-          Text("About"),
-          Text("Case Study #1: Flash Learn"),
-          Text("Case Study #2: Production ML"),
-          Text("Case Study #3: News Outlet Freedom Detection"),
+          _Section(child: Text("About")),
+          _Section(child: Text("Case Study #1: Flash Learn")),
+          _Section(child: Text("Case Study #2: Production ML")),
+          _Section(child: Text("Case Study #3: News Outlet Freedom Detection")),
         ],
       ),
     );
   }
 }
 
-class NavLink extends StatelessWidget {
+class _Section extends StatelessWidget {
+  final Widget child;
+
+  const _Section({required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    final double width = MediaQuery.of(context).size.width;
+    final double height = MediaQuery.of(context).size.height;
+
+    return SizedBox(width: width, height: height, child: child);
+  }
+}
+
+class _NavLink extends StatelessWidget {
   final String title;
   final bool invert;
 
-  const NavLink({super.key, required this.title, this.invert = false});
+  const _NavLink({required this.title, this.invert = false});
 
   @override
   Widget build(BuildContext context) {
