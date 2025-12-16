@@ -5,31 +5,17 @@ class _ProductionMLSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _Section(
-      child: Center(
-        child: SizedBox(
-          width: MediaQuery.of(context).size.width * 0.85,
-          height: MediaQuery.of(context).size.height * 0.85,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _CaseStudyHeader(
-                2,
-                "Production ML",
-                "Production OCR & Financial Document Parsing",
-                [
-                  FontAwesome.python_brand,
-                  FontAwesome.golang_brand,
-                  Icons.flutter_dash_sharp,
-                  FontAwesome.docker_brand,
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
+    return _CaseStudySection(
+      index: 2,
+      title: "Production ML",
+      shortDescription: "Production OCR & Financial Document Parsing",
+      techStack: [
+        FontAwesome.python_brand,
+        FontAwesome.golang_brand,
+        BoxIcons.bxl_flutter,
+        FontAwesome.docker_brand,
+      ],
+      detailsFilePath: 'assets/markdowns/production_ml.md',
     );
   }
 }

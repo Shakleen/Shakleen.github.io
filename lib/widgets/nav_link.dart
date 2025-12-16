@@ -12,7 +12,7 @@ class _NavLink extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         title,
-        style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+        style: TextStyle(color: Theme.of(context).colorScheme.secondary),
       ),
     );
   }
