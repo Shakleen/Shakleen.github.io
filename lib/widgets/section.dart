@@ -7,9 +7,11 @@ class _Section extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Make response by changing this later on
     final double width = MediaQuery.of(context).size.width;
-    final double height = MediaQuery.of(context).size.height;
+    final appBarHeight = AppBar().preferredSize.height;
+    final statusBarHeight = MediaQuery.of(context).padding.top;
+    final double height =
+        MediaQuery.of(context).size.height - appBarHeight - statusBarHeight;
 
     return SizedBox(width: width, height: height, child: child);
   }

@@ -3,14 +3,15 @@ part of '../main.dart';
 class _NavLink extends StatelessWidget {
   final String title;
   final bool invert;
+  final VoidCallback onPressed;
 
-  const _NavLink({required this.title, this.invert = false});
+  const _NavLink({required this.title, this.invert = false, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     if (invert) {
       return ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           title,
           style: TextStyle(color: Theme.of(context).colorScheme.primary),
@@ -19,7 +20,7 @@ class _NavLink extends StatelessWidget {
     }
 
     return TextButton(
-      onPressed: () {},
+      onPressed: onPressed,
       child: Text(
         title,
         style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
