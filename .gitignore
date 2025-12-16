@@ -1,1 +1,33 @@
-node_modules
+# Generated directories
+.dart_tool/
+.fvm/
+.idea/
+.vscode/
+build/
+coverage/
+
+# Generated files
+*.dart.js
+*.dart.snapshot
+*.g.dart
+*.gr.dart
+*.freezed.dart
+*.jks
+*.pro
+pubspec.lock
+
+# IDE-related files and directories
+.DS_Store
+.gradle/
+Captures/
+android/.gradle/
+android/captures/
+android/local.properties
+android/key.properties
+ios/.DS_Store
+ios/Flutter/Generated.xcconfig
+ios/Flutter/App.framework
+ios/Flutter/app.framework
+ios/Flutter/App.xcassetsproj
+ios/Flutter/GeneratedAssetSymlinks.plist
+ios/Pods/
