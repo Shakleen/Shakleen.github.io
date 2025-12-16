@@ -53,27 +53,24 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final _scrollController = ScrollController();
+  final _pageController = PageController();
   final _aboutKey = GlobalKey();
   final _flashLearnKey = GlobalKey();
   final _productionMLKey = GlobalKey();
   final _newsBiasKey = GlobalKey();
 
-  void _scrollToSection(GlobalKey key) {
-    final context = key.currentContext;
-    if (context != null) {
-      Scrollable.ensureVisible(
-        context,
-        duration: const Duration(milliseconds: 250),
-        curve: Curves.easeInOut,
-      );
-    }
+  void _scrollToSection(int page) {
+    _pageController.animateToPage(
+      page,
+      duration: const Duration(milliseconds: 250),
+      curve: Curves.easeInOut,
+    );
   }
 
   @override
   void dispose() {
     super.dispose();
-    _scrollController.dispose();
+    _pageController.dispose();
   }
 
   @override
@@ -113,35 +110,40 @@ class _HomeState extends State<Home> {
               );
             },
           ),
-          _NavLink(
-            title: "About",
-            onPressed: () => _scrollToSection(_aboutKey),
-          ),
-          _NavLink(
-            title: "Flash Learn",
-            onPressed: () => _scrollToSection(_flashLearnKey),
-          ),
-          _NavLink(
-            title: "Production ML",
-            onPressed: () => _scrollToSection(_productionMLKey),
-          ),
-          _NavLink(
-            title: "News Bias",
-            onPressed: () => _scrollToSection(_newsBiasKey),
-          ),
         ],
       ),
-
-      body: SingleChildScrollView(
-        controller: _scrollController,
-        child: Column(
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            _AboutSection(key: _aboutKey),
-            _FlashLearnSection(key: _flashLearnKey),
-            _ProductionMLSection(key: _productionMLKey),
-            _NewsBiasSection(key: _newsBiasKey),
+            _NavLink(
+              title: "About",
+              onPressed: () => _scrollToSection(0),
+            ),
+            _NavLink(
+              title: "Flash Learn",
+              onPressed: () => _scrollToSection(1),
+            ),
+            _NavLink(
+              title: "Production ML",
+              onPressed: () => _scrollToSection(2),
+            ),
+            _NavLink(
+              title: "News Bias",
+              onPressed: () => _scrollToSection(3),
+            ),
           ],
         ),
+      ),
+      body: PageView(
+        controller: _pageController,
+        scrollDirection: Axis.horizontal,
+        children: [
+          _AboutSection(key: _aboutKey),
+          _FlashLearnSection(key: _flashLearnKey),
+          _ProductionMLSection(key: _productionMLKey),
+          _NewsBiasSection(key: _newsBiasKey),
+        ],
       ),
     );
   }
