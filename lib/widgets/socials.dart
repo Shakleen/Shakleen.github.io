@@ -5,6 +5,28 @@ class _Socials extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          "Contact me",
+          style: Theme.of(context).textTheme.bodySmall!.copyWith(
+            color: Theme.of(context).colorScheme.inverseSurface.withAlpha(128),
+          ),
+        ),
+        SizedBox(height: 8),
+        _ButtonBar(),
+      ],
+    );
+  }
+}
+
+class _ButtonBar extends StatelessWidget {
+  const _ButtonBar();
+
+  @override
+  Widget build(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceAround,

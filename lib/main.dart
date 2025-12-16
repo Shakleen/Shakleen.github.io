@@ -10,6 +10,7 @@ part 'widgets/section_flash_learn.dart';
 part 'widgets/section_production_ml.dart';
 part 'widgets/section_pii_detection.dart';
 part 'widgets/case_study_header.dart';
+part 'widgets/skills.dart';
 
 void main() {
   runApp(const MyApp());
