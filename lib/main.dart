@@ -6,9 +6,10 @@ part 'widgets/section.dart';
 part 'widgets/nav_link.dart';
 part 'widgets/socials.dart';
 part 'widgets/section_about.dart';
-part 'widgets/section_experience.dart';
-part 'widgets/section_education.dart';
-part 'widgets/section_projects.dart';
+part 'widgets/section_flash_learn.dart';
+part 'widgets/section_production_ml.dart';
+part 'widgets/section_pii_detection.dart';
+part 'widgets/case_study_header.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,9 +39,9 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final _scrollController = ScrollController();
   final _aboutKey = GlobalKey();
-  final _projectsKey = GlobalKey();
-  final _experienceKey = GlobalKey();
-  final _educationKey = GlobalKey();
+  final _flashLearnKey = GlobalKey();
+  final _productionMLKey = GlobalKey();
+  final _piiDetectionKey = GlobalKey();
 
   void _scrollToSection(GlobalKey key) {
     final context = key.currentContext;
@@ -54,12 +55,32 @@ class _HomeState extends State<Home> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    _scrollController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "SI",
-          style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+        leading: IconButton(
+          icon: Icon(
+            Icons.download,
+            color: Theme.of(context).colorScheme.onPrimary,
+          ),
+          tooltip: "Resume",
+          onPressed: () async => await launchURL(
+            context,
+            'https://drive.google.com/file/d/1UIMRwmcYXDOc7vyvsVQoTXLc03FwmYqB/view?usp=drive_link',
+            "Failed to launch URL for resume",
+            "Error occurred when launching URL for resume",
+          ),
+        ),
+        title: Image.asset(
+          "assets/images/signature.png",
+          height: 50,
+          color: Theme.of(context).colorScheme.onPrimary,
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
         actions: <Widget>[
@@ -68,26 +89,16 @@ class _HomeState extends State<Home> {
             onPressed: () => _scrollToSection(_aboutKey),
           ),
           _NavLink(
-            title: "Projects",
-            onPressed: () => _scrollToSection(_projectsKey),
+            title: "Flash Learn",
+            onPressed: () => _scrollToSection(_flashLearnKey),
           ),
           _NavLink(
-            title: "Experience",
-            onPressed: () => _scrollToSection(_experienceKey),
+            title: "Production ML",
+            onPressed: () => _scrollToSection(_productionMLKey),
           ),
           _NavLink(
-            title: "Education",
-            onPressed: () => _scrollToSection(_educationKey),
-          ),
-          _NavLink(
-            title: "Resume",
-            invert: true,
-            onPressed: () async => await launchURL(
-              context,
-              'https://drive.google.com/file/d/1UIMRwmcYXDOc7vyvsVQoTXLc03FwmYqB/view?usp=drive_link',
-              "Failed to launch URL for resume",
-              "Error occurred when launching URL for resume",
-            ),
+            title: "PII Detection",
+            onPressed: () => _scrollToSection(_piiDetectionKey),
           ),
         ],
       ),
@@ -96,9 +107,9 @@ class _HomeState extends State<Home> {
         child: Column(
           children: [
             _AboutSection(key: _aboutKey),
-            _ProjectsSection(key: _projectsKey),
-            _ExperienceSection(key: _experienceKey),
-            _EducationSection(key: _educationKey),
+            _FlashLearnSection(key: _flashLearnKey),
+            _ProductionMLSection(key: _productionMLKey),
+            _PiiDetectionSection(key: _piiDetectionKey),
           ],
         ),
       ),
