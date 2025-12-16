@@ -14,7 +14,19 @@ class _ProductionMLSection extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [_CaseStudyHeader(2, "Production ML")],
+            children: [
+              _CaseStudyHeader(
+                2,
+                "Production ML",
+                "Production OCR & Financial Document Parsing",
+                [
+                  FontAwesome.python_brand,
+                  FontAwesome.golang_brand,
+                  Icons.flutter_dash_sharp,
+                  FontAwesome.docker_brand,
+                ],
+              ),
+            ],
           ),
         ),
       ),

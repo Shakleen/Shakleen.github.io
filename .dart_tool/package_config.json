@@ -62,6 +62,12 @@
       "languageVersion": "3.8"
     },
     {
+      "name": "flutter_markdown_plus",
+      "rootUri": "file:///home/ishrak/.pub-cache/hosted/pub.dev/flutter_markdown_plus-1.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
       "name": "flutter_svg",
       "rootUri": "file:///home/ishrak/.pub-cache/hosted/pub.dev/flutter_svg-2.2.3",
       "packageUri": "lib/",
@@ -120,6 +126,12 @@
       "rootUri": "file:///home/ishrak/.pub-cache/hosted/pub.dev/lints-6.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.8"
+    },
+    {
+      "name": "markdown",
+      "rootUri": "file:///home/ishrak/.pub-cache/hosted/pub.dev/markdown-7.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
     },
     {
       "name": "matcher",

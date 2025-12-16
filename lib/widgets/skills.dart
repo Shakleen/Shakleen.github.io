@@ -33,7 +33,7 @@ class _SkillIconBar extends StatelessWidget {
       children: [
         _SkillIcon(icon: FontAwesome.python_brand),
         _SkillIcon(icon: FontAwesome.golang_brand),
-        _SkillIcon(icon: Icons.flutter_dash_sharp),
+        _SkillIcon(icon: BoxIcons.bxl_flutter),
         _SkillIcon(icon: FontAwesome.aws_brand),
         _SkillIcon(icon: FontAwesome.linux_brand),
         _SkillIcon(icon: FontAwesome.git_brand),

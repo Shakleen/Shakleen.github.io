@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:my_portfolio_website/utils/launch_url.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 part 'widgets/section.dart';
 part 'widgets/nav_link.dart';

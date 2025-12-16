@@ -15,7 +15,18 @@ class _PiiDetectionSection extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [_CaseStudyHeader(3, "PII Data Detection")],
+              children: [
+                _CaseStudyHeader(
+                  3,
+                  "PII Data Detection",
+                  "Identify and classify token as PII",
+                  [
+                    FontAwesome.python_brand,
+                    Icons.flutter_dash_sharp,
+                    FontAwesome.docker_brand,
+                  ],
+                ),
+              ],
             ),
           ),
         ),
