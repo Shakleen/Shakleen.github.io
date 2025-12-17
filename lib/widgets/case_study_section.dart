@@ -5,14 +5,14 @@ class _CaseStudySection extends StatelessWidget {
   final String shortDescription;
   final String detailsFilePath;
   final int index;
-  final List<IconData> techStack;
+  final List<String> logoPaths;
 
   const _CaseStudySection({
     required this.title,
     required this.shortDescription,
     required this.detailsFilePath,
     required this.index,
-    required this.techStack,
+    required this.logoPaths,
   });
 
   @override
@@ -27,7 +27,7 @@ class _CaseStudySection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _CaseStudyHeader(index, title, shortDescription, techStack),
+              _CaseStudyHeader(index, title, shortDescription, logoPaths),
               Divider(height: 4),
               Row(
                 mainAxisSize: MainAxisSize.max,

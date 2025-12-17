@@ -34,7 +34,12 @@ class _ButtonBar extends StatelessWidget {
       children: [
         _SocialButton(
           title: "Email",
-          icon: Icons.mail,
+          icon: SvgPicture.asset(
+            'assets/logos/gmail.svg',
+            width: 24,
+            height: 24,
+            fit: BoxFit.contain,
+          ),
           onPressed: () async => await launchURL(
             context,
             'mailto:shakleenishfar@gmail.com',
@@ -44,7 +49,12 @@ class _ButtonBar extends StatelessWidget {
         ),
         _SocialButton(
           title: "LinkedIn",
-          icon: FontAwesome.linkedin_brand,
+          icon: SvgPicture.asset(
+            'assets/logos/linkedin.svg',
+            width: 24,
+            height: 24,
+            fit: BoxFit.contain,
+          ),
           onPressed: () async => await launchURL(
             context,
             'https://www.linkedin.com/in/shakleen-ishfar/',
@@ -54,7 +64,12 @@ class _ButtonBar extends StatelessWidget {
         ),
         _SocialButton(
           title: "GitHub",
-          icon: FontAwesome.github_brand,
+          icon: SvgPicture.asset(
+            'assets/logos/github.svg',
+            width: 24,
+            height: 24,
+            fit: BoxFit.contain,
+          ),
           onPressed: () async => await launchURL(
             context,
             'https://github.com/Shakleen',
@@ -64,7 +79,7 @@ class _ButtonBar extends StatelessWidget {
         ),
         _SocialButton(
           title: "Resume",
-          icon: Icons.download,
+          icon: Icon(Icons.download),
           onPressed: () async => await launchURL(
             context,
             'https://drive.google.com/file/d/1UIMRwmcYXDOc7vyvsVQoTXLc03FwmYqB/view?usp=drive_link',
@@ -79,7 +94,7 @@ class _ButtonBar extends StatelessWidget {
 
 class _SocialButton extends StatelessWidget {
   final String title;
-  final IconData icon;
+  final Widget icon;
   final VoidCallback onPressed;
 
   const _SocialButton({
@@ -92,7 +107,7 @@ class _SocialButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      child: Row(children: [Icon(icon), SizedBox(width: 4), Text(title)]),
+      child: Row(children: [icon, SizedBox(width: 4), Text(title)]),
     );
   }
 }

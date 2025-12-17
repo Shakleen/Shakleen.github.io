@@ -31,28 +31,33 @@ class _SkillIconBar extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        _SkillIcon(icon: FontAwesome.python_brand),
-        _SkillIcon(icon: FontAwesome.golang_brand),
-        _SkillIcon(icon: BoxIcons.bxl_flutter),
-        _SkillIcon(icon: FontAwesome.aws_brand),
-        _SkillIcon(icon: FontAwesome.linux_brand),
-        _SkillIcon(icon: FontAwesome.git_brand),
-        _SkillIcon(icon: Icons.android),
-        _SkillIcon(icon: FontAwesome.docker_brand),
+        _SkillIcon(path: 'assets/logos/python.svg'),
+        _SkillIcon(path: 'assets/logos/go.svg'),
+        _SkillIcon(path: 'assets/logos/flutter.svg'),
+        _SkillIcon(path: 'assets/logos/docker.svg'),
+        _SkillIcon(path: 'assets/logos/kubernetes.svg'),
+        _SkillIcon(path: 'assets/logos/aws.svg'),
+        _SkillIcon(path: 'assets/logos/vim.svg'),
+        _SkillIcon(path: 'assets/logos/git.svg'),
+        _SkillIcon(path: 'assets/logos/arch-linux.svg'),
       ],
     );
   }
 }
 
 class _SkillIcon extends StatelessWidget {
-  final IconData icon;
+  final String path;
 
-  const _SkillIcon({required this.icon});
+  const _SkillIcon({required this.path});
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      child: Icon(icon, color: Theme.of(context).colorScheme.inverseSurface),
+    return SvgPicture.asset(
+      path,
+      width: 24,
+      height: 24,
+      fit: BoxFit.contain,
+      color: Theme.of(context).colorScheme.secondary,
     );
   }
 }

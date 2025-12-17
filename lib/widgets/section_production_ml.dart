@@ -9,11 +9,12 @@ class _ProductionMLSection extends StatelessWidget {
       index: 2,
       title: "Production ML",
       shortDescription: "Production OCR & Financial Document Parsing",
-      techStack: [
-        FontAwesome.python_brand,
-        FontAwesome.golang_brand,
-        BoxIcons.bxl_flutter,
-        FontAwesome.docker_brand,
+      logoPaths: [
+        'assets/logos/python.svg',
+        'assets/logos/pandas.svg',
+        'assets/logos/pytorch.svg',
+        'assets/logos/docker.svg',
+        'assets/logos/kubernetes.svg',
       ],
       detailsFilePath: 'assets/markdowns/production_ml.md',
     );

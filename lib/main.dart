@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:my_portfolio_website/cubits/section_cubit.dart';
 import 'package:my_portfolio_website/utils/launch_url.dart';
 import 'package:flutter/services.dart' show rootBundle;

@@ -9,11 +9,11 @@ class _NewsBiasSection extends StatelessWidget {
       index: 3,
       title: "News Outlet Freedom Detection",
       shortDescription: "Measuring Media Bias with Fine-Tuned LLMs",
-      techStack: [
-        FontAwesome.python_brand,
-        FontAwesome.golang_brand,
-        BoxIcons.bxl_flutter,
-        FontAwesome.docker_brand,
+      logoPaths: [
+        'assets/logos/python.svg',
+        'assets/logos/pandas.svg',
+        'assets/logos/pytorch.svg',
+        'assets/logos/git.svg',
       ],
       detailsFilePath: 'assets/markdowns/news_bias.md',
     );

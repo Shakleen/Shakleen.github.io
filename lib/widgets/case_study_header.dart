@@ -4,13 +4,13 @@ class _CaseStudyHeader extends StatelessWidget {
   final int number;
   final String title;
   final String shortDescription;
-  final List<IconData> techstack;
+  final List<String> logoPaths;
 
   const _CaseStudyHeader(
     this.number,
     this.title,
     this.shortDescription,
-    this.techstack,
+    this.logoPaths,
   );
 
   @override
@@ -28,31 +28,34 @@ class _CaseStudyHeader extends StatelessWidget {
             description: shortDescription,
           ),
         ),
-        Expanded(flex: 1, child: _TechStack(techstack: techstack)),
+        Expanded(flex: 1, child: _TechStack(logoPaths: logoPaths)),
       ],
     );
   }
 }
 
 class _TechStack extends StatelessWidget {
-  const _TechStack({required this.techstack});
+  const _TechStack({required this.logoPaths});
 
-  final List<IconData> techstack;
+  final List<String> logoPaths;
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         _SubTitle(text: "Tech Stack"),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: techstack
+          children: logoPaths
               .map(
-                (IconData icon) =>
-                    Icon(icon, color: Theme.of(context).colorScheme.primary),
+                (String path) => SvgPicture.asset(
+                  path,
+                  width: 24,
+                  height: 24,
+                  fit: BoxFit.contain,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               )
               .toList(),
         ),

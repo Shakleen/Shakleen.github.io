@@ -9,11 +9,11 @@ class _FlashLearnSection extends StatelessWidget {
       index: 1,
       title: "Flash Learn",
       shortDescription: "AI-Powered Adaptive Learning Platform",
-      techStack: [
-        FontAwesome.python_brand,
-        FontAwesome.golang_brand,
-        BoxIcons.bxl_flutter,
-        FontAwesome.docker_brand,
+      logoPaths: [
+        'assets/logos/python.svg',
+        'assets/logos/go.svg',
+        'assets/logos/flutter.svg',
+        'assets/logos/docker.svg',
       ],
       detailsFilePath: 'assets/markdowns/flash_learn.md',
     );
