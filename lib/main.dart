@@ -130,28 +130,15 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: BottomAppBar(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _NavLink(
-              title: "About",
-              section: Section.About,
-              onPressed: () => _scrollToSection(0),
-            ),
-            _NavLink(
-              title: "Flash Learn",
-              section: Section.FlashLearn,
-              onPressed: () => _scrollToSection(1),
-            ),
-            _NavLink(
-              title: "Production ML",
-              section: Section.ProductionMl,
-              onPressed: () => _scrollToSection(2),
-            ),
-            _NavLink(
-              title: "News Bias",
-              section: Section.NewsBias,
-              onPressed: () => _scrollToSection(3),
-            ),
-          ],
+          children: Section.values
+              .map<_NavLink>(
+                (Section sec) => _NavLink(
+                  title: sectionToName[sec]!,
+                  section: sec,
+                  onPressed: () => _scrollToSection(sectionToIndex[sec]!),
+                ),
+              )
+              .toList(),
         ),
       ),
       body: PageView(
