@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import 'package:icons_plus/icons_plus.dart';
+import 'package:my_portfolio_website/cubits/section_cubit.dart';
 import 'package:my_portfolio_website/utils/launch_url.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:my_portfolio_website/utils/theme_manager.dart';
@@ -19,8 +21,11 @@ part 'widgets/case_study_section.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => ThemeManager(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => ThemeManager()),
+        BlocProvider(create: (context) => SectionCubit()),
+      ],
       child: const MyApp(),
     ),
   );
@@ -59,10 +64,20 @@ class _HomeState extends State<Home> {
   final _productionMLKey = GlobalKey();
   final _newsBiasKey = GlobalKey();
 
+  @override
+  void initState() {
+    super.initState();
+    _pageController.addListener(() {
+      final page = _pageController.page!.round();
+      final section = Section.values[page];
+      context.read<SectionCubit>().updateSection(section);
+    });
+  }
+
   void _scrollToSection(int page) {
     _pageController.animateToPage(
       page,
-      duration: const Duration(milliseconds: 250),
+      duration: const Duration(milliseconds: 500),
       curve: Curves.easeInOut,
     );
   }
@@ -118,18 +133,22 @@ class _HomeState extends State<Home> {
           children: [
             _NavLink(
               title: "About",
+              section: Section.About,
               onPressed: () => _scrollToSection(0),
             ),
             _NavLink(
               title: "Flash Learn",
+              section: Section.FlashLearn,
               onPressed: () => _scrollToSection(1),
             ),
             _NavLink(
               title: "Production ML",
+              section: Section.ProductionMl,
               onPressed: () => _scrollToSection(2),
             ),
             _NavLink(
               title: "News Bias",
+              section: Section.NewsBias,
               onPressed: () => _scrollToSection(3),
             ),
           ],
