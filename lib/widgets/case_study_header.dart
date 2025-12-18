@@ -54,7 +54,7 @@ class _TechStack extends StatelessWidget {
                   width: 24,
                   height: 24,
                   fit: BoxFit.contain,
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
               )
               .toList(),

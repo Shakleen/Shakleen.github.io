@@ -40,6 +40,7 @@ class _SkillIconBar extends StatelessWidget {
         _SkillIcon(path: 'assets/logos/vim.svg'),
         _SkillIcon(path: 'assets/logos/git.svg'),
         _SkillIcon(path: 'assets/logos/arch-linux.svg'),
+        _SkillIcon(path: 'assets/logos/postgresql.svg'),
       ],
     );
   }

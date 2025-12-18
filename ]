@@ -37,7 +37,7 @@ class _CaseStudySection extends StatelessWidget {
               children: [
                 _CaseStudyHeader(index, title, shortDescription, logoPaths),
                 Divider(height: 4),
-                _MarkdownWidget(filePath: problemStatementMdPath),
+                _Details(filePath: problemStatementMdPath),
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -45,7 +45,7 @@ class _CaseStudySection extends StatelessWidget {
                   children: [
                     Expanded(
                       flex: 2,
-                      child: _DetailsSection(
+                      child: _Details(
                         technicalDetailMdPath: technicalDetailMdPath,
                         lessonsLearntMdPath: lessonsLearntMdPath,
                         keyOutcomesMdPath: keyOutcomesMdPath,
@@ -63,8 +63,8 @@ class _CaseStudySection extends StatelessWidget {
   }
 }
 
-class _DetailsSection extends StatelessWidget {
-  const _DetailsSection({
+class _Details extends StatelessWidget {
+  const _Details({
     required this.technicalDetailMdPath,
     required this.lessonsLearntMdPath,
     required this.keyOutcomesMdPath,
@@ -77,6 +77,7 @@ class _DetailsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CaseStudySectionCubit, CaseStudySection>(
+      bloc: context.read<CaseStudySectionCubit>(),
       builder: (context, state) {
         late final String filePath;
 
@@ -89,67 +90,19 @@ class _DetailsSection extends StatelessWidget {
             filePath = keyOutcomesMdPath;
         }
 
-        return Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: CaseStudySection.values.map((CaseStudySection section) {
-                late final Color textColor, buttonColor;
-                final bool isInView = state == section;
-
-                if (isInView) {
-                  textColor = Theme.of(context).colorScheme.onPrimary;
-                  buttonColor = Theme.of(context).colorScheme.primary;
-                } else {
-                  textColor = Theme.of(context).colorScheme.primary;
-                  buttonColor = Theme.of(context).colorScheme.onPrimary;
-                }
-
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 2.0),
-                  child: TextButton(
-                    onPressed: () {
-                      context.read<CaseStudySectionCubit>().update(section);
-                    },
-                    style: TextButton.styleFrom(backgroundColor: buttonColor),
-                    child: Text(
-                      caseStudySectionToName[section]!,
-                      style: TextStyle(color: textColor),
-                    ),
-                  ),
-                );
-              }).toList(),
-            ),
-            _MarkdownWidget(filePath: filePath),
-          ],
+        return FutureBuilder(
+          future: rootBundle.loadString(filePath),
+          builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+            if (snapshot.hasData) {
+              return Markdown(
+                data: snapshot.data!,
+                shrinkWrap: true,
+                selectable: true,
+              );
+            }
+            return Center(child: CircularProgressIndicator());
+          },
         );
-      },
-    );
-  }
-}
-
-class _MarkdownWidget extends StatelessWidget {
-  final String filePath;
-
-  const _MarkdownWidget({required this.filePath});
-
-  @override
-  Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: rootBundle.loadString(filePath),
-      builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
-        if (snapshot.hasData) {
-          return Markdown(
-            data: snapshot.data!,
-            shrinkWrap: true,
-            selectable: true,
-          );
-        }
-        return Center(child: CircularProgressIndicator());
       },
     );
   }

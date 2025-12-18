@@ -15,7 +15,11 @@ class _NewsBiasSection extends StatelessWidget {
         'assets/logos/pytorch.svg',
         'assets/logos/git.svg',
       ],
-      detailsFilePath: 'assets/markdowns/news_bias.md',
+      problemStatementMdPath:
+          'assets/markdown/flash-learn-problem-statement.md',
+      keyOutcomesMdPath: 'assets/markdown/flash-learn-key-outcomes.md',
+      lessonsLearntMdPath: 'assets/markdown/flash-learn-lessons-learnt.md',
+      technicalDetailMdPath: 'assets/markdown/flash-learn-technical-details.md',
     );
   }
 }

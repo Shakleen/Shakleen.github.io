@@ -16,7 +16,11 @@ class _ProductionMLSection extends StatelessWidget {
         'assets/logos/docker.svg',
         'assets/logos/kubernetes.svg',
       ],
-      detailsFilePath: 'assets/markdowns/production_ml.md',
+      problemStatementMdPath:
+          'assets/markdown/flash-learn-problem-statement.md',
+      keyOutcomesMdPath: 'assets/markdown/flash-learn-key-outcomes.md',
+      lessonsLearntMdPath: 'assets/markdown/flash-learn-lessons-learnt.md',
+      technicalDetailMdPath: 'assets/markdown/flash-learn-technical-details.md',
     );
   }
 }

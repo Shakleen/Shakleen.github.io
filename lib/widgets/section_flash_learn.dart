@@ -13,9 +13,16 @@ class _FlashLearnSection extends StatelessWidget {
         'assets/logos/python.svg',
         'assets/logos/go.svg',
         'assets/logos/flutter.svg',
+        'assets/logos/postgresql.svg',
         'assets/logos/docker.svg',
+        'assets/logos/aws.svg',
       ],
-      detailsFilePath: 'assets/markdowns/flash_learn.md',
+      problemStatementMdPath:
+          'assets/markdowns/flash-learn-problem-statement.md',
+      keyOutcomesMdPath: 'assets/markdowns/flash-learn-key-outcomes.md',
+      lessonsLearntMdPath: 'assets/markdowns/flash-learn-lessons-learnt.md',
+      technicalDetailMdPath:
+          'assets/markdowns/flash-learn-technical-details.md',
     );
   }
 }

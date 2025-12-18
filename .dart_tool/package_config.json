@@ -110,12 +110,6 @@
       "languageVersion": "3.4"
     },
     {
-      "name": "icons_plus",
-      "rootUri": "file:///home/ishrak/.pub-cache/hosted/pub.dev/icons_plus-5.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.16"
-    },
-    {
       "name": "leak_tracker",
       "rootUri": "file:///home/ishrak/.pub-cache/hosted/pub.dev/leak_tracker-11.0.2",
       "packageUri": "lib/",
