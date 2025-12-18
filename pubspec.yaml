@@ -66,6 +66,9 @@ flutter:
   assets:
     - assets/images/
     - assets/markdowns/
+    - assets/markdowns/flash-learn/
+    - assets/markdowns/media-bias/
+    - assets/markdowns/pii/
     - assets/logos/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

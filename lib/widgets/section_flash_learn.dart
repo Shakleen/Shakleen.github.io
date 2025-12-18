@@ -18,11 +18,21 @@ class _FlashLearnSection extends StatelessWidget {
         'assets/logos/aws.svg',
       ],
       problemStatementMdPath:
-          'assets/markdowns/flash-learn-problem-statement.md',
-      keyOutcomesMdPath: 'assets/markdowns/flash-learn-key-outcomes.md',
-      lessonsLearntMdPath: 'assets/markdowns/flash-learn-lessons-learnt.md',
-      technicalDetailMdPath:
-          'assets/markdowns/flash-learn-technical-details.md',
+          'assets/markdowns/flash-learn/problem-statement.md',
+      features: [
+        FeatureModel(
+          title: "Tackling the forgetting curve",
+          markdownPath: 'assets/markdowns/flash-learn/forgetting-curve.md',
+        ),
+        FeatureModel(
+          title: "High performance front & backend",
+          markdownPath: 'assets/markdowns/flash-learn/high-performance.md',
+        ),
+        FeatureModel(
+          title: "Scaling with Rigorous Stability",
+          markdownPath: 'assets/markdowns/flash-learn/rigorous-stability.md',
+        ),
+      ],
     );
   }
 }

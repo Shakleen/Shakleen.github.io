@@ -34,13 +34,15 @@ class _SkillIconBar extends StatelessWidget {
         _SkillIcon(path: 'assets/logos/python.svg'),
         _SkillIcon(path: 'assets/logos/go.svg'),
         _SkillIcon(path: 'assets/logos/flutter.svg'),
+        _SkillIcon(path: 'assets/logos/postgresql.svg'),
         _SkillIcon(path: 'assets/logos/docker.svg'),
         _SkillIcon(path: 'assets/logos/kubernetes.svg'),
         _SkillIcon(path: 'assets/logos/aws.svg'),
+        _SkillIcon(path: 'assets/logos/pytorch.svg'),
+        _SkillIcon(path: 'assets/logos/huggingface.svg'),
         _SkillIcon(path: 'assets/logos/vim.svg'),
         _SkillIcon(path: 'assets/logos/git.svg'),
         _SkillIcon(path: 'assets/logos/arch-linux.svg'),
-        _SkillIcon(path: 'assets/logos/postgresql.svg'),
       ],
     );
   }

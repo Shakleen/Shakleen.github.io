@@ -11,15 +11,28 @@ class _NewsBiasSection extends StatelessWidget {
       shortDescription: "Measuring Media Bias with Fine-Tuned LLMs",
       logoPaths: [
         'assets/logos/python.svg',
-        'assets/logos/pandas.svg',
         'assets/logos/pytorch.svg',
-        'assets/logos/git.svg',
+        'assets/logos/huggingface.svg',
+        'assets/logos/pandas.svg',
+        'assets/logos/plotly.svg',
+        'assets/logos/sklearn.svg',
       ],
       problemStatementMdPath:
-          'assets/markdown/flash-learn-problem-statement.md',
-      keyOutcomesMdPath: 'assets/markdown/flash-learn-key-outcomes.md',
-      lessonsLearntMdPath: 'assets/markdown/flash-learn-lessons-learnt.md',
-      technicalDetailMdPath: 'assets/markdown/flash-learn-technical-details.md',
+          'assets/markdowns/media-bias/problem-statement.md',
+      features: [
+        FeatureModel(
+          title: "Automated Press Freedom Analysis",
+          markdownPath: 'assets/markdowns/media-bias/auto-analysis.md',
+        ),
+        FeatureModel(
+          title: "High-Performance ML & Data Pipelines",
+          markdownPath: 'assets/markdowns/media-bias/ml-pipeline.md',
+        ),
+        FeatureModel(
+          title: "Advanced RAG & Statistical Insights",
+          markdownPath: 'assets/markdowns/media-bias/advanced-rag.md',
+        ),
+      ],
     );
   }
 }

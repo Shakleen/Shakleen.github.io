@@ -5,10 +5,8 @@ class _CaseStudySection extends StatelessWidget {
   final String shortDescription;
   final int index;
   final List<String> logoPaths;
+  final List<FeatureModel> features;
   final String problemStatementMdPath;
-  final String technicalDetailMdPath;
-  final String keyOutcomesMdPath;
-  final String lessonsLearntMdPath;
 
   const _CaseStudySection({
     required this.title,
@@ -16,9 +14,7 @@ class _CaseStudySection extends StatelessWidget {
     required this.index,
     required this.logoPaths,
     required this.problemStatementMdPath,
-    required this.technicalDetailMdPath,
-    required this.keyOutcomesMdPath,
-    required this.lessonsLearntMdPath,
+    required this.features,
   });
 
   @override
@@ -38,22 +34,8 @@ class _CaseStudySection extends StatelessWidget {
                 _CaseStudyHeader(index, title, shortDescription, logoPaths),
                 Divider(height: 4),
                 _MarkdownWidget(filePath: problemStatementMdPath),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      flex: 2,
-                      child: _DetailsSection(
-                        technicalDetailMdPath: technicalDetailMdPath,
-                        lessonsLearntMdPath: lessonsLearntMdPath,
-                        keyOutcomesMdPath: keyOutcomesMdPath,
-                      ),
-                    ),
-                    Expanded(flex: 4, child: Placeholder(color: Colors.green)),
-                  ],
-                ),
+                _FeatureTabBar(features: features),
+                _FeatureDescription(features: features),
               ],
             ),
           ),
@@ -63,69 +45,83 @@ class _CaseStudySection extends StatelessWidget {
   }
 }
 
-class _DetailsSection extends StatelessWidget {
-  const _DetailsSection({
-    required this.technicalDetailMdPath,
-    required this.lessonsLearntMdPath,
-    required this.keyOutcomesMdPath,
-  });
+class _FeatureDescription extends StatelessWidget {
+  const _FeatureDescription({super.key, required this.features});
 
-  final String technicalDetailMdPath;
-  final String lessonsLearntMdPath;
-  final String keyOutcomesMdPath;
+  final List<FeatureModel> features;
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CaseStudySectionCubit, CaseStudySection>(
-      builder: (context, state) {
-        late final String filePath;
-
-        switch (state) {
-          case CaseStudySection.technicalDetail:
-            filePath = technicalDetailMdPath;
-          case CaseStudySection.lessonsLearnt:
-            filePath = lessonsLearntMdPath;
-          case CaseStudySection.keyOutcomes:
-            filePath = keyOutcomesMdPath;
-        }
-
-        return Column(
+    return BlocBuilder<CaseStudySectionCubit, int>(
+      builder: (context, index) {
+        return Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: CaseStudySection.values.map((CaseStudySection section) {
-                late final Color textColor, buttonColor;
-                final bool isInView = state == section;
-
-                if (isInView) {
-                  textColor = Theme.of(context).colorScheme.onPrimary;
-                  buttonColor = Theme.of(context).colorScheme.primary;
-                } else {
-                  textColor = Theme.of(context).colorScheme.primary;
-                  buttonColor = Theme.of(context).colorScheme.onPrimary;
-                }
-
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 2.0),
-                  child: TextButton(
-                    onPressed: () {
-                      context.read<CaseStudySectionCubit>().update(section);
-                    },
-                    style: TextButton.styleFrom(backgroundColor: buttonColor),
-                    child: Text(
-                      caseStudySectionToName[section]!,
-                      style: TextStyle(color: textColor),
-                    ),
-                  ),
-                );
-              }).toList(),
+            Expanded(
+              flex: 2,
+              child: _MarkdownWidget(filePath: features[index].markdownPath),
             ),
-            _MarkdownWidget(filePath: filePath),
+            Expanded(flex: 4, child: Placeholder(color: Colors.green)),
           ],
+        );
+      },
+    );
+  }
+}
+
+class _FeatureTabBar extends StatelessWidget {
+  const _FeatureTabBar({required this.features});
+
+  final List<FeatureModel> features;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: features
+          .map(
+            (FeatureModel model) =>
+                _FeatureTab(index: features.indexOf(model), model: model),
+          )
+          .toList(),
+    );
+  }
+}
+
+class _FeatureTab extends StatelessWidget {
+  final int index;
+  final FeatureModel model;
+
+  const _FeatureTab({required this.index, required this.model});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<CaseStudySectionCubit, int>(
+      builder: (context, inViewIndex) {
+        late final Color textColor, buttonColor;
+        final bool isInView = inViewIndex == index;
+
+        if (isInView) {
+          textColor = Theme.of(context).colorScheme.onPrimary;
+          buttonColor = Theme.of(context).colorScheme.primary;
+        } else {
+          textColor = Theme.of(context).colorScheme.primary;
+          buttonColor = Theme.of(context).colorScheme.onPrimary;
+        }
+
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 2.0),
+          child: TextButton(
+            onPressed: () {
+              context.read<CaseStudySectionCubit>().update(index);
+            },
+            style: TextButton.styleFrom(backgroundColor: buttonColor),
+            child: Text(model.title, style: TextStyle(color: textColor)),
+          ),
         );
       },
     );

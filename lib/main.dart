@@ -4,6 +4,7 @@ import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:my_portfolio_website/cubits/case_study_cubit.dart';
 import 'package:my_portfolio_website/cubits/section_cubit.dart';
+import 'package:my_portfolio_website/models/feature_model.dart';
 import 'package:my_portfolio_website/utils/launch_url.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:my_portfolio_website/utils/theme_manager.dart';
@@ -14,7 +15,7 @@ part 'widgets/nav_link.dart';
 part 'widgets/socials.dart';
 part 'widgets/section_about.dart';
 part 'widgets/section_flash_learn.dart';
-part 'widgets/section_production_ml.dart';
+part 'widgets/section_pii.dart';
 part 'widgets/section_news_bias.dart';
 part 'widgets/case_study_header.dart';
 part 'widgets/skills.dart';
@@ -148,7 +149,7 @@ class _HomeState extends State<Home> {
         children: [
           _AboutSection(key: _aboutKey),
           _FlashLearnSection(key: _flashLearnKey),
-          _ProductionMLSection(key: _productionMLKey),
+          _PiiSection(key: _productionMLKey),
           _NewsBiasSection(key: _newsBiasKey),
         ],
       ),
