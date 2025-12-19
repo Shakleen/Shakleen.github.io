@@ -65,9 +65,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
-    - assets/markdowns/
     - assets/markdowns/flash-learn/
-    - assets/markdowns/media-bias/
+    - assets/markdowns/professional/
     - assets/markdowns/pii/
     - assets/logos/
   #   - images/a_dot_burr.jpeg

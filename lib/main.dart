@@ -16,7 +16,7 @@ part 'widgets/socials.dart';
 part 'widgets/section_about.dart';
 part 'widgets/section_flash_learn.dart';
 part 'widgets/section_pii.dart';
-part 'widgets/section_news_bias.dart';
+part 'widgets/section_professional.dart';
 part 'widgets/case_study_header.dart';
 part 'widgets/skills.dart';
 part 'widgets/case_study_section.dart';
@@ -64,7 +64,7 @@ class _HomeState extends State<Home> {
   final _aboutKey = GlobalKey();
   final _flashLearnKey = GlobalKey();
   final _productionMLKey = GlobalKey();
-  final _newsBiasKey = GlobalKey();
+  final _professionalKey = GlobalKey();
 
   @override
   void initState() {
@@ -149,8 +149,8 @@ class _HomeState extends State<Home> {
         children: [
           _AboutSection(key: _aboutKey),
           _FlashLearnSection(key: _flashLearnKey),
+          _ProfessionalSection(key: _professionalKey),
           _PiiSection(key: _productionMLKey),
-          _NewsBiasSection(key: _newsBiasKey),
         ],
       ),
     );
