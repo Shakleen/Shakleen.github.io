@@ -1,11 +1,13 @@
-part of '../main.dart';
+import 'package:flutter/material.dart';
+import 'package:my_portfolio_website/data/models/feature_model.dart';
+import 'package:my_portfolio_website/presentation/view/widgets/case_study_section.dart';
 
-class _ProfessionalSection extends StatelessWidget {
-  const _ProfessionalSection({super.key});
+class ProfessionalSection extends StatelessWidget {
+  const ProfessionalSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return _CaseStudySection(
+    return CaseStudySection(
       index: 2,
       title: "Production ML",
       shortDescription: "",

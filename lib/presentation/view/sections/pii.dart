@@ -1,11 +1,13 @@
-part of '../main.dart';
+import 'package:flutter/material.dart';
+import 'package:my_portfolio_website/data/models/feature_model.dart';
+import 'package:my_portfolio_website/presentation/view/widgets/case_study_section.dart';
 
-class _PiiSection extends StatelessWidget {
-  const _PiiSection({super.key});
+class PiiSection extends StatelessWidget {
+  const PiiSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return _CaseStudySection(
+    return CaseStudySection(
       index: 2,
       title: "Kaggle: PII Data Detection",
       shortDescription: "Protecting Privacy in Student Essays",

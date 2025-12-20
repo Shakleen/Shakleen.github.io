@@ -1,6 +1,15 @@
-part of '../main.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
+import 'package:my_portfolio_website/data/models/feature_model.dart';
+import 'package:my_portfolio_website/presentation/cubits/case_study_cubit.dart';
+import 'package:my_portfolio_website/presentation/view/widgets/case_study_header.dart';
+import 'package:my_portfolio_website/presentation/view/widgets/section.dart';
+import 'package:my_portfolio_website/utils/theme_manager.dart';
+import 'package:provider/provider.dart';
 
-class _CaseStudySection extends StatelessWidget {
+class CaseStudySection extends StatelessWidget {
   final String title;
   final String shortDescription;
   final int index;
@@ -8,7 +17,8 @@ class _CaseStudySection extends StatelessWidget {
   final List<FeatureModel> features;
   final String problemStatementMdPath;
 
-  const _CaseStudySection({
+  const CaseStudySection({
+    super.key,
     required this.title,
     required this.shortDescription,
     required this.index,
@@ -21,7 +31,7 @@ class _CaseStudySection extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<CaseStudySectionCubit>(
       create: (BuildContext context) => CaseStudySectionCubit(),
-      child: _Section(
+      child: SectionWidget(
         child: Center(
           child: SizedBox(
             width: MediaQuery.of(context).size.width * 0.85,
@@ -31,7 +41,12 @@ class _CaseStudySection extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _CaseStudyHeader(index, title, shortDescription, logoPaths),
+                CaseStudyHeader(
+                  number: index,
+                  title: title,
+                  shortDescription: shortDescription,
+                  logoPaths: logoPaths,
+                ),
                 Divider(height: 4),
                 _MarkdownWidget(filePath: problemStatementMdPath),
                 _FeatureTabBar(features: features),

@@ -1,17 +1,19 @@
-part of '../main.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
-class _CaseStudyHeader extends StatelessWidget {
+class CaseStudyHeader extends StatelessWidget {
   final int number;
   final String title;
   final String shortDescription;
   final List<String> logoPaths;
 
-  const _CaseStudyHeader(
-    this.number,
-    this.title,
-    this.shortDescription,
-    this.logoPaths,
-  );
+  const CaseStudyHeader({
+    super.key,
+    required this.number,
+    required this.title,
+    required this.shortDescription,
+    required this.logoPaths,
+  });
 
   @override
   Widget build(BuildContext context) {

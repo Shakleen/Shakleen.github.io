@@ -1,9 +1,9 @@
-part of '../main.dart';
+import 'package:flutter/material.dart';
 
-class _Section extends StatelessWidget {
+class SectionWidget extends StatelessWidget {
   final Widget child;
 
-  const _Section({required this.child});
+  const SectionWidget({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {

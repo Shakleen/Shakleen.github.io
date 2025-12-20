@@ -1,11 +1,14 @@
-part of '../main.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_portfolio_website/presentation/cubits/section_cubit.dart';
 
-class _NavLink extends StatelessWidget {
+class NavLink extends StatelessWidget {
   final String title;
   final VoidCallback onPressed;
   final Section section;
 
-  const _NavLink({
+  const NavLink({
+    super.key,
     required this.title,
     required this.onPressed,
     required this.section,
