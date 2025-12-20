@@ -22,14 +22,20 @@ class _PiiSection extends StatelessWidget {
         FeatureModel(
           title: "Award-Winning Performance",
           markdownPath: 'assets/markdowns/pii/award-winning.md',
+          lightImgPath: 'assets/diagrams/pii-medal-light.png',
+          darkImgPath: 'assets/diagrams/pii-medal-dark.png',
         ),
         FeatureModel(
           title: "Overcoming Extreme Class Imbalance",
           markdownPath: 'assets/markdowns/pii/class-imbalance.md',
+          lightImgPath: 'assets/diagrams/pii-label-diagram-light.png',
+          darkImgPath: 'assets/diagrams/pii-label-diagram-dark.png',
         ),
         FeatureModel(
           title: "High-Recall PII Extraction",
           markdownPath: 'assets/markdowns/pii/high-recall.md',
+          lightImgPath: 'assets/diagrams/pii-flow-light.png',
+          darkImgPath: 'assets/diagrams/pii-flow-dark.png',
         ),
       ],
     );

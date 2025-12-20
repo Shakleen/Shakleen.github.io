@@ -1,11 +1,13 @@
 class FeatureModel {
   final String title;
   final String markdownPath;
-  final String? imagePath;
+  final String? lightImgPath;
+  final String? darkImgPath;
 
   const FeatureModel({
     required this.title,
     required this.markdownPath,
-    this.imagePath,
+    this.lightImgPath,
+    this.darkImgPath,
   });
 }

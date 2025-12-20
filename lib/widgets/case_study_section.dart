@@ -46,7 +46,7 @@ class _CaseStudySection extends StatelessWidget {
 }
 
 class _FeatureDescription extends StatelessWidget {
-  const _FeatureDescription({super.key, required this.features});
+  const _FeatureDescription({required this.features});
 
   final List<FeatureModel> features;
 
@@ -63,11 +63,35 @@ class _FeatureDescription extends StatelessWidget {
               flex: 2,
               child: _MarkdownWidget(filePath: features[index].markdownPath),
             ),
-            Expanded(flex: 4, child: Placeholder(color: Colors.green)),
+            Expanded(flex: 4, child: _ImageWidget(feature: features[index])),
           ],
         );
       },
     );
+  }
+}
+
+class _ImageWidget extends StatelessWidget {
+  final FeatureModel feature;
+
+  const _ImageWidget({required this.feature});
+
+  @override
+  Widget build(BuildContext context) {
+    final themeManager = Provider.of<ThemeManager>(context);
+    String? imagePath;
+
+    if (themeManager.themeMode == ThemeMode.dark) {
+      imagePath = feature.darkImgPath ?? feature.lightImgPath;
+    } else {
+      imagePath = feature.lightImgPath ?? feature.darkImgPath;
+    }
+
+    if (imagePath == null) {
+      return Placeholder(color: Colors.green);
+    }
+
+    return Image.asset(imagePath, fit: BoxFit.fill);
   }
 }
 

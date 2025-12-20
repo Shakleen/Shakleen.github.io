@@ -6,9 +6,9 @@ class _ProfessionalSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _CaseStudySection(
-      index: 3,
-      title: "News Outlet Freedom Detection",
-      shortDescription: "Measuring Media Bias with Fine-Tuned LLMs",
+      index: 2,
+      title: "Production ML",
+      shortDescription: "",
       logoPaths: [
         'assets/logos/python.svg',
         'assets/logos/pytorch.svg',
@@ -23,6 +23,8 @@ class _ProfessionalSection extends StatelessWidget {
         FeatureModel(
           title: "AI Engineer at startup",
           markdownPath: 'assets/markdowns/professional/doc-intelli.md',
+          lightImgPath: 'assets/diagrams/credit_risk_light.png',
+          darkImgPath: 'assets/diagrams/credit_risk_dark.png',
         ),
         FeatureModel(
           title: "Software Engineer at Samsung",
@@ -31,6 +33,8 @@ class _ProfessionalSection extends StatelessWidget {
         FeatureModel(
           title: "Research Assistant at URMC",
           markdownPath: 'assets/markdowns/professional/bio-automation.md',
+          lightImgPath: 'assets/diagrams/bio_comp_light.png',
+          darkImgPath: 'assets/diagrams/bio_comp_dark.png',
         ),
       ],
     );
