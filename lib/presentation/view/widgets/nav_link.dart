@@ -19,8 +19,9 @@ class NavLink extends StatelessWidget {
     return BlocBuilder<SectionCubit, Section>(
       builder: (context, state) {
         late final Color textColor, buttonColor;
+        final bool isInView = state == section;
 
-        if (state == section) {
+        if (isInView) {
           textColor = Theme.of(context).colorScheme.onPrimary;
           buttonColor = Theme.of(context).colorScheme.primary;
         } else {
@@ -31,7 +32,7 @@ class NavLink extends StatelessWidget {
         return Container(
           margin: const EdgeInsets.symmetric(horizontal: 4),
           child: TextButton(
-            onPressed: onPressed,
+            onPressed: isInView ? null : onPressed,
             style: TextButton.styleFrom(backgroundColor: buttonColor),
             child: Text(title, style: TextStyle(color: textColor)),
           ),

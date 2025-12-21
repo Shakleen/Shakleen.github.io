@@ -2,58 +2,42 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
+import 'package:my_portfolio_website/data/models/case_study_model.dart';
 import 'package:my_portfolio_website/data/models/feature_model.dart';
 import 'package:my_portfolio_website/presentation/cubits/case_study_cubit.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/case_study_header.dart';
-import 'package:my_portfolio_website/presentation/view/widgets/section.dart';
 import 'package:my_portfolio_website/utils/theme_manager.dart';
 import 'package:provider/provider.dart';
 
 class CaseStudySection extends StatelessWidget {
-  final String title;
-  final String shortDescription;
-  final int index;
-  final List<String> logoPaths;
-  final List<FeatureModel> features;
-  final String problemStatementMdPath;
+  final CaseStudyModel data;
 
-  const CaseStudySection({
-    super.key,
-    required this.title,
-    required this.shortDescription,
-    required this.index,
-    required this.logoPaths,
-    required this.problemStatementMdPath,
-    required this.features,
-  });
+  const CaseStudySection({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<CaseStudySectionCubit>(
       create: (BuildContext context) => CaseStudySectionCubit(),
-      child: SectionWidget(
-        child: Center(
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width * 0.85,
-            height: MediaQuery.of(context).size.height * 0.85,
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CaseStudyHeader(
-                  number: index,
-                  title: title,
-                  shortDescription: shortDescription,
-                  logoPaths: logoPaths,
-                ),
-                Divider(height: 4),
-                _MarkdownWidget(filePath: problemStatementMdPath),
-                _FeatureTabBar(features: features),
-                _FeatureDescription(features: features),
-              ],
+      child: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
+        child: Column(
+          children: [
+            Expanded(
+              flex: 20,
+              child: CaseStudyHeader(
+                number: data.index,
+                title: data.title,
+                shortDescription: data.problemStatement,
+                logoPaths: data.logoPaths,
+                features: data.features,
+              ),
             ),
-          ),
+            Expanded(
+              flex: 80,
+              child: _FeatureDescription(features: data.features),
+            ),
+          ],
         ),
       ),
     );
@@ -106,64 +90,7 @@ class _ImageWidget extends StatelessWidget {
       return Placeholder(color: Colors.green);
     }
 
-    return Image.asset(imagePath, fit: BoxFit.fill);
-  }
-}
-
-class _FeatureTabBar extends StatelessWidget {
-  const _FeatureTabBar({required this.features});
-
-  final List<FeatureModel> features;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: features
-          .map(
-            (FeatureModel model) =>
-                _FeatureTab(index: features.indexOf(model), model: model),
-          )
-          .toList(),
-    );
-  }
-}
-
-class _FeatureTab extends StatelessWidget {
-  final int index;
-  final FeatureModel model;
-
-  const _FeatureTab({required this.index, required this.model});
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<CaseStudySectionCubit, int>(
-      builder: (context, inViewIndex) {
-        late final Color textColor, buttonColor;
-        final bool isInView = inViewIndex == index;
-
-        if (isInView) {
-          textColor = Theme.of(context).colorScheme.onPrimary;
-          buttonColor = Theme.of(context).colorScheme.primary;
-        } else {
-          textColor = Theme.of(context).colorScheme.primary;
-          buttonColor = Theme.of(context).colorScheme.onPrimary;
-        }
-
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 2.0),
-          child: TextButton(
-            onPressed: () {
-              context.read<CaseStudySectionCubit>().update(index);
-            },
-            style: TextButton.styleFrom(backgroundColor: buttonColor),
-            child: Text(model.title, style: TextStyle(color: textColor)),
-          ),
-        );
-      },
-    );
+    return Image.asset(imagePath, fit: BoxFit.contain);
   }
 }
 

@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:my_portfolio_website/data/models/feature_model.dart';
+import 'package:my_portfolio_website/presentation/cubits/case_study_cubit.dart';
 
 class CaseStudyHeader extends StatelessWidget {
   final int number;
   final String title;
   final String shortDescription;
   final List<String> logoPaths;
+  final List<FeatureModel> features;
 
   const CaseStudyHeader({
     super.key,
@@ -13,25 +17,45 @@ class CaseStudyHeader extends StatelessWidget {
     required this.title,
     required this.shortDescription,
     required this.logoPaths,
+    required this.features,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Expanded(
-          flex: 5,
-          child: _Title(
-            number: number,
-            title: title,
-            description: shortDescription,
-          ),
+    return Card(
+      color: Theme.of(context).colorScheme.primaryContainer.withOpacity(0.95),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _SubTitle(text: "Case Study #$number: $shortDescription"),
+                _SubTitle(text: "Technology Stack"),
+              ],
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                ),
+                _TechStack(logoPaths: logoPaths),
+              ],
+            ),
+            _FeatureTabBar(features: features),
+          ],
         ),
-        Expanded(flex: 1, child: _TechStack(logoPaths: logoPaths)),
-      ],
+      ),
     );
   }
 }
@@ -43,63 +67,22 @@ class _TechStack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        _SubTitle(text: "Tech Stack"),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: logoPaths
-              .map(
-                (String path) => SvgPicture.asset(
-                  path,
-                  width: 24,
-                  height: 24,
-                  fit: BoxFit.contain,
-                  color: Theme.of(context).colorScheme.secondary,
-                ),
-              )
-              .toList(),
-        ),
-      ],
-    );
-  }
-}
-
-class _Title extends StatelessWidget {
-  const _Title({
-    required this.number,
-    required this.title,
-    required this.description,
-  });
-
-  final int number;
-  final String title;
-  final String description;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        _SubTitle(text: "Case Study #$number"),
-        SizedBox(height: 2),
-        Text(
-          title,
-          style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-            color: Theme.of(context).colorScheme.primary,
-          ),
-        ),
-        SizedBox(height: 2),
-        Text(
-          description,
-          style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-            color: Theme.of(context).colorScheme.secondary,
-          ),
-        ),
-      ],
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: logoPaths
+          .map(
+            (String path) => Container(
+              margin: const EdgeInsets.only(left: 8.0),
+              child: SvgPicture.asset(
+                path,
+                width: 28,
+                height: 28,
+                fit: BoxFit.contain,
+                color: Theme.of(context).colorScheme.primary,
+              ),
+            ),
+          )
+          .toList(),
     );
   }
 }
@@ -112,5 +95,64 @@ class _SubTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(text, style: Theme.of(context).textTheme.bodySmall);
+  }
+}
+
+class _FeatureTabBar extends StatelessWidget {
+  const _FeatureTabBar({required this.features});
+
+  final List<FeatureModel> features;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: features
+          .map(
+            (FeatureModel model) =>
+                _FeatureTab(index: features.indexOf(model), model: model),
+          )
+          .toList(),
+    );
+  }
+}
+
+class _FeatureTab extends StatelessWidget {
+  final int index;
+  final FeatureModel model;
+
+  const _FeatureTab({required this.index, required this.model});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<CaseStudySectionCubit, int>(
+      builder: (context, inViewIndex) {
+        late final Color textColor, buttonColor;
+        final bool isInView = inViewIndex == index;
+
+        if (isInView) {
+          textColor = Theme.of(context).colorScheme.onPrimary;
+          buttonColor = Theme.of(context).colorScheme.primary;
+        } else {
+          textColor = Theme.of(context).colorScheme.onSecondary;
+          buttonColor = Theme.of(context).colorScheme.primary.withOpacity(0.6);
+        }
+
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 2.0),
+          child: TextButton(
+            onPressed: isInView
+                ? null
+                : () {
+                    context.read<CaseStudySectionCubit>().update(index);
+                  },
+            style: TextButton.styleFrom(backgroundColor: buttonColor),
+            child: Text(model.title, style: TextStyle(color: textColor)),
+          ),
+        );
+      },
+    );
   }
 }

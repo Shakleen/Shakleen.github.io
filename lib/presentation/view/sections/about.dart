@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:my_portfolio_website/presentation/view/widgets/section.dart';
 import 'package:my_portfolio_website/utils/launch_url.dart';
 
 class AboutSection extends StatelessWidget {
@@ -8,28 +7,26 @@ class AboutSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SectionWidget(
-      child: Center(
-        child: SizedBox(
-          width: MediaQuery.of(context).size.width * 0.6,
-          height: MediaQuery.of(context).size.height * 0.6,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _Bio(),
-              SizedBox(height: 32),
-              Text(
-                "I build and deploy AI systems that improve accuracy, latency, and cost. Experience shipping ML products at Samsung, startups, and as a founder.",
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-              SizedBox(height: 32),
-              _Skills(),
-              SizedBox(height: 32),
-              _Socials(),
-            ],
-          ),
+    return Center(
+      child: SizedBox(
+        width: MediaQuery.of(context).size.width * 0.6,
+        height: MediaQuery.of(context).size.height * 0.6,
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _Bio(),
+            SizedBox(height: 32),
+            Text(
+              "I build and deploy AI systems that improve accuracy, latency, and cost. Experience shipping ML products at Samsung, startups, and as a founder.",
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+            SizedBox(height: 32),
+            _Skills(),
+            SizedBox(height: 32),
+            _Socials(),
+          ],
         ),
       ),
     );
