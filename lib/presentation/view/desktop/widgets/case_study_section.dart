@@ -53,17 +53,20 @@ class _FeatureDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CaseStudySectionCubit, int>(
       builder: (context, index) {
-        return Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              flex: 2,
-              child: _MarkdownWidget(filePath: features[index].markdownPath),
-            ),
-            Expanded(flex: 4, child: _ImageWidget(feature: features[index])),
-          ],
+        return Container(
+          margin: const EdgeInsets.only(right: 8.0),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 2,
+                child: _MarkdownWidget(filePath: features[index].markdownPath),
+              ),
+              Expanded(flex: 4, child: _ImageWidget(feature: features[index])),
+            ],
+          ),
         );
       },
     );

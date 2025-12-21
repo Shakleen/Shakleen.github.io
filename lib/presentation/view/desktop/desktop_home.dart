@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_website/presentation/cubits/section_cubit.dart';
-import 'package:my_portfolio_website/presentation/view/sections/about.dart';
-import 'package:my_portfolio_website/presentation/view/sections/flash_learn.dart';
-import 'package:my_portfolio_website/presentation/view/sections/pii.dart';
-import 'package:my_portfolio_website/presentation/view/sections/professional.dart';
-import 'package:my_portfolio_website/presentation/view/widgets/custom_app_bar.dart';
-import 'package:my_portfolio_website/presentation/view/widgets/nav_link.dart';
+import 'package:my_portfolio_website/presentation/view/desktop/sections/about.dart';
+import 'package:my_portfolio_website/presentation/view/desktop/sections/flash_learn.dart';
+import 'package:my_portfolio_website/presentation/view/desktop/sections/pii.dart';
+import 'package:my_portfolio_website/presentation/view/desktop/sections/professional.dart';
+import 'package:my_portfolio_website/presentation/view/desktop/widgets/custom_app_bar.dart';
+import 'package:my_portfolio_website/presentation/view/desktop/widgets/nav_link.dart';
 import 'package:my_portfolio_website/utils/constant.dart';
 import 'package:provider/provider.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class DesktopHome extends StatefulWidget {
+  const DesktopHome({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<DesktopHome> createState() => _DesktopHomeState();
 }
 
-class _HomeState extends State<Home> {
+class _DesktopHomeState extends State<DesktopHome> {
   final _pageController = PageController();
   final _aboutKey = GlobalKey();
   final _flashLearnKey = GlobalKey();

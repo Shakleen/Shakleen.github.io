@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portfolio_website/presentation/cubits/section_cubit.dart';
-import 'package:my_portfolio_website/presentation/view/home.dart';
+import 'package:my_portfolio_website/presentation/view/responsive_home_page.dart';
 import 'package:my_portfolio_website/utils/constant.dart';
 import 'package:my_portfolio_website/utils/hex_to_color.dart';
 import 'package:my_portfolio_website/utils/theme_manager.dart';
@@ -14,7 +15,10 @@ void main() {
         ChangeNotifierProvider(create: (context) => ThemeManager()),
         BlocProvider(create: (context) => SectionCubit()),
       ],
-      child: const MyApp(),
+      child: ScreenUtilInit(
+        designSize: Size(1920, 1080),
+        builder: (context, widget) => const MyApp(),
+      ),
     ),
   );
 }
@@ -44,7 +48,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           themeMode: themeManager.themeMode,
-          home: const Home(),
+          home: const ResponsiveHomePage(),
         );
       },
     );

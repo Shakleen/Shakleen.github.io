@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_website/data/models/case_study_model.dart';
 import 'package:my_portfolio_website/data/models/feature_model.dart';
-import 'package:my_portfolio_website/presentation/view/widgets/case_study_section.dart';
+import 'package:my_portfolio_website/presentation/view/desktop/widgets/case_study_section.dart';
 
 class ProfessionalSection extends StatelessWidget {
   const ProfessionalSection({super.key});
