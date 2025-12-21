@@ -4,8 +4,8 @@ import 'package:my_portfolio_website/presentation/view/desktop/sections/about.da
 import 'package:my_portfolio_website/presentation/view/desktop/sections/flash_learn.dart';
 import 'package:my_portfolio_website/presentation/view/desktop/sections/pii.dart';
 import 'package:my_portfolio_website/presentation/view/desktop/sections/professional.dart';
-import 'package:my_portfolio_website/presentation/view/desktop/widgets/custom_app_bar.dart';
 import 'package:my_portfolio_website/presentation/view/desktop/widgets/nav_link.dart';
+import 'package:my_portfolio_website/presentation/view/widgets/custom_app_bar.dart';
 import 'package:my_portfolio_website/utils/constant.dart';
 import 'package:provider/provider.dart';
 

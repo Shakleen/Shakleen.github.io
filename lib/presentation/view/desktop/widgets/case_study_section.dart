@@ -5,7 +5,7 @@ import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import 'package:my_portfolio_website/data/models/case_study_model.dart';
 import 'package:my_portfolio_website/data/models/feature_model.dart';
 import 'package:my_portfolio_website/presentation/cubits/case_study_cubit.dart';
-import 'package:my_portfolio_website/presentation/view/widgets/case_study_header.dart';
+import 'package:my_portfolio_website/presentation/view/desktop/widgets/case_study_header.dart';
 import 'package:my_portfolio_website/utils/theme_manager.dart';
 import 'package:provider/provider.dart';
 
