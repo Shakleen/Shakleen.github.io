@@ -1,10 +1,10 @@
 {
   "roots": [
-    "my_portfolio_website"
+    "portfolio"
   ],
   "packages": [
     {
-      "name": "my_portfolio_website",
+      "name": "portfolio",
       "version": "1.0.0+1",
       "dependencies": [
         "cupertino_icons",

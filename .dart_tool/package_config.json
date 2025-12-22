@@ -344,7 +344,7 @@
       "languageVersion": "3.8"
     },
     {
-      "name": "my_portfolio_website",
+      "name": "portfolio",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.10"
