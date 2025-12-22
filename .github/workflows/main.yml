@@ -23,7 +23,7 @@ jobs:
         run: flutter pub get
 
       - name: Build Web
-        run: flutter build web --release --web-renderer html --base-href "/Shakleen.github.io/"
+        run: flutter build web --release --base-href "/Shakleen.github.io/"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
