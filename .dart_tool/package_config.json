@@ -80,6 +80,12 @@
       "languageVersion": "3.4"
     },
     {
+      "name": "flutter_screenutil",
+      "rootUri": "file:///home/ishrak/.pub-cache/hosted/pub.dev/flutter_screenutil-5.9.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "flutter_svg",
       "rootUri": "file:///home/ishrak/.pub-cache/hosted/pub.dev/flutter_svg-2.2.3",
       "packageUri": "lib/",
@@ -192,6 +198,12 @@
       "rootUri": "file:///home/ishrak/.pub-cache/hosted/pub.dev/provider-6.1.5+1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "responsive_builder",
+      "rootUri": "file:///home/ishrak/.pub-cache/hosted/pub.dev/responsive_builder-0.7.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
     },
     {
       "name": "sky_engine",

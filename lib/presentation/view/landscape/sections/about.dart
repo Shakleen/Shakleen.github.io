@@ -10,9 +10,8 @@ class LandscapeAboutSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.92,
+      height: 350,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(flex: 40, child: _Introduction()),

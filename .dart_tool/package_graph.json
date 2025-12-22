@@ -11,8 +11,10 @@
         "flutter",
         "flutter_bloc",
         "flutter_markdown_plus",
+        "flutter_screenutil",
         "flutter_svg",
         "provider",
+        "responsive_builder",
         "url_launcher"
       ],
       "devDependencies": [
@@ -43,6 +45,21 @@
         "stream_channel",
         "test_api",
         "vector_math"
+      ]
+    },
+    {
+      "name": "responsive_builder",
+      "version": "0.7.1",
+      "dependencies": [
+        "flutter",
+        "provider"
+      ]
+    },
+    {
+      "name": "flutter_screenutil",
+      "version": "5.9.3",
+      "dependencies": [
+        "flutter"
       ]
     },
     {

@@ -22,7 +22,6 @@ class LandscapeCaseStudySection extends StatelessWidget {
         children: [
           Divider(height: 32),
           Container(
-            height: MediaQuery.of(context).size.height * 1.5,
             padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
             child: Row(
               children: [
@@ -64,7 +63,7 @@ class _FeatureDescription extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             _MarkdownWidget(filePath: features[index].markdownPath),
-            Flexible(child: _ImageWidget(feature: features[index])),
+            _ImageWidget(feature: features[index]),
           ],
         );
       },
@@ -92,7 +91,12 @@ class _ImageWidget extends StatelessWidget {
       return Placeholder(color: Colors.green);
     }
 
-    return Image.asset(imagePath, fit: BoxFit.contain);
+    return Container(
+      constraints: BoxConstraints(
+        maxHeight: MediaQuery.of(context).size.height * 0.5,
+      ),
+      child: Image.asset(imagePath, fit: BoxFit.contain),
+    );
   }
 }
 
@@ -103,18 +107,23 @@ class _MarkdownWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: rootBundle.loadString(filePath),
-      builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
-        if (snapshot.hasData) {
-          return Markdown(
-            data: snapshot.data!,
-            shrinkWrap: true,
-            selectable: false,
-          );
-        }
-        return Center(child: CircularProgressIndicator());
-      },
+    return Container(
+      constraints: BoxConstraints(
+        maxHeight: MediaQuery.of(context).size.height * 1.5,
+      ),
+      child: FutureBuilder(
+        future: rootBundle.loadString(filePath),
+        builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+          if (snapshot.hasData) {
+            return Markdown(
+              data: snapshot.data!,
+              shrinkWrap: true,
+              selectable: false,
+            );
+          }
+          return Center(child: CircularProgressIndicator());
+        },
+      ),
     );
   }
 }
