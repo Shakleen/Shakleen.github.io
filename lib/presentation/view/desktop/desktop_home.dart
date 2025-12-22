@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_website/presentation/cubits/section_cubit.dart';
 import 'package:my_portfolio_website/presentation/view/desktop/sections/about.dart';
-import 'package:my_portfolio_website/presentation/view/desktop/sections/flash_learn.dart';
-import 'package:my_portfolio_website/presentation/view/desktop/sections/pii.dart';
-import 'package:my_portfolio_website/presentation/view/desktop/sections/professional.dart';
+import 'package:my_portfolio_website/presentation/view/desktop/widgets/case_study_section.dart';
 import 'package:my_portfolio_website/presentation/view/desktop/widgets/nav_link.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/custom_app_bar.dart';
 import 'package:my_portfolio_website/utils/constant.dart';
@@ -20,7 +18,7 @@ class _DesktopHomeState extends State<DesktopHome> {
   final _pageController = PageController();
   final _aboutKey = GlobalKey();
   final _flashLearnKey = GlobalKey();
-  final _productionMLKey = GlobalKey();
+  final _piiKey = GlobalKey();
   final _professionalKey = GlobalKey();
 
   @override
@@ -70,9 +68,15 @@ class _DesktopHomeState extends State<DesktopHome> {
         scrollDirection: Axis.horizontal,
         children: [
           AboutSection(key: _aboutKey),
-          FlashLearnSection(key: _flashLearnKey),
-          ProfessionalSection(key: _professionalKey),
-          PiiSection(key: _productionMLKey),
+          CaseStudySection(
+            key: _flashLearnKey,
+            data: caseStudyData[Section.flashLearn]!,
+          ),
+          CaseStudySection(
+            key: _professionalKey,
+            data: caseStudyData[Section.prof]!,
+          ),
+          CaseStudySection(key: _piiKey, data: caseStudyData[Section.pii]!),
         ],
       ),
     );

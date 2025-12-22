@@ -3,8 +3,8 @@ import 'package:my_portfolio_website/presentation/view/widgets/profile_picture.d
 import 'package:my_portfolio_website/presentation/view/widgets/skills_subsection.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/socials_subsection.dart';
 
-class AboutSection extends StatelessWidget {
-  const AboutSection({super.key});
+class PortraitAboutSection extends StatelessWidget {
+  const PortraitAboutSection({super.key});
 
   @override
   Widget build(BuildContext context) {

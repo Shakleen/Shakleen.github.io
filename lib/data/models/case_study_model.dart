@@ -7,7 +7,7 @@ class CaseStudyModel {
   final List<String> logoPaths;
   final List<FeatureModel> features;
 
-  CaseStudyModel({
+  const CaseStudyModel({
     required this.index,
     required this.title,
     required this.problemStatement,

@@ -48,8 +48,9 @@ class _AppBarTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.asset(
       "assets/images/signature.png",
-      height: 50,
-      color: Theme.of(context).colorScheme.primary,
+      height: 32,
+      fit: BoxFit.contain,
+      color: Theme.of(context).colorScheme.secondary,
     );
   }
 }
