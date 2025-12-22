@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_portfolio_website/presentation/cubits/section_cubit.dart';
 import 'package:my_portfolio_website/presentation/view/portrait/sections/about.dart';
-import 'package:my_portfolio_website/presentation/view/portrait/widgets/section.dart';
+import 'package:my_portfolio_website/presentation/view/portrait/widgets/case_study_section.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/custom_app_bar.dart';
 import 'package:my_portfolio_website/utils/constant.dart';
 

@@ -4,14 +4,14 @@ import 'package:flutter_svg/svg.dart';
 import 'package:my_portfolio_website/data/models/feature_model.dart';
 import 'package:my_portfolio_website/presentation/cubits/case_study_cubit.dart';
 
-class PortraitCaseStudyHeader extends StatelessWidget {
+class LandscapeCaseStudyHeader extends StatelessWidget {
   final int number;
   final String title;
   final String shortDescription;
   final List<String> logoPaths;
   final List<FeatureModel> features;
 
-  const PortraitCaseStudyHeader({
+  const LandscapeCaseStudyHeader({
     super.key,
     required this.number,
     required this.title,
@@ -22,27 +22,33 @@ class PortraitCaseStudyHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Theme.of(context).colorScheme.primaryContainer.withOpacity(0.95),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  title,
-                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                    color: Theme.of(context).colorScheme.primary,
+    return RotatedBox(
+      quarterTurns: -1,
+      child: Card(
+        color: Theme.of(context).colorScheme.primaryContainer.withOpacity(0.95),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    title,
+                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                   ),
-                ),
-                _TechStack(logoPaths: logoPaths),
-              ],
-            ),
-            SizedBox(height: 48, child: _FeatureTabBar(features: features)),
-          ],
+                  _TechStack(logoPaths: logoPaths),
+                ],
+              ),
+              SizedBox(height: 48, child: _FeatureTabBar(features: features)),
+            ],
+          ),
         ),
       ),
     );
@@ -83,9 +89,9 @@ class _FeatureTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      scrollDirection: Axis.horizontal,
-      shrinkWrap: true,
+    return Row(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: features
           .map(
             (FeatureModel model) =>
