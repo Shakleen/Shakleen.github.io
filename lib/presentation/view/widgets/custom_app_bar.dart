@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio_website/utils/constant.dart';
+import 'package:my_portfolio_website/data/models/config_model.dart';
 import 'package:my_portfolio_website/utils/launch_url.dart';
 import 'package:my_portfolio_website/utils/theme_manager.dart';
 import 'package:provider/provider.dart';
@@ -60,6 +60,8 @@ class _DownloadResumeIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final config = context.watch<ConfigModel>();
+
     return IconButton(
       icon: Icon(
         Icons.download,
@@ -68,9 +70,9 @@ class _DownloadResumeIconButton extends StatelessWidget {
       tooltip: "Resume",
       onPressed: () async => await launchURL(
         context,
-        resumeUrl,
-        failMessageResumeLink,
-        errorMessageResumeLink,
+        config.urls.resumePdf,
+        "Failed to launch URL for resume",
+        "Error occurred when launching URL for resume",
       ),
     );
   }

@@ -1,0 +1,133 @@
+{
+  "app_name": "Shakleen Ishfar - Portfolio",
+  "seed_color": "#4169E1",
+  "urls": {
+    "email": "mailto:shakleenishfar@gmail.com",
+    "resume_pdf": "https://drive.google.com/file/d/1UIMRwmcYXDOc7vyvsVQoTXLc03FwmYqB/view?usp=drive_link",
+    "linked_in_profile": "https://www.linkedin.com/in/shakleen-ishfar/",
+    "github_profile": "https://github.com/Shakleen",
+    "flash_learn_playlist": "https://youtube.com/playlist?list=PLOsfJuwghQEYPEMtCdZYo2R1qb8SuM3ye&si=JyEtdE0uPjXZ3MJe",
+    "pii_repository": "https://github.com/Shakleen/Kaggle-PII-Challenge"
+  },
+  "about": {
+    "profile-picture-light": "assets/images/profile-picture-light.jpeg",
+    "profile-picture-dark": "assets/images/profile-picture-dark.jpeg",
+    "description": "I build and deploy AI systems that improve accuracy, latency, and cost. Experience shipping ML products at Samsung, startups, and as a founder.",
+    "skills": {
+      "python": "assets/logos/python.svg",
+      "go": "assets/logos/go.svg",
+      "flutter": "assets/logos/flutter.svg",
+      "postgresql": "assets/logos/postgresql.svg",
+      "docker": "assets/logos/docker.svg",
+      "kubernetes": "assets/logos/kubernetes.svg",
+      "aws": "assets/logos/aws.svg",
+      "pytorch": "assets/logos/pytorch.svg",
+      "huggingface": "assets/logos/huggingface.svg",
+      "vim": "assets/logos/vim.svg",
+      "git": "assets/logos/git.svg",
+      "arch-linux": "assets/logos/arch-linux.svg",
+      "gmail": "assets/logos/gmail.svg",
+      "linked_in": "assets/logos/linkedin.svg",
+      "github": "assets/logos/github.svg"
+    }
+  },
+  "case_studies": {
+    "flash-learn": {
+      "title": "Flash Learn",
+      "problemStatement": "AI-Powered Adaptive Learning Platform",
+      "logoPaths": [
+        "assets/logos/python.svg",
+        "assets/logos/go.svg",
+        "assets/logos/flutter.svg",
+        "assets/logos/postgresql.svg",
+        "assets/logos/docker.svg",
+        "assets/logos/aws.svg"
+      ],
+      "features": [
+        {
+          "title": "Tackling the forgetting curve",
+          "markdownPath": "assets/markdowns/flash-learn/forgetting-curve.md",
+          "lightImgPath": "assets/diagrams/fl-ss.png",
+          "darkImgPath": "assets/diagrams/fl-ss.png"
+        },
+        {
+          "title": "High performance front & backend",
+          "markdownPath": "assets/markdowns/flash-learn/high-performance.md"
+        },
+        {
+          "title": "Scaling with Rigorous Stability",
+          "markdownPath": "assets/markdowns/flash-learn/rigorous-stability.md",
+          "lightImgPath": "assets/diagrams/fl-cicd-light.png",
+          "darkImgPath": "assets/diagrams/fl-cicd-dark.png"
+        }
+      ]
+    },
+    "production_ml": {
+      "title": "Production ML",
+      "problemStatement": "",
+      "logoPaths": [
+        "assets/logos/python.svg",
+        "assets/logos/pytorch.svg",
+        "assets/logos/matlab.svg",
+        "assets/logos/opencv.svg",
+        "assets/logos/pandas.svg",
+        "assets/logos/plotly.svg"
+      ],
+      "features": [
+        {
+          "title": "AI Engineer at startup",
+          "markdownPath": "assets/markdowns/professional/doc-intelli.md",
+          "lightImgPath": "assets/diagrams/credit_risk_light.png",
+          "darkImgPath": "assets/diagrams/credit_risk_dark.png"
+        },
+        {
+          "title": "Software Engineer at Samsung",
+          "markdownPath": "assets/markdowns/professional/smart-watch.md"
+        },
+        {
+          "title": "Research Assistant at URMC",
+          "markdownPath": "assets/markdowns/professional/bio-automation.md",
+          "lightImgPath": "assets/diagrams/bio_comp_light.png",
+          "darkImgPath": "assets/diagrams/bio_comp_dark.png"
+        }
+      ]
+    },
+    "pii": {
+      "title": "PII Detection",
+      "problemStatement": "Protecting Privacy in Student Essays",
+      "logoPaths": [
+        "assets/logos/python.svg",
+        "assets/logos/pytorch.svg",
+        "assets/logos/huggingface.svg",
+        "assets/logos/sklearn.svg",
+        "assets/logos/pandas.svg",
+        "assets/logos/plotly.svg"
+      ],
+      "features": [
+        {
+          "title": "Award-Winning Performance",
+          "markdownPath": "assets/markdowns/pii/award-winning.md",
+          "lightImgPath": "assets/diagrams/pii-medal-light.png",
+          "darkImgPath": "assets/diagrams/pii-medal-dark.png"
+        },
+        {
+          "title": "Overcoming Extreme Class Imbalance",
+          "markdownPath": "assets/markdowns/pii/class-imbalance.md",
+          "lightImgPath": "assets/diagrams/pii-label-diagram-light.png",
+          "darkImgPath": "assets/diagrams/pii-label-diagram-dark.png"
+        },
+        {
+          "title": "High-Recall PII Extraction",
+          "markdownPath": "assets/markdowns/pii/high-recall.md",
+          "lightImgPath": "assets/diagrams/pii-flow-light.png",
+          "darkImgPath": "assets/diagrams/pii-flow-dark.png"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "gmail_logo": "assets/logos/gmail.svg",
+    "linkedin_logo": "assets/logos/linkedin.svg",
+    "github_logo": "assets/logos/github.svg"
+  }
+}

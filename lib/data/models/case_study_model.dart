@@ -14,4 +14,16 @@ class CaseStudyModel {
     required this.logoPaths,
     required this.features,
   });
+
+  factory CaseStudyModel.fromJson(Map<String, dynamic> json, int index) {
+    return CaseStudyModel(
+      index: index,
+      title: json['title'],
+      problemStatement: json['problemStatement'],
+      logoPaths: List<String>.from(json['logoPaths']),
+      features: (json['features'] as List)
+          .map((featureJson) => FeatureModel.fromJson(featureJson))
+          .toList(),
+    );
+  }
 }

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:my_portfolio_website/data/models/config_model.dart';
 import 'package:my_portfolio_website/utils/launch_url.dart';
+import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class SocialsSubsection extends StatelessWidget {
@@ -30,6 +33,8 @@ class _ButtonBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final config = context.watch<ConfigModel>();
+
     return Row(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -38,14 +43,14 @@ class _ButtonBar extends StatelessWidget {
         _SocialButton(
           title: "Email",
           icon: SvgPicture.asset(
-            'assets/logos/gmail.svg',
+            config.assets.gmailLogo,
             width: 24,
             height: 24,
             fit: BoxFit.contain,
           ),
           onPressed: () async => await launchURL(
             context,
-            'mailto:shakleenishfar@gmail.com',
+            config.urls.email,
             "Failed to launch URL for email",
             "Error occurred when launching URL for email",
           ),
@@ -53,14 +58,14 @@ class _ButtonBar extends StatelessWidget {
         _SocialButton(
           title: "LinkedIn",
           icon: SvgPicture.asset(
-            'assets/logos/linkedin.svg',
+            config.assets.linkedinLogo,
             width: 24,
             height: 24,
             fit: BoxFit.contain,
           ),
           onPressed: () async => await launchURL(
             context,
-            'https://www.linkedin.com/in/shakleen-ishfar/',
+            config.urls.linkedInProfile,
             "Failed to launch URL for LinkedIn",
             "Error occurred when launching URL for LinkedIn",
           ),
@@ -68,14 +73,14 @@ class _ButtonBar extends StatelessWidget {
         _SocialButton(
           title: "GitHub",
           icon: SvgPicture.asset(
-            'assets/logos/github.svg',
+            config.assets.githubLogo,
             width: 24,
             height: 24,
             fit: BoxFit.contain,
           ),
           onPressed: () async => await launchURL(
             context,
-            'https://github.com/Shakleen',
+            config.urls.githubProfile,
             "Failed to launch URL for GitHub",
             "Error occurred when launching URL for GitHub",
           ),
@@ -85,7 +90,7 @@ class _ButtonBar extends StatelessWidget {
           icon: Icon(Icons.download),
           onPressed: () async => await launchURL(
             context,
-            'https://drive.google.com/file/d/1UIMRwmcYXDOc7vyvsVQoTXLc03FwmYqB/view?usp=drive_link',
+            config.urls.resumePdf,
             "Failed to launch URL for resume",
             "Error occurred when launching URL for resume",
           ),

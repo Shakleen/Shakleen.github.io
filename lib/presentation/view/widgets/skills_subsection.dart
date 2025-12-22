@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:my_portfolio_website/data/models/config_model.dart';
 
 class SkillsSubsection extends StatelessWidget {
   const SkillsSubsection({super.key});
@@ -28,23 +30,14 @@ class _SkillIconBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final config = context.watch<ConfigModel>();
+
     return Row(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        _SkillIcon(path: 'assets/logos/python.svg'),
-        _SkillIcon(path: 'assets/logos/go.svg'),
-        _SkillIcon(path: 'assets/logos/flutter.svg'),
-        _SkillIcon(path: 'assets/logos/postgresql.svg'),
-        _SkillIcon(path: 'assets/logos/docker.svg'),
-        _SkillIcon(path: 'assets/logos/kubernetes.svg'),
-        _SkillIcon(path: 'assets/logos/aws.svg'),
-        _SkillIcon(path: 'assets/logos/pytorch.svg'),
-        _SkillIcon(path: 'assets/logos/huggingface.svg'),
-        _SkillIcon(path: 'assets/logos/vim.svg'),
-        _SkillIcon(path: 'assets/logos/git.svg'),
-        _SkillIcon(path: 'assets/logos/arch-linux.svg'),
-      ],
+      children: config.about.skills.values
+          .map((val) => _SkillIcon(path: val))
+          .toList(),
     );
   }
 }

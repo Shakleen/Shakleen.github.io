@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_portfolio_website/data/models/config_model.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/profile_picture.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/skills_subsection.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/socials_subsection.dart';
@@ -76,8 +78,10 @@ class _Description extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final config = context.watch<ConfigModel>();
+
     return Text(
-      "I build and deploy AI systems that improve accuracy, latency, and cost. Experience shipping ML products at Samsung, startups, and as a founder.",
+      config.about.description,
       style: Theme.of(context).textTheme.bodyMedium,
       textAlign: TextAlign.center,
     );

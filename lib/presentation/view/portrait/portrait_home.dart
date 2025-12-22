@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_portfolio_website/data/models/config_model.dart';
 import 'package:my_portfolio_website/presentation/cubits/section_cubit.dart';
 import 'package:my_portfolio_website/presentation/view/portrait/sections/about.dart';
 import 'package:my_portfolio_website/presentation/view/portrait/widgets/case_study_section.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/custom_app_bar.dart';
-import 'package:my_portfolio_website/utils/constant.dart';
+import 'package:provider/provider.dart';
 
 class PortraitHome extends StatefulWidget {
   const PortraitHome({super.key});
@@ -72,6 +73,7 @@ class _PortraitHomeState extends State<PortraitHome> {
 
   @override
   Widget build(BuildContext context) {
+    final config = context.watch<ConfigModel>();
     return Scaffold(
       appBar: CustomAppBar(),
       body: ListView(
@@ -81,15 +83,15 @@ class _PortraitHomeState extends State<PortraitHome> {
           PortraitAboutSection(key: _aboutKey),
           PortraitCaseStudySection(
             key: _flashLearnKey,
-            data: caseStudyData[Section.flashLearn]!,
+            data: config.caseStudies['flash-learn']!,
           ),
           PortraitCaseStudySection(
             key: _professionalKey,
-            data: caseStudyData[Section.prof]!,
+            data: config.caseStudies['production_ml']!,
           ),
           PortraitCaseStudySection(
             key: _piiKey,
-            data: caseStudyData[Section.pii]!,
+            data: config.caseStudies['pii']!,
           ),
         ],
       ),

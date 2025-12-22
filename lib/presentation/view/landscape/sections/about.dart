@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio_website/presentation/view/widgets/about_description.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/profile_picture.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/skills_subsection.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/socials_subsection.dart';
@@ -32,7 +33,7 @@ class _Footer extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [_Description(), SkillsSubsection(), SocialsSubsection()],
+        children: [AboutDescription(), SkillsSubsection(), SocialsSubsection()],
       ),
     );
   }
@@ -75,20 +76,6 @@ class _Introduction extends StatelessWidget {
           ],
         ),
       ],
-    );
-  }
-}
-
-class _Description extends StatelessWidget {
-  const _Description();
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      "I build and deploy AI systems that improve accuracy, latency, and cost. Experience shipping ML products at Samsung, startups, and as a founder.",
-      style: Theme.of(context).textTheme.bodyLarge,
-      textAlign: TextAlign.center,
-      softWrap: true,
     );
   }
 }

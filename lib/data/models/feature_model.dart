@@ -10,4 +10,13 @@ class FeatureModel {
     this.lightImgPath,
     this.darkImgPath,
   });
+
+  factory FeatureModel.fromJson(Map<String, dynamic> json) {
+    return FeatureModel(
+      title: json['title'],
+      markdownPath: json['markdownPath'],
+      lightImgPath: json['lightImgPath'],
+      darkImgPath: json['darkImgPath'],
+    );
+  }
 }

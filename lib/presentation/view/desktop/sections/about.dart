@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio_website/presentation/view/widgets/about_description.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/profile_picture.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/skills_subsection.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/socials_subsection.dart';
@@ -10,22 +11,15 @@ class AboutSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: MediaQuery.of(context).size.width * 0.6,
-        height: MediaQuery.of(context).size.height * 0.6,
+        width: 650,
+        height: 400,
         child: Column(
           mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             _Bio(),
-            SizedBox(height: 32),
-            Text(
-              "I build and deploy AI systems that improve accuracy, latency, and cost. Experience shipping ML products at Samsung, startups, and as a founder.",
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
-            SizedBox(height: 32),
+            AboutDescription(),
             SkillsSubsection(),
-            SizedBox(height: 32),
             SocialsSubsection(),
           ],
         ),
@@ -40,6 +34,7 @@ class _Bio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ProfilePicture(),
         SizedBox(width: 32),

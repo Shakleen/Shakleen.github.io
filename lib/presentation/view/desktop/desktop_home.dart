@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio_website/data/models/config_model.dart';
 import 'package:my_portfolio_website/presentation/cubits/section_cubit.dart';
 import 'package:my_portfolio_website/presentation/view/desktop/sections/about.dart';
 import 'package:my_portfolio_website/presentation/view/desktop/widgets/case_study_section.dart';
 import 'package:my_portfolio_website/presentation/view/desktop/widgets/nav_link.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/custom_app_bar.dart';
-import 'package:my_portfolio_website/utils/constant.dart';
 import 'package:provider/provider.dart';
 
 class DesktopHome extends StatefulWidget {
@@ -20,6 +20,8 @@ class _DesktopHomeState extends State<DesktopHome> {
   final _flashLearnKey = GlobalKey();
   final _piiKey = GlobalKey();
   final _professionalKey = GlobalKey();
+
+  static const int animationDurationPageScroll = 500;
 
   @override
   void initState() {
@@ -47,6 +49,7 @@ class _DesktopHomeState extends State<DesktopHome> {
 
   @override
   Widget build(BuildContext context) {
+    final config = context.watch<ConfigModel>();
     return Scaffold(
       appBar: CustomAppBar(),
       bottomNavigationBar: BottomAppBar(
@@ -70,13 +73,13 @@ class _DesktopHomeState extends State<DesktopHome> {
           AboutSection(key: _aboutKey),
           CaseStudySection(
             key: _flashLearnKey,
-            data: caseStudyData[Section.flashLearn]!,
+            data: config.caseStudies['flash-learn']!,
           ),
           CaseStudySection(
             key: _professionalKey,
-            data: caseStudyData[Section.prof]!,
+            data: config.caseStudies['production_ml']!,
           ),
-          CaseStudySection(key: _piiKey, data: caseStudyData[Section.pii]!),
+          CaseStudySection(key: _piiKey, data: config.caseStudies['pii']!),
         ],
       ),
     );
