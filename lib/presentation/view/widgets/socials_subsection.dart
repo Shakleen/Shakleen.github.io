@@ -108,19 +108,31 @@ class _SocialButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final withText = Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [icon, const SizedBox(width: 4), Text(title)],
+    final withText = ElevatedButton(
+      onPressed: onPressed,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [icon, const SizedBox(width: 4), Text(title)],
+      ),
+    );
+    final onlyIcon = IconButton(
+      icon: icon,
+      tooltip: title,
+      onPressed: onPressed,
     );
 
-    return ElevatedButton(
-      onPressed: onPressed,
-      child: ScreenTypeLayout.builder(
-        mobile: (context) => OrientationLayoutBuilder(
-          portrait: (context) => icon,
-          landscape: (context) => withText,
-        ),
-        tablet: (context) => withText,
+    return ScreenTypeLayout.builder(
+      mobile: (context) => OrientationLayoutBuilder(
+        portrait: (context) => onlyIcon,
+        landscape: (context) => onlyIcon,
+      ),
+      tablet: (context) => OrientationLayoutBuilder(
+        portrait: (context) => onlyIcon,
+        landscape: (context) => onlyIcon,
+      ),
+      desktop: (context) => OrientationLayoutBuilder(
+        portrait: (context) => onlyIcon,
+        landscape: (context) => withText,
       ),
     );
   }

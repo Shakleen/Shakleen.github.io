@@ -19,11 +19,14 @@ class ResponsiveHomePage extends StatelessWidget {
         } else if (_isTablet(sizingInformation)) {
           return OrientationLayoutBuilder(
             portrait: (context) => PortraitHome(),
-            landscape: (context) => DesktopHome(),
+            landscape: (context) => LandscapeHome(),
           );
         }
 
-        return DesktopHome();
+        return OrientationLayoutBuilder(
+          portrait: (context) => PortraitHome(),
+          landscape: (context) => DesktopHome(),
+        );
       },
     );
   }
