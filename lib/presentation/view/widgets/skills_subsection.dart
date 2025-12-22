@@ -32,12 +32,30 @@ class _SkillIconBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final config = context.watch<ConfigModel>();
 
-    return Row(
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: config.about.skills.values
-          .map((val) => _SkillIcon(path: val))
-          .toList(),
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        final double availableWidth = constraints.maxWidth;
+        // Assuming icon width is 24 and spacing is 8.
+        // The 24 comes from the _SkillIcon width. The 8 is the spacing.
+        final double itemWidthWithSpacing = 24.0 + 8.0;
+
+        int itemsPerRow = (availableWidth / itemWidthWithSpacing).floor();
+        if (itemsPerRow == 0) itemsPerRow = 1; // Ensure at least one item per row
+
+        final int maxItemsToShow = itemsPerRow * 3; // Limit to 3 rows
+
+        final List<String> skillPaths = config.about.skills.values.toList();
+        final List<String> skillsToShow = skillPaths.take(maxItemsToShow).toList();
+
+        return Wrap(
+          alignment: WrapAlignment.center,
+          spacing: 8.0, // Horizontal spacing between items
+          runSpacing: 8.0, // Vertical spacing between runs
+          children: skillsToShow
+              .map((val) => _SkillIcon(path: val))
+              .toList(),
+        );
+      },
     );
   }
 }
