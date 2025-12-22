@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import 'package:my_portfolio_website/data/models/case_study_model.dart';
 import 'package:my_portfolio_website/data/models/feature_model.dart';
 import 'package:my_portfolio_website/presentation/cubits/case_study_cubit.dart';
 import 'package:my_portfolio_website/presentation/view/portrait/widgets/case_study_header.dart';
+import 'package:my_portfolio_website/presentation/view/widgets/markdown.dart';
 import 'package:my_portfolio_website/utils/theme_manager.dart';
 import 'package:provider/provider.dart';
 
@@ -53,7 +52,7 @@ class _FeatureDescription extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _MarkdownWidget(filePath: features[index].markdownPath),
+            MarkdownWidget(filePath: features[index].markdownPath),
             _ImageWidget(feature: features[index]),
           ],
         );
@@ -83,28 +82,5 @@ class _ImageWidget extends StatelessWidget {
     }
 
     return Image.asset(imagePath, fit: BoxFit.contain);
-  }
-}
-
-class _MarkdownWidget extends StatelessWidget {
-  final String filePath;
-
-  const _MarkdownWidget({required this.filePath});
-
-  @override
-  Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: rootBundle.loadString(filePath),
-      builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
-        if (snapshot.hasData) {
-          return Markdown(
-            data: snapshot.data!,
-            shrinkWrap: true,
-            selectable: false,
-          );
-        }
-        return Center(child: CircularProgressIndicator());
-      },
-    );
   }
 }
