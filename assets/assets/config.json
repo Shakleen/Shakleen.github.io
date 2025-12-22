@@ -64,7 +64,7 @@
     },
     "production_ml": {
       "title": "Production ML",
-      "problemStatement": "",
+      "problemStatement": "Developing and deploying production applications",
       "logoPaths": [
         "assets/logos/python.svg",
         "assets/logos/pytorch.svg",
