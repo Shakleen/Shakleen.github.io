@@ -4,9 +4,8 @@ import 'package:my_portfolio_website/data/models/case_study_model.dart';
 import 'package:my_portfolio_website/data/models/feature_model.dart';
 import 'package:my_portfolio_website/presentation/cubits/case_study_cubit.dart';
 import 'package:my_portfolio_website/presentation/view/desktop/widgets/case_study_header.dart';
+import 'package:my_portfolio_website/presentation/view/widgets/case_study_image.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/markdown.dart';
-import 'package:my_portfolio_website/utils/theme_manager.dart';
-import 'package:provider/provider.dart';
 
 class CaseStudySection extends StatelessWidget {
   final CaseStudyModel data;
@@ -63,35 +62,11 @@ class _FeatureDescription extends StatelessWidget {
                 flex: 2,
                 child: MarkdownWidget(filePath: features[index].markdownPath),
               ),
-              Expanded(flex: 4, child: _ImageWidget(feature: features[index])),
+              Expanded(flex: 4, child: ImageWidget(feature: features[index])),
             ],
           ),
         );
       },
     );
-  }
-}
-
-class _ImageWidget extends StatelessWidget {
-  final FeatureModel feature;
-
-  const _ImageWidget({required this.feature});
-
-  @override
-  Widget build(BuildContext context) {
-    final themeManager = Provider.of<ThemeManager>(context);
-    String? imagePath;
-
-    if (themeManager.themeMode == ThemeMode.dark) {
-      imagePath = feature.darkImgPath ?? feature.lightImgPath;
-    } else {
-      imagePath = feature.lightImgPath ?? feature.darkImgPath;
-    }
-
-    if (imagePath == null) {
-      return Placeholder(color: Colors.green);
-    }
-
-    return Image.asset(imagePath, fit: BoxFit.contain);
   }
 }

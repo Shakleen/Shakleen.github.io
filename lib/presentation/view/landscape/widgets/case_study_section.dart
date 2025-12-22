@@ -4,22 +4,32 @@ import 'package:my_portfolio_website/data/models/case_study_model.dart';
 import 'package:my_portfolio_website/data/models/feature_model.dart';
 import 'package:my_portfolio_website/presentation/cubits/case_study_cubit.dart';
 import 'package:my_portfolio_website/presentation/view/landscape/widgets/case_study_header.dart';
+import 'package:my_portfolio_website/presentation/view/widgets/case_study_image.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/markdown.dart';
-import 'package:my_portfolio_website/utils/theme_manager.dart';
-import 'package:provider/provider.dart';
 
-class LandscapeCaseStudySection extends StatelessWidget {
+class LandscapeCaseStudySection extends StatefulWidget {
   final CaseStudyModel data;
 
   const LandscapeCaseStudySection({super.key, required this.data});
 
   @override
+  State<LandscapeCaseStudySection> createState() =>
+      _LandscapeCaseStudySectionState();
+}
+
+class _LandscapeCaseStudySectionState extends State<LandscapeCaseStudySection>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocProvider<CaseStudySectionCubit>(
       create: (BuildContext context) => CaseStudySectionCubit(),
       child: Column(
         children: [
-          Divider(height: 32),
+          const Divider(height: 32),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
             child: Row(
@@ -27,16 +37,16 @@ class LandscapeCaseStudySection extends StatelessWidget {
                 Expanded(
                   flex: 17,
                   child: LandscapeCaseStudyHeader(
-                    number: data.index,
-                    title: data.title,
-                    shortDescription: data.problemStatement,
-                    logoPaths: data.logoPaths,
-                    features: data.features,
+                    number: widget.data.index,
+                    title: widget.data.title,
+                    shortDescription: widget.data.problemStatement,
+                    logoPaths: widget.data.logoPaths,
+                    features: widget.data.features,
                   ),
                 ),
                 Expanded(
                   flex: 83,
-                  child: _FeatureDescription(features: data.features),
+                  child: _FeatureDescription(features: widget.data.features),
                 ),
               ],
             ),
@@ -67,39 +77,15 @@ class _FeatureDescription extends StatelessWidget {
               ),
               child: MarkdownWidget(filePath: features[index].markdownPath),
             ),
-            _ImageWidget(feature: features[index]),
+            Container(
+              constraints: BoxConstraints(
+                maxHeight: MediaQuery.of(context).size.height * 0.5,
+              ),
+              child: ImageWidget(feature: features[index]),
+            ),
           ],
         );
       },
-    );
-  }
-}
-
-class _ImageWidget extends StatelessWidget {
-  final FeatureModel feature;
-
-  const _ImageWidget({required this.feature});
-
-  @override
-  Widget build(BuildContext context) {
-    final themeManager = Provider.of<ThemeManager>(context);
-    String? imagePath;
-
-    if (themeManager.themeMode == ThemeMode.dark) {
-      imagePath = feature.darkImgPath ?? feature.lightImgPath;
-    } else {
-      imagePath = feature.lightImgPath ?? feature.darkImgPath;
-    }
-
-    if (imagePath == null) {
-      return Placeholder(color: Colors.green);
-    }
-
-    return Container(
-      constraints: BoxConstraints(
-        maxHeight: MediaQuery.of(context).size.height * 0.5,
-      ),
-      child: Image.asset(imagePath, fit: BoxFit.contain),
     );
   }
 }

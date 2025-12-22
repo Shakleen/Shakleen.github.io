@@ -25,10 +25,7 @@
       "huggingface": "assets/logos/huggingface.svg",
       "vim": "assets/logos/vim.svg",
       "git": "assets/logos/git.svg",
-      "arch-linux": "assets/logos/arch-linux.svg",
-      "gmail": "assets/logos/gmail.svg",
-      "linked_in": "assets/logos/linkedin.svg",
-      "github": "assets/logos/github.svg"
+      "arch-linux": "assets/logos/arch-linux.svg"
     }
   },
   "case_studies": {

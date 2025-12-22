@@ -37,23 +37,24 @@ class _SkillIconBar extends StatelessWidget {
         final double availableWidth = constraints.maxWidth;
         // Assuming icon width is 24 and spacing is 8.
         // The 24 comes from the _SkillIcon width. The 8 is the spacing.
-        final double itemWidthWithSpacing = 24.0 + 8.0;
+        final double itemWidthWithSpacing = 24.0 + 16.0;
 
         int itemsPerRow = (availableWidth / itemWidthWithSpacing).floor();
-        if (itemsPerRow == 0) itemsPerRow = 1; // Ensure at least one item per row
+        if (itemsPerRow == 0)
+          itemsPerRow = 1; // Ensure at least one item per row
 
         final int maxItemsToShow = itemsPerRow * 3; // Limit to 3 rows
 
         final List<String> skillPaths = config.about.skills.values.toList();
-        final List<String> skillsToShow = skillPaths.take(maxItemsToShow).toList();
+        final List<String> skillsToShow = skillPaths
+            .take(maxItemsToShow)
+            .toList();
 
         return Wrap(
           alignment: WrapAlignment.center,
-          spacing: 8.0, // Horizontal spacing between items
+          spacing: 16.0, // Horizontal spacing between items
           runSpacing: 8.0, // Vertical spacing between runs
-          children: skillsToShow
-              .map((val) => _SkillIcon(path: val))
-              .toList(),
+          children: skillsToShow.map((val) => _SkillIcon(path: val)).toList(),
         );
       },
     );
@@ -72,7 +73,7 @@ class _SkillIcon extends StatelessWidget {
       width: 24,
       height: 24,
       fit: BoxFit.contain,
-      color: Theme.of(context).colorScheme.secondary,
+      color: Theme.of(context).colorScheme.primary,
     );
   }
 }
