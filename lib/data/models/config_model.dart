@@ -25,7 +25,7 @@ class ConfigModel {
     final caseStudyKeys = caseStudiesJson.keys.toList();
     final caseStudies = <String, CaseStudyModel>{};
     for (var key in caseStudyKeys) {
-      final index = caseStudyKeys.indexOf(key);
+      final index = caseStudyKeys.indexOf(key) + 1;
       caseStudies[key] = CaseStudyModel.fromJson(caseStudiesJson[key], index);
     }
 

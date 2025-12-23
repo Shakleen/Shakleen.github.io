@@ -1,6 +1,7 @@
 import 'package:my_portfolio_website/data/models/feature_model.dart';
 
 class CaseStudyModel {
+  final String url;
   final int index;
   final String title;
   final String problemStatement;
@@ -8,6 +9,7 @@ class CaseStudyModel {
   final List<FeatureModel> features;
 
   const CaseStudyModel({
+    required this.url,
     required this.index,
     required this.title,
     required this.problemStatement,
@@ -18,6 +20,7 @@ class CaseStudyModel {
   factory CaseStudyModel.fromJson(Map<String, dynamic> json, int index) {
     return CaseStudyModel(
       index: index,
+      url: json['url'],
       title: json['title'],
       problemStatement: json['problemStatement'],
       logoPaths: List<String>.from(json['logoPaths']),
@@ -27,3 +30,4 @@ class CaseStudyModel {
     );
   }
 }
+

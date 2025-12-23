@@ -29,6 +29,7 @@ class CaseStudySection extends StatelessWidget {
                 shortDescription: data.problemStatement,
                 logoPaths: data.logoPaths,
                 features: data.features,
+                url: data.url,
               ),
             ),
             Expanded(

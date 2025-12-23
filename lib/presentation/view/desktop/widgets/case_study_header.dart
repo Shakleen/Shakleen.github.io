@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:my_portfolio_website/data/models/feature_model.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/feature_tab.dart';
+import 'package:my_portfolio_website/utils/launch_url.dart';
 
 class CaseStudyHeader extends StatelessWidget {
   final int number;
+  final String url;
   final String title;
   final String shortDescription;
   final List<String> logoPaths;
@@ -17,6 +19,7 @@ class CaseStudyHeader extends StatelessWidget {
     required this.shortDescription,
     required this.logoPaths,
     required this.features,
+    required this.url,
   });
 
   @override
@@ -42,12 +45,7 @@ class CaseStudyHeader extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  title,
-                  style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
+                CaseStudyTitleWithLink(title: title, url: url),
                 _TechStack(logoPaths: logoPaths),
               ],
             ),
@@ -55,6 +53,49 @@ class CaseStudyHeader extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class CaseStudyTitleWithLink extends StatelessWidget {
+  const CaseStudyTitleWithLink({
+    super.key,
+    required this.title,
+    required this.url,
+  });
+
+  final String title;
+  final String url;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        IconButton(
+          icon: Icon(
+            Icons.link_outlined,
+            color: Theme.of(context).colorScheme.onPrimary,
+          ),
+          style: IconButton.styleFrom(
+            backgroundColor: Theme.of(context).colorScheme.primary,
+          ),
+          tooltip: "Repository",
+          onPressed: () async => await launchURL(
+            context,
+            url,
+            "Unable to load URL",
+            "Unable to load URL",
+          ),
+        ),
+        SizedBox(width: 8),
+        Text(
+          title,
+          style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+            color: Theme.of(context).colorScheme.primary,
+          ),
+        ),
+      ],
     );
   }
 }
