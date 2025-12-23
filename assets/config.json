@@ -48,7 +48,9 @@
         },
         {
           "title": "High performance front & backend",
-          "markdownPath": "assets/markdowns/flash-learn/high-performance.md"
+          "markdownPath": "assets/markdowns/flash-learn/high-performance.md",
+          "lightImgPath": "assets/diagrams/lang.png",
+          "darkImgPath": "assets/diagrams/lang.png"
         },
         {
           "title": "Scaling with Rigorous Stability",
@@ -72,17 +74,19 @@
       ],
       "features": [
         {
-          "title": "AI Engineer at startup",
+          "title": "Credit risk analyzer",
           "markdownPath": "assets/markdowns/professional/doc-intelli.md",
           "lightImgPath": "assets/diagrams/credit_risk_light.png",
           "darkImgPath": "assets/diagrams/credit_risk_dark.png"
         },
         {
-          "title": "Software Engineer at Samsung",
-          "markdownPath": "assets/markdowns/professional/smart-watch.md"
+          "title": "Social media parser",
+          "markdownPath": "assets/markdowns/professional/social-parser.md",
+          "lightImgPath": "assets/diagrams/social-parser-light.png",
+          "darkImgPath": "assets/diagrams/social-parser-dark.png"
         },
         {
-          "title": "Research Assistant at URMC",
+          "title": "Vascular pulsatility calculation",
           "markdownPath": "assets/markdowns/professional/bio-automation.md",
           "lightImgPath": "assets/diagrams/bio_comp_light.png",
           "darkImgPath": "assets/diagrams/bio_comp_dark.png"

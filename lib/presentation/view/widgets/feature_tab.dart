@@ -40,7 +40,7 @@ class FeatureTab extends StatelessWidget {
                 style: Theme.of(
                   context,
                 ).textTheme.bodySmall!.copyWith(color: textColor),
-                textAlign: TextAlign.left,
+                textAlign: TextAlign.center,
                 softWrap: true,
               ),
             ),
