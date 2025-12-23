@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_website/data/models/feature_model.dart';
-import 'package:my_portfolio_website/utils/theme_manager.dart';
-import 'package:provider/provider.dart';
 
 class ImageWidget extends StatelessWidget {
   final FeatureModel feature;
@@ -10,10 +8,10 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeManager = Provider.of<ThemeManager>(context);
+    final brightness = Theme.of(context).brightness;
     String? imagePath;
 
-    if (themeManager.themeMode == ThemeMode.dark) {
+    if (brightness == Brightness.dark) {
       imagePath = feature.darkImgPath ?? feature.lightImgPath;
     } else {
       imagePath = feature.lightImgPath ?? feature.darkImgPath;

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:my_portfolio_website/data/models/config_model.dart';
+import 'package:my_portfolio_website/presentation/view/widgets/resume_button.dart';
 import 'package:my_portfolio_website/utils/launch_url.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -85,16 +86,7 @@ class _ButtonBar extends StatelessWidget {
             "Error occurred when launching URL for GitHub",
           ),
         ),
-        _SocialButton(
-          title: "Resume",
-          icon: Icon(Icons.download),
-          onPressed: () async => await launchURL(
-            context,
-            config.urls.resumePdf,
-            "Failed to launch URL for resume",
-            "Error occurred when launching URL for resume",
-          ),
-        ),
+        ResumeButton(),
       ],
     );
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio_website/data/models/config_model.dart';
-import 'package:my_portfolio_website/utils/launch_url.dart';
+import 'package:my_portfolio_website/presentation/view/widgets/resume_button.dart';
 import 'package:my_portfolio_website/utils/theme_manager.dart';
 import 'package:provider/provider.dart';
 
@@ -12,8 +11,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return AppBar(
-      leading: _DownloadResumeIconButton(),
+      leading: ResumeButton(),
+      leadingWidth: screenWidth > 600.0 ? 120 : 50,
       title: _AppBarTitle(),
       centerTitle: true,
       actions: <Widget>[_ToggleDarkModeIconButton()],
@@ -51,29 +53,6 @@ class _AppBarTitle extends StatelessWidget {
       height: 32,
       fit: BoxFit.contain,
       color: Theme.of(context).colorScheme.secondary,
-    );
-  }
-}
-
-class _DownloadResumeIconButton extends StatelessWidget {
-  const _DownloadResumeIconButton();
-
-  @override
-  Widget build(BuildContext context) {
-    final config = context.watch<ConfigModel>();
-
-    return IconButton(
-      icon: Icon(
-        Icons.download,
-        color: Theme.of(context).colorScheme.secondary,
-      ),
-      tooltip: "Resume",
-      onPressed: () async => await launchURL(
-        context,
-        config.urls.resumePdf,
-        "Failed to launch URL for resume",
-        "Error occurred when launching URL for resume",
-      ),
     );
   }
 }
