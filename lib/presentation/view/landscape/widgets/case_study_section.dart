@@ -37,6 +37,7 @@ class _LandscapeCaseStudySectionState extends State<LandscapeCaseStudySection>
                 Expanded(
                   flex: 17,
                   child: LandscapeCaseStudyHeader(
+                    url: widget.data.url,
                     number: widget.data.index,
                     title: widget.data.title,
                     shortDescription: widget.data.problemStatement,

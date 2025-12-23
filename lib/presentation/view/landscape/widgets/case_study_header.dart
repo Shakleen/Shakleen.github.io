@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:my_portfolio_website/data/models/feature_model.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/feature_tab.dart';
+import 'package:my_portfolio_website/presentation/view/widgets/title_with_link.dart';
 
 class LandscapeCaseStudyHeader extends StatelessWidget {
   final int number;
+  final String url;
   final String title;
   final String shortDescription;
   final List<String> logoPaths;
@@ -17,6 +19,7 @@ class LandscapeCaseStudyHeader extends StatelessWidget {
     required this.shortDescription,
     required this.logoPaths,
     required this.features,
+    required this.url,
   });
 
   @override
@@ -36,12 +39,7 @@ class LandscapeCaseStudyHeader extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    title,
-                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                  ),
+                  CaseStudyTitleWithLink(title: title, url: url),
                   _TechStack(logoPaths: logoPaths),
                 ],
               ),

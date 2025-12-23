@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:my_portfolio_website/data/models/feature_model.dart';
 import 'package:my_portfolio_website/presentation/view/widgets/feature_tab.dart';
-import 'package:my_portfolio_website/utils/launch_url.dart';
+import 'package:my_portfolio_website/presentation/view/widgets/title_with_link.dart';
 
 class CaseStudyHeader extends StatelessWidget {
   final int number;
@@ -53,49 +53,6 @@ class CaseStudyHeader extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class CaseStudyTitleWithLink extends StatelessWidget {
-  const CaseStudyTitleWithLink({
-    super.key,
-    required this.title,
-    required this.url,
-  });
-
-  final String title;
-  final String url;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        IconButton(
-          icon: Icon(
-            Icons.link_outlined,
-            color: Theme.of(context).colorScheme.onPrimary,
-          ),
-          style: IconButton.styleFrom(
-            backgroundColor: Theme.of(context).colorScheme.primary,
-          ),
-          tooltip: "Repository",
-          onPressed: () async => await launchURL(
-            context,
-            url,
-            "Unable to load URL",
-            "Unable to load URL",
-          ),
-        ),
-        SizedBox(width: 8),
-        Text(
-          title,
-          style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-            color: Theme.of(context).colorScheme.primary,
-          ),
-        ),
-      ],
     );
   }
 }

@@ -23,6 +23,7 @@ class PortraitCaseStudySection extends StatelessWidget {
           children: [
             Divider(height: 32),
             PortraitCaseStudyHeader(
+              url: data.url,
               number: data.index,
               title: data.title,
               shortDescription: data.problemStatement,
