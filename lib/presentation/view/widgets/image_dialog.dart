@@ -52,16 +52,20 @@ class _ImageDialogState extends State<ImageDialog> {
     final Size screenSize = MediaQuery.of(context).size;
     final double screenWidth = screenSize.width;
     final double screenHeight = screenSize.height;
+    final Orientation orientation = MediaQuery.of(context).orientation;
 
     return Dialog(
       backgroundColor: Theme.of(context).colorScheme.surface.withOpacity(0.85),
       insetPadding: const EdgeInsets.all(16),
-      constraints: BoxConstraints(
-        minHeight: screenHeight * 0.6,
-        maxHeight: screenHeight * 0.8,
-        minWidth: screenWidth * 0.4,
-        maxWidth: screenWidth * 0.8,
-      ),
+      constraints: orientation == Orientation.portrait
+          ? BoxConstraints(
+              maxHeight: screenHeight * 0.7,
+              maxWidth: screenWidth * 0.95,
+            )
+          : BoxConstraints(
+              maxHeight: screenHeight * 0.95,
+              maxWidth: screenWidth * 0.7,
+            ),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusGeometry.circular(24),
       ),
@@ -143,3 +147,4 @@ class _ImageDialogState extends State<ImageDialog> {
     );
   }
 }
+
