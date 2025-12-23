@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
+import 'package:shimmer/shimmer.dart';
 
 class MarkdownWidget extends StatelessWidget {
   final String filePath;
@@ -22,7 +23,28 @@ class MarkdownWidget extends StatelessWidget {
             ),
           );
         }
-        return Center(child: CircularProgressIndicator());
+        return Shimmer.fromColors(
+          baseColor: Theme.of(context).colorScheme.surfaceContainerHighest,
+          highlightColor: Theme.of(context).colorScheme.surfaceContainerHigh,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                width: double.infinity,
+                height: 20.0,
+                color: Colors.white,
+                margin: const EdgeInsets.only(bottom: 8.0),
+              ),
+              Container(
+                width: double.infinity,
+                height: 20.0,
+                color: Colors.white,
+                margin: const EdgeInsets.only(bottom: 8.0),
+              ),
+              Container(width: 150.0, height: 20.0, color: Colors.white),
+            ],
+          ),
+        );
       },
     );
   }

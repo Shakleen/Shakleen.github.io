@@ -41,6 +41,7 @@ dependencies:
   flutter_svg: ^2.2.3
   flutter_screenutil: ^5.9.3
   responsive_builder: ^0.7.1
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

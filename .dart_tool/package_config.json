@@ -206,6 +206,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "shimmer",
+      "rootUri": "file:///home/ishrak/.pub-cache/hosted/pub.dev/shimmer-3.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///home/ishrak/.cache/flutter_sdk/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
