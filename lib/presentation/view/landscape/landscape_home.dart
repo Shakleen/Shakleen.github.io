@@ -31,9 +31,9 @@ class _LandscapeHomeState extends State<LandscapeHome> {
         scrollDirection: Axis.vertical,
         children: [
           LandscapeAboutSection(),
-          LandscapeCaseStudySection(data: config.caseStudies['flash-learn']!),
-          LandscapeCaseStudySection(data: config.caseStudies['production_ml']!),
-          LandscapeCaseStudySection(data: config.caseStudies['pii']!),
+          ...config.caseStudies.values
+              .map((caseStudy) => LandscapeCaseStudySection(data: caseStudy))
+              .toList(),
         ],
       ),
     );

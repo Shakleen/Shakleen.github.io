@@ -16,20 +16,41 @@ class DesktopHome extends StatefulWidget {
 
 class _DesktopHomeState extends State<DesktopHome> {
   final _pageController = PageController();
-  final _aboutKey = GlobalKey();
-  final _flashLearnKey = GlobalKey();
-  final _piiKey = GlobalKey();
-  final _professionalKey = GlobalKey();
+
+  final List<Section> _availableSections = [];
+  final List<Widget> _pages = [];
+  bool _isInitialized = false;
 
   static const int animationDurationPageScroll = 500;
+
+  void _initialize(ConfigModel config) {
+    if (_isInitialized) return;
+
+    _availableSections.add(Section.about);
+    _pages.add(AboutSection(key: GlobalKey()));
+
+    final caseStudies = config.caseStudies.values.toList();
+    caseStudies.sort((a, b) => a.index.compareTo(b.index));
+
+    for (var cs in caseStudies) {
+      if (cs.index < Section.values.length) {
+        _availableSections.add(Section.values[cs.index]);
+        _pages.add(CaseStudySection(key: GlobalKey(), data: cs));
+      }
+    }
+    _isInitialized = true;
+  }
 
   @override
   void initState() {
     super.initState();
     _pageController.addListener(() {
+      if (!_isInitialized) return;
       final page = _pageController.page!.round();
-      final section = Section.values[page];
-      context.read<SectionCubit>().updateSection(section);
+      if (page < _availableSections.length) {
+        final section = _availableSections[page];
+        context.read<SectionCubit>().updateSection(section);
+      }
     });
   }
 
@@ -50,17 +71,18 @@ class _DesktopHomeState extends State<DesktopHome> {
   @override
   Widget build(BuildContext context) {
     final config = context.watch<ConfigModel>();
+    _initialize(config);
     return Scaffold(
       appBar: CustomAppBar(),
       bottomNavigationBar: BottomAppBar(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: Section.values
+          children: _availableSections
               .map<NavLink>(
                 (Section sec) => NavLink(
                   title: sectionToName[sec]!,
                   section: sec,
-                  onPressed: () => _scrollToSection(sectionToIndex[sec]!),
+                  onPressed: () => _scrollToSection(_availableSections.indexOf(sec)),
                 ),
               )
               .toList(),
@@ -69,18 +91,7 @@ class _DesktopHomeState extends State<DesktopHome> {
       body: PageView(
         controller: _pageController,
         scrollDirection: Axis.horizontal,
-        children: [
-          AboutSection(key: _aboutKey),
-          CaseStudySection(
-            key: _flashLearnKey,
-            data: config.caseStudies['flash-learn']!,
-          ),
-          CaseStudySection(
-            key: _professionalKey,
-            data: config.caseStudies['production_ml']!,
-          ),
-          CaseStudySection(key: _piiKey, data: config.caseStudies['pii']!),
-        ],
+        children: _pages,
       ),
     );
   }

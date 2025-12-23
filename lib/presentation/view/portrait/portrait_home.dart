@@ -16,57 +16,15 @@ class PortraitHome extends StatefulWidget {
 
 class _PortraitHomeState extends State<PortraitHome> {
   final _scrollController = ScrollController();
-  final _aboutKey = GlobalKey();
-  final _flashLearnKey = GlobalKey();
-  final _piiKey = GlobalKey();
-  final _professionalKey = GlobalKey();
-  Section? _currentSection;
 
   @override
   void initState() {
     super.initState();
-    _scrollController.addListener(_onScroll);
-  }
-
-  void _onScroll() {
-    final Map<GlobalKey, Section> keyToSection = {
-      _aboutKey: Section.about,
-      _flashLearnKey: Section.flashLearn,
-      _piiKey: Section.pii,
-      _professionalKey: Section.prof,
-    };
-
-    final sections = [_aboutKey, _flashLearnKey, _piiKey, _professionalKey];
-    Section? newSection;
-    double accumulatedHeight = 0;
-    const threshold = 200.0;
-
-    for (final key in sections) {
-      final context = key.currentContext;
-      if (context == null) continue;
-
-      final height = context.size!.height;
-      if (_scrollController.offset < accumulatedHeight + height - threshold) {
-        newSection = keyToSection[key];
-        break;
-      }
-      accumulatedHeight += height;
-    }
-
-    if (newSection == null &&
-        sections.every((key) => key.currentContext != null)) {
-      newSection = keyToSection[sections.last];
-    }
-
-    if (newSection != null && newSection != _currentSection) {
-      _currentSection = newSection;
-      context.read<SectionCubit>().updateSection(newSection);
-    }
+    // No _onScroll listener needed
   }
 
   @override
   void dispose() {
-    _scrollController.removeListener(_onScroll);
     _scrollController.dispose();
     super.dispose();
   }
@@ -74,25 +32,20 @@ class _PortraitHomeState extends State<PortraitHome> {
   @override
   Widget build(BuildContext context) {
     final config = context.watch<ConfigModel>();
+
     return Scaffold(
       appBar: CustomAppBar(),
       body: ListView(
         controller: _scrollController,
         scrollDirection: Axis.vertical,
         children: [
-          PortraitAboutSection(key: _aboutKey),
-          PortraitCaseStudySection(
-            key: _flashLearnKey,
-            data: config.caseStudies['flash-learn']!,
-          ),
-          PortraitCaseStudySection(
-            key: _professionalKey,
-            data: config.caseStudies['production_ml']!,
-          ),
-          PortraitCaseStudySection(
-            key: _piiKey,
-            data: config.caseStudies['pii']!,
-          ),
+          const PortraitAboutSection(), // Removed key
+          ...config.caseStudies.values.map((caseStudy) {
+            return PortraitCaseStudySection(
+              // Removed key
+              data: caseStudy,
+            );
+          }),
         ],
       ),
     );
