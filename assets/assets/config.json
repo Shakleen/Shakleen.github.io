@@ -5,9 +5,7 @@
     "email": "mailto:shakleenishfar@gmail.com",
     "resume_pdf": "https://drive.google.com/file/d/1UIMRwmcYXDOc7vyvsVQoTXLc03FwmYqB/view?usp=drive_link",
     "linked_in_profile": "https://www.linkedin.com/in/shakleen-ishfar/",
-    "github_profile": "https://github.com/Shakleen",
-    "flash_learn_playlist": "https://youtube.com/playlist?list=PLOsfJuwghQEYPEMtCdZYo2R1qb8SuM3ye&si=JyEtdE0uPjXZ3MJe",
-    "pii_repository": "https://github.com/Shakleen/Kaggle-PII-Challenge"
+    "github_profile": "https://github.com/Shakleen"
   },
   "about": {
     "profile-picture-light": "assets/images/profile-picture-light.jpeg",
@@ -30,6 +28,7 @@
   },
   "case_studies": {
     "flash-learn": {
+      "url": "https://youtube.com/playlist?list=PLOsfJuwghQEYPEMtCdZYo2R1qb8SuM3ye&si=JyEtdE0uPjXZ3MJe",
       "title": "Flash Learn",
       "problemStatement": "AI-Powered Adaptive Learning Platform",
       "logoPaths": [
@@ -49,7 +48,9 @@
         },
         {
           "title": "High performance front & backend",
-          "markdownPath": "assets/markdowns/flash-learn/high-performance.md"
+          "markdownPath": "assets/markdowns/flash-learn/high-performance.md",
+          "lightImgPath": "assets/diagrams/lang.png",
+          "darkImgPath": "assets/diagrams/lang.png"
         },
         {
           "title": "Scaling with Rigorous Stability",
@@ -60,6 +61,7 @@
       ]
     },
     "production_ml": {
+      "url": "https://drive.google.com/file/d/1UIMRwmcYXDOc7vyvsVQoTXLc03FwmYqB/view?usp=drive_link",
       "title": "Production ML",
       "problemStatement": "Developing and deploying production applications",
       "logoPaths": [
@@ -72,17 +74,19 @@
       ],
       "features": [
         {
-          "title": "AI Engineer at startup",
+          "title": "Credit risk analyzer",
           "markdownPath": "assets/markdowns/professional/doc-intelli.md",
           "lightImgPath": "assets/diagrams/credit_risk_light.png",
           "darkImgPath": "assets/diagrams/credit_risk_dark.png"
         },
         {
-          "title": "Software Engineer at Samsung",
-          "markdownPath": "assets/markdowns/professional/smart-watch.md"
+          "title": "Social media parser",
+          "markdownPath": "assets/markdowns/professional/social-parser.md",
+          "lightImgPath": "assets/diagrams/social-parser-light.png",
+          "darkImgPath": "assets/diagrams/social-parser-dark.png"
         },
         {
-          "title": "Research Assistant at URMC",
+          "title": "Vascular pulsatility calculation",
           "markdownPath": "assets/markdowns/professional/bio-automation.md",
           "lightImgPath": "assets/diagrams/bio_comp_light.png",
           "darkImgPath": "assets/diagrams/bio_comp_dark.png"
@@ -90,6 +94,7 @@
       ]
     },
     "pii": {
+      "url": "https://github.com/Shakleen/Kaggle-PII-Challenge",
       "title": "PII Detection",
       "problemStatement": "Protecting Privacy in Student Essays",
       "logoPaths": [

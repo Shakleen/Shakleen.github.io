@@ -1,10 +1,11 @@
 ## Problem
-The initial Python and React stack faced scaling bottlenecks and high resource consumption.
+* **Backend**: Needed fast, type-safe language — Python/JS too slow, Rust/C too complex.
+* **Frontend**: Wanted single codebase for all platforms — React Native slow and not type-safe.
 
 ## Solution
-- **Backend migration** from Python to **Go**
-- **Frontend migration** from React to **Flutter**
+* **Backend**: Chose Go for excellent performance and static typing.
+* **Frontend**: Chose Flutter for native performance, type safety, and single codebase.
 
 ## Result
-* 10x increase in Requests Per Second and 5x reduction in memory usage
-* 20% improvement in page load times.
+* **Backend**: ~50% higher requests/second than Python, no type-related bugs, faster development.
+* **Frontend**: One codebase across platforms, better performance than React Native, saved significant time and code.
