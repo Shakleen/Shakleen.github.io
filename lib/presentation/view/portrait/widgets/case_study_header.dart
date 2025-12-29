@@ -80,15 +80,18 @@ class _FeatureTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      scrollDirection: Axis.horizontal,
-      shrinkWrap: true,
-      children: features
-          .map(
-            (FeatureModel model) =>
-                FeatureTab(index: features.indexOf(model), model: model),
-          )
-          .toList(),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        shrinkWrap: true,
+        children: features
+            .map(
+              (FeatureModel model) =>
+                  FeatureTab(index: features.indexOf(model), model: model),
+            )
+            .toList(),
+      ),
     );
   }
 }

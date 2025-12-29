@@ -49,8 +49,8 @@
         {
           "title": "High performance front & backend",
           "markdownPath": "assets/markdowns/flash-learn/high-performance.md",
-          "lightImgPath": "assets/diagrams/lang.png",
-          "darkImgPath": "assets/diagrams/lang.png"
+          "lightImgPath": "assets/diagrams/flash_learn_sys_light.png",
+          "darkImgPath": "assets/diagrams/flash_learn_sys_dark.png"
         },
         {
           "title": "Scaling with Rigorous Stability",
