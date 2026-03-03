@@ -43,8 +43,8 @@
         {
           "title": "Tackling the forgetting curve",
           "markdownPath": "assets/markdowns/flash-learn/forgetting-curve.md",
-          "lightImgPath": "assets/diagrams/fl-ss.png",
-          "darkImgPath": "assets/diagrams/fl-ss.png"
+          "lightImgPath": "assets/diagrams/fl-ss-light.png",
+          "darkImgPath": "assets/diagrams/fl-ss-dark.png"
         },
         {
           "title": "High performance front & backend",
